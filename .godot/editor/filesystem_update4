@@ -21,3 +21,8 @@ res://scenes/Worlds/world_2.tscn
 res://scripts/WorldScripts/world_2.gd
 res://scenes/Worlds/world_3.tscn
 res://scripts/WorldScripts/world_3.gd
+res://scenes/drop_place.tscn
+res://scripts/global_drag.gd
+res://scripts/drop_place.gd
+res://scenes/object.tscn
+res://scripts/object.gd
