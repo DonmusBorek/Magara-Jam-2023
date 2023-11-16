@@ -3,6 +3,7 @@
 [ext_resource type="Script" path="res://scripts/eyelaser.gd" id="1_c0srk"]
 
 [node name="Eyelaser" type="RayCast2D" groups=["Hurt"]]
+z_index = -1
 target_position = Vector2(1000, 0)
 script = ExtResource("1_c0srk")
 

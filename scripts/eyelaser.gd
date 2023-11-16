@@ -26,7 +26,7 @@ func _set_casting(cast:bool):
 
 func appear():
 	var tween = get_tree().create_tween()
-	tween.tween_property($Line2D,"width",30.0,0.2)
+	tween.tween_property($Line2D,"width",7.0,0.2)
 	
 func disapper():
 	var tween = get_tree().create_tween()

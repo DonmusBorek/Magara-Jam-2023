@@ -13,7 +13,7 @@ const JUMP_BUFFER_TIME = 10
 
 var jump_buffer_counter = 0
 
-@onready var anim = $AnimatedSprite2D
+@onready var anim = $turn/AnimatedSprite2D
 @onready var coyote_timer = $coyotetimer
 
 var can_move = true
@@ -69,5 +69,6 @@ func update_animation():
 	if velocity.x == 0:
 		anim.animation = "idle"
 	else:
-		anim.scale.x = sign(velocity.x)
+		$turn.scale.x = sign(velocity.x)
 		anim.animation = "walking"
+
