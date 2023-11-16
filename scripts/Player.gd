@@ -17,7 +17,9 @@ var jump_buffer_counter = 0
 @onready var coyote_timer = $coyotetimer
 
 var can_move = true
-
+func _ready():
+	State.player = self
+	
 func _physics_process(delta):
 	if can_move:
 		apply_gravity(delta)
