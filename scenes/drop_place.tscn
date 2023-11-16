@@ -8,11 +8,11 @@ size = Vector2(40, 40)
 [node name="Drop_place" type="StaticBody2D" groups=["dropable"]]
 script = ExtResource("1_s7xrv")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_hq147")
-
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_left = -20.0
 offset_top = -20.0
 offset_right = 20.0
 offset_bottom = 20.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_hq147")

@@ -1,8 +1,5 @@
 extends Control
 
-var Jump_Boost:bool
-var Speed_Boost:bool
-var time:bool
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
