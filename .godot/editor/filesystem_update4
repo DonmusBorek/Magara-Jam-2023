@@ -1,3 +1,13 @@
 res://scenes/menu.tscn
 res://scripts/Menu.gd
 res://Sound/default_bus_layout.tres
+res://scenes/Player.tscn
+res://scenes/Player.gd
+res://scenes/test.tscn
+res://UpgradeStation.gd
+res://scenes/upgrade_station.tscn
+res://scenes/eye.tscn
+res://scripts/eye.gd
+res://scenes/eyelaser.tscn
+res://scripts/eyelaser.gd
+res://scenes/real_eye.tscn

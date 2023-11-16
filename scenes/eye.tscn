@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://cl1wdbdm28en0"]
+
+[ext_resource type="Script" path="res://scripts/eye.gd" id="1_8713f"]
+[ext_resource type="Texture2D" uid="uid://868u4jdwn0ck" path="res://icon.svg" id="1_q2c6y"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_orns4"]
+radius = 394.103
+
+[node name="Eye" type="Node2D"]
+script = ExtResource("1_8713f")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_q2c6y")
+
+[node name="track" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="track"]
+shape = SubResource("CircleShape2D_orns4")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 4.0
+one_shot = true
+
+[connection signal="area_entered" from="track" to="." method="_on_area_2d_area_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
