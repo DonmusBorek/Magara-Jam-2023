@@ -1,2 +1,3 @@
 res://scenes/menu.tscn
 res://scripts/Menu.gd
+res://Sound/default_bus_layout.tres
