@@ -63,12 +63,9 @@ func _on_geri_toggled(button_pressed):
 		faded = true
 		timer.start()
 		
-
-
 func _on_master_2_value_changed(value):
 	volume(0,value/2)
 
 func volume(bus_index, value):
 	AudioServer.set_bus_volume_db(bus_index,value)
 	
-
