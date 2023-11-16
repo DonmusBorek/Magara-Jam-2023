@@ -3,9 +3,17 @@ extends Node2D
 var draggable = false
 var is_inside_dropable = false
 var body_ref
+var offset: Vector2
+var initialPos: Vector2
 
 func _process(delta):
-	pass
+	if draggable:
+		if Input.is_action_just_pressed("Left_Click"):
+			initialPos = global_position
+			offset = get_global_mouse_position() - global_position
+			GlobalDrag.is_dragging = true
+		if Input.is_action_just_pressed("Left_Click"):
+			global_position = get_global_mouse_position() - offset
 	
 
 
