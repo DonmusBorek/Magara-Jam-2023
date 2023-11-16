@@ -189,7 +189,7 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_65yv0")
 toggle_mode = true
 text = "Geri"
 
-[node name="HSlider" type="HSlider" parent="OptionsButtons"]
+[node name="Master2" type="HSlider" parent="OptionsButtons"]
 offset_left = 1650.0
 offset_top = 229.0
 offset_right = 2012.0
@@ -223,6 +223,7 @@ position = Vector2(1647, 271)
 [node name="menumusic" type="AudioStreamPlayer2D" parent="Camera2D"]
 position = Vector2(-1159, -16)
 stream = ExtResource("2_0wqf1")
+volume_db = 9.369
 autoplay = true
 bus = &"Music"
 
@@ -248,4 +249,5 @@ texture = ExtResource("2_tuuv6")
 [connection signal="toggled" from="MenuButtons/Cıkıs" to="." method="_on_cıkıs_toggled"]
 [connection signal="toggled" from="OptionsButtons/CheckButton" to="." method="_on_check_button_toggled"]
 [connection signal="toggled" from="OptionsButtons/Geri" to="." method="_on_geri_toggled"]
+[connection signal="value_changed" from="OptionsButtons/Master2" to="." method="_on_master_2_value_changed"]
 [connection signal="animation_finished" from="Fade" to="." method="_on_fade_animation_finished"]
