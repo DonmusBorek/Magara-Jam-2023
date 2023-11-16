@@ -1,0 +1,30 @@
+[gd_scene load_steps=2 format=3 uid="uid://biptv3omlj33f"]
+
+[ext_resource type="Script" path="res://scripts/death_timer.gd" id="1_jytw0"]
+
+[node name="DeathTimer" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_jytw0")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 10.0
+one_shot = true
+
+[node name="Seconds" type="Label" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "02:"
+
+[node name="MSeconds" type="Label" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_left = 13.0
+offset_right = 53.0
+offset_bottom = 26.0
+text = "11"
+horizontal_alignment = 1
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://cl1wdbdm28en0"]
+
+[ext_resource type="Script" path="res://scripts/eye.gd" id="1_8713f"]
+[ext_resource type="Texture2D" uid="uid://nnn0x11grg1q" path="res://sprites/festuscanon.png" id="2_w5yrw"]
+[ext_resource type="Texture2D" uid="uid://ciomu0d6d8id3" path="res://sprites/lasercannons.png" id="3_lt7ka"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_orns4"]
+radius = 394.103
+
+[node name="Eye" type="Node2D"]
+script = ExtResource("1_8713f")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("2_w5yrw")
+
+[node name="track" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="track"]
+visible = false
+shape = SubResource("CircleShape2D_orns4")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 4.0
+one_shot = true
+
+[node name="Rotatet" type="Marker2D" parent="."]
+
+[node name="Sprite2D2" type="Sprite2D" parent="Rotatet"]
+z_index = -1
+texture_filter = 1
+position = Vector2(0, -1)
+rotation = -1.5708
+texture = ExtResource("3_lt7ka")
+
+[connection signal="area_entered" from="track" to="." method="_on_area_2d_area_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

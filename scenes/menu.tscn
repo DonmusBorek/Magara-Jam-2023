@@ -168,9 +168,9 @@ text = "Çıkış
 
 [node name="CheckButton" type="CheckButton" parent="OptionsButtons"]
 offset_left = 1215.0
-offset_top = 2.0
+offset_top = -31.0
 offset_right = 1420.0
-offset_bottom = 94.0
+offset_bottom = 61.0
 scale = Vector2(2.595, 2.595)
 theme_override_font_sizes/font_size = 26
 theme_override_styles/focus = SubResource("StyleBoxEmpty_nrqba")
@@ -191,18 +191,51 @@ text = "Geri"
 
 [node name="Master2" type="HSlider" parent="OptionsButtons"]
 offset_left = 1650.0
-offset_top = 229.0
+offset_top = 199.0
 offset_right = 2012.0
-offset_bottom = 245.0
-value = 50.0
+offset_bottom = 215.0
+min_value = -25.0
+max_value = 25.0
 
 [node name="Master" type="Label" parent="OptionsButtons"]
 offset_left = 1236.0
-offset_top = 188.0
+offset_top = 158.0
 offset_right = 1459.0
-offset_bottom = 282.0
+offset_bottom = 252.0
 theme_override_font_sizes/font_size = 66
 text = "Master"
+
+[node name="Music" type="HSlider" parent="OptionsButtons"]
+offset_left = 1650.0
+offset_top = 274.0
+offset_right = 2012.0
+offset_bottom = 290.0
+min_value = -25.0
+max_value = 25.0
+
+[node name="Music2" type="Label" parent="OptionsButtons"]
+offset_left = 1236.0
+offset_top = 233.0
+offset_right = 1459.0
+offset_bottom = 327.0
+theme_override_font_sizes/font_size = 66
+text = "Müzik"
+
+[node name="Sfx" type="HSlider" parent="OptionsButtons"]
+offset_left = 1650.0
+offset_top = 344.0
+offset_right = 2012.0
+offset_bottom = 360.0
+min_value = -25.0
+max_value = 25.0
+
+[node name="Sfx2" type="Label" parent="OptionsButtons"]
+offset_left = 1236.0
+offset_top = 303.0
+offset_right = 1459.0
+offset_bottom = 397.0
+theme_override_font_sizes/font_size = 66
+text = "Sfx"
 
 [node name="Title" type="Label" parent="."]
 modulate = Color(1.5, 1, 1, 1)
@@ -218,7 +251,7 @@ text = "Exorcism 2"
 environment = SubResource("Environment_ebdu5")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(1647, 271)
+position = Vector2(1647, 272)
 
 [node name="menumusic" type="AudioStreamPlayer2D" parent="Camera2D"]
 position = Vector2(-1159, -16)
@@ -250,4 +283,6 @@ texture = ExtResource("2_tuuv6")
 [connection signal="toggled" from="OptionsButtons/CheckButton" to="." method="_on_check_button_toggled"]
 [connection signal="toggled" from="OptionsButtons/Geri" to="." method="_on_geri_toggled"]
 [connection signal="value_changed" from="OptionsButtons/Master2" to="." method="_on_master_2_value_changed"]
+[connection signal="value_changed" from="OptionsButtons/Music" to="." method="_on_music_value_changed"]
+[connection signal="value_changed" from="OptionsButtons/Sfx" to="." method="_on_sfx_value_changed"]
 [connection signal="animation_finished" from="Fade" to="." method="_on_fade_animation_finished"]
