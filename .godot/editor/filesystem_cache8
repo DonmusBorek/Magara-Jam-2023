@@ -1,0 +1,12 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1700148209
+icon.svg::CompressedTexture2D::2382268464316952474::1700141010::1700141032::1::::<><>::
+::res://scenes/::1700148064
+menu.tscn::PackedScene::5702462138679423188::1700148064::0::1::::<><>::res://scripts/Menu.gd<>uid://xj1y13uqyfsh::::res://Sound/Music/intro.mp3<>uid://868u4jdwn0ck::::res://icon.svg
+::res://scripts/::1700144809
+Menu.gd::GDScript::-1::1700144809::0::1::::<>Control<>::
+::res://Sound/::1700145684
+default_bus_layout.tres::AudioBusLayout::6164825703708547890::1700145282::0::1::::<><>::
+::res://Sound/Music/::1700145175
+intro.mp3::AudioStreamMP3::1634545714119595327::1700145129::1700145175::1::::<><>::
+::res://Sound/SoundEffect/::1700145171

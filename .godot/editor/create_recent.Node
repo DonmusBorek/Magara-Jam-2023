@@ -1,0 +1,16 @@
+Label
+HSlider
+LineEdit
+Control
+AudioStreamPlayer2D
+CheckButton
+Node
+Sprite2D
+CanvasLayer
+AnimationPlayer
+Camera2D
+WorldEnvironment
+Button
+VBoxContainer
+TextureRect
+ColorRect
