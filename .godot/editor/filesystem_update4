@@ -6,3 +6,4 @@ res://NPCs/MiniBoss1.tscn
 res://state.gd
 res://scenes/Player.tscn
 res://scripts/Player.gd
+res://NPCs/MiniBoss1.gd
