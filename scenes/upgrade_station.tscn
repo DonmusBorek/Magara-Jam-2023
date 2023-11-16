@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://bkua0s8hor0i0"]
+[gd_scene load_steps=5 format=3 uid="uid://bkua0s8hor0i0"]
 
 [ext_resource type="Script" path="res://scripts/UpgradeStation.gd" id="1_m8ssf"]
 [ext_resource type="PackedScene" uid="uid://crcefqtatwi7g" path="res://scenes/drop_place.tscn" id="2_8wsbc"]
+[ext_resource type="Texture2D" uid="uid://868u4jdwn0ck" path="res://icon.svg" id="2_cakvr"]
+[ext_resource type="PackedScene" uid="uid://oq7okgpi7rss" path="res://scenes/object.tscn" id="3_8op1s"]
 
 [node name="UpgradeStation" type="Control"]
 layout_mode = 3
@@ -33,5 +35,46 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
-[node name="Drop_place" parent="." instance=ExtResource("2_8wsbc")]
-position = Vector2(217, 48)
+[node name="Placable" type="Node2D" parent="."]
+
+[node name="Drop_place" parent="Placable" instance=ExtResource("2_8wsbc")]
+position = Vector2(208, 66)
+
+[node name="Drop_place2" parent="Placable" instance=ExtResource("2_8wsbc")]
+position = Vector2(179, 134)
+
+[node name="Drop_place4" parent="Placable" instance=ExtResource("2_8wsbc")]
+position = Vector2(237, 134)
+
+[node name="Drop_place3" parent="Placable" instance=ExtResource("2_8wsbc")]
+position = Vector2(208, 201)
+
+[node name="Empty" type="Node2D" parent="."]
+
+[node name="Drop_place" parent="Empty" instance=ExtResource("2_8wsbc")]
+position = Vector2(418, 66)
+
+[node name="Drop_place3" parent="Empty" instance=ExtResource("2_8wsbc")]
+position = Vector2(343, 66)
+
+[node name="Drop_place4" parent="Empty" instance=ExtResource("2_8wsbc")]
+position = Vector2(418, 134)
+
+[node name="Drop_place6" parent="Empty" instance=ExtResource("2_8wsbc")]
+position = Vector2(343, 134)
+
+[node name="Drop_place9" parent="Empty" instance=ExtResource("2_8wsbc")]
+position = Vector2(343, 134)
+
+[node name="Drop_place10" parent="Empty" instance=ExtResource("2_8wsbc")]
+position = Vector2(418, 202)
+
+[node name="Drop_place12" parent="Empty" instance=ExtResource("2_8wsbc")]
+position = Vector2(343, 202)
+
+[node name="Objects" type="Node2D" parent="."]
+
+[node name="Object" parent="Objects" instance=ExtResource("3_8op1s")]
+position = Vector2(418, 66)
+nagme = "Vision"
+sprite = ExtResource("2_cakvr")

@@ -27,3 +27,4 @@ res://scripts/drop_place.gd
 res://scenes/object.tscn
 res://scripts/object.gd
 res://Tilseset1.tres
+res://scripts/UpgradeStation.gd
