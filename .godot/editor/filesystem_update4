@@ -2,3 +2,7 @@ res://scenes/Worlds/world_2.tscn
 res://Tilseset1.tres
 res://scenes/Worlds/world_1.tscn
 res://scenes/Worlds/world_3.tscn
+res://NPCs/MiniBoss1.tscn
+res://state.gd
+res://scenes/Player.tscn
+res://scripts/Player.gd
