@@ -101,6 +101,7 @@ grow_vertical = 2
 script = ExtResource("1_m8ssf")
 
 [node name="Control" type="Control" parent="."]
+visible = false
 anchors_preset = 0
 offset_left = -94.0
 offset_top = 8.0
@@ -123,40 +124,40 @@ color = Color(0.2, 0.2, 0.2, 1)
 [node name="Empty" type="Node2D" parent="Control"]
 position = Vector2(94, -8)
 
-[node name="Drop_place" parent="Control/Empty" instance=ExtResource("2_8wsbc")]
+[node name="Drop_place" parent="Control/Empty" groups=["empty"] instance=ExtResource("2_8wsbc")]
 position = Vector2(418, 66)
 
-[node name="Drop_place2" parent="Control/Empty" instance=ExtResource("2_8wsbc")]
+[node name="Drop_place2" parent="Control/Empty" groups=["empty"] instance=ExtResource("2_8wsbc")]
 position = Vector2(343, 66)
 
-[node name="Drop_place4" parent="Control/Empty" instance=ExtResource("2_8wsbc")]
+[node name="Drop_place4" parent="Control/Empty" groups=["empty"] instance=ExtResource("2_8wsbc")]
 position = Vector2(418, 134)
 
-[node name="Drop_place6" parent="Control/Empty" instance=ExtResource("2_8wsbc")]
+[node name="Drop_place6" parent="Control/Empty" groups=["empty"] instance=ExtResource("2_8wsbc")]
 position = Vector2(343, 134)
 
-[node name="Drop_place9" parent="Control/Empty" instance=ExtResource("2_8wsbc")]
+[node name="Drop_place9" parent="Control/Empty" groups=["empty"] instance=ExtResource("2_8wsbc")]
 position = Vector2(343, 134)
 
-[node name="Drop_place10" parent="Control/Empty" instance=ExtResource("2_8wsbc")]
+[node name="Drop_place10" parent="Control/Empty" groups=["empty"] instance=ExtResource("2_8wsbc")]
 position = Vector2(418, 202)
 
-[node name="Drop_place12" parent="Control/Empty" instance=ExtResource("2_8wsbc")]
+[node name="Drop_place12" parent="Control/Empty" groups=["empty"] instance=ExtResource("2_8wsbc")]
 position = Vector2(343, 202)
 
 [node name="Placable" type="Node2D" parent="Control"]
 position = Vector2(94, -8)
 
-[node name="Head" parent="Control/Placable" instance=ExtResource("2_8wsbc")]
+[node name="Head" parent="Control/Placable" groups=["weapon"] instance=ExtResource("2_8wsbc")]
 position = Vector2(208, 66)
 
-[node name="Left_Hand" parent="Control/Placable" instance=ExtResource("2_8wsbc")]
+[node name="Left_Hand" parent="Control/Placable" groups=["weapon"] instance=ExtResource("2_8wsbc")]
 position = Vector2(179, 134)
 
-[node name="Right_Hand" parent="Control/Placable" instance=ExtResource("2_8wsbc")]
+[node name="Right_Hand" parent="Control/Placable" groups=["weapon"] instance=ExtResource("2_8wsbc")]
 position = Vector2(237, 134)
 
-[node name="Ability" parent="Control/Placable" instance=ExtResource("2_8wsbc")]
+[node name="Ability" parent="Control/Placable" groups=["weapon"] instance=ExtResource("2_8wsbc")]
 position = Vector2(208, 201)
 
 [node name="Objects" type="Node2D" parent="Control"]

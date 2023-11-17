@@ -26,11 +26,13 @@ func _process(delta):
 		elif Input.is_action_just_released("Left_Click"):
 			GlobalDrag.is_dragging = false
 			var tween = get_tree().create_tween()
-			if is_inside_dropable && body_ref.name == can_go or body_ref.name == "Drop_place" or body_ref.name == "Drop_place2":
+			if is_inside_dropable && body_ref.name == can_go or body_ref.is_in_group("empty"):
 				tween.tween_property(self,"position",body_ref.position,0.2).set_ease(Tween.EASE_OUT)
 			else:
 				tween.tween_property(self,"global_position",initialPos,0.2).set_ease(Tween.EASE_OUT)
-	
+	if body_ref.is_in_group("weapon") && nagme == "vision":
+		State.VisionCompHave = true
+		
 
 
 func _on_area_2d_mouse_entered():
