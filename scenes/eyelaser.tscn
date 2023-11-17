@@ -6,6 +6,7 @@
 z_index = -1
 target_position = Vector2(1000, 0)
 script = ExtResource("1_c0srk")
+wait_time = 2.0
 
 [node name="Line2D" type="Line2D" parent="."]
 points = PackedVector2Array(0, 0, 53, 0)

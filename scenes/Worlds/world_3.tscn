@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://lefoi2dhtlfc"]
+[gd_scene load_steps=15 format=3 uid="uid://lefoi2dhtlfc"]
 
 [ext_resource type="Script" path="res://scripts/WorldScripts/world_3.gd" id="1_3okja"]
 [ext_resource type="TileSet" uid="uid://dbcekwogp6tu4" path="res://Tilseset1.tres" id="2_xig3k"]
@@ -57,6 +57,9 @@ _data = {
 "platform": SubResource("Animation_psjoq")
 }
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ypusj"]
+size = Vector2(108, 20)
+
 [node name="World3" type="Node2D"]
 script = ExtResource("1_3okja")
 
@@ -102,7 +105,7 @@ shape = SubResource("RectangleShape2D_qq8h8")
 position = Vector2(-20, 13)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Platform/Squish2"]
-position = Vector2(-4.5, -29)
+position = Vector2(-4.5, -31.888)
 shape = SubResource("RectangleShape2D_q6jaw")
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -116,6 +119,15 @@ libraries = {
 [node name="MiniBoss1" parent="." instance=ExtResource("6_oxajl")]
 position = Vector2(369, 201)
 
+[node name="Squish1" type="Area2D" parent="."]
+position = Vector2(247, 231)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Squish1"]
+position = Vector2(-1, 2)
+shape = SubResource("RectangleShape2D_ypusj")
+
 [connection signal="area_entered" from="Platform/platformdetect" to="." method="_on_platformdetect_area_entered"]
 [connection signal="area_exited" from="Platform/platformdetect" to="." method="_on_platformdetect_area_exited"]
 [connection signal="area_entered" from="Platform/Squish2" to="." method="_on_squish_2_area_entered"]
+[connection signal="body_entered" from="Platform/Squish2" to="." method="_on_squish_2_body_entered"]
+[connection signal="body_entered" from="Squish1" to="." method="_on_squish_1_body_entered"]

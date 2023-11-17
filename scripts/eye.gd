@@ -9,13 +9,18 @@ extends Node2D
 var rotation_speed = 1.0
 var track = false
 
+var a = false
+
 
 func _physics_process(delta):
 		
 	if track:
 		rotateToTarget(player, delta)
 		if timer.time_left == 0: 
-			timer.start()
+			if !a:
+				timer.start(2.5)
+			else:
+				timer.start(3.5)
 		
 
 func rotateToTarget(target, delta):
@@ -33,4 +38,5 @@ func _on_area_2d_area_entered(area):
 func _on_timer_timeout():
 	var eyelaser = preload("res://scenes/eyelaser.tscn").instantiate()
 	rotatet.add_child(eyelaser)
+	a = true
 	

@@ -3,6 +3,9 @@ extends Node2D
 @onready var camera = $Camera2D
 @onready var player = $Player
 
+var squish1 = false
+var squish2 = false
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -14,6 +17,9 @@ func _process(delta):
 		camera.global_position.x += 480
 	elif player.global_position.x - camera.global_position.x < 0:
 		camera.global_position.x -= 480
+		
+	if squish1 && squish2:
+		print("aa")
 
 
 func _on_platformdetect_area_entered(area):
@@ -32,3 +38,14 @@ func _on_platformdetect_area_exited(area):
 func _on_squish_2_area_entered(area):
 	if area.is_in_group("Player"):
 		print("robededdo")
+
+
+
+func _on_squish_1_body_entered(body):
+	if body.is_in_group("Enemy"):
+		squish1 = true
+
+
+func _on_squish_2_body_entered(body):
+	if body.is_in_group("Enemy"):
+		squish2 = true
