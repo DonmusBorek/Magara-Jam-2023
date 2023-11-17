@@ -146,6 +146,7 @@ layer_0/tile_data = PackedInt32Array(131101, 65536, 4, 29, 65536, 2, 131100, 655
 layer = 2
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+visible = false
 material = SubResource("ShaderMaterial_b2hur")
 offset_left = -21.0
 offset_top = -10.0
