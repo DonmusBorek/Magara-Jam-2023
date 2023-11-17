@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://bpd4cxa2o3yjf"]
+
+[ext_resource type="Script" path="res://HitEnemy.gd" id="1_kx1op"]
+[ext_resource type="Texture2D" uid="uid://cqo5wasw0xjik" path="res://hitenemy.png" id="1_tc1do"]
+
+[node name="HitEnemy" type="Sprite2D"]
+texture_filter = 1
+texture = ExtResource("1_tc1do")
+script = ExtResource("1_kx1op")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.05
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

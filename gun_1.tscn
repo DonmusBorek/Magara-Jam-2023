@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://dwpuixeiq62vc"]
+
+[ext_resource type="Texture2D" uid="uid://7y0peecvwhth" path="res://sprites/tufek.png" id="1_6ydvt"]
+[ext_resource type="Script" path="res://gun_1.gd" id="2_pfyut"]
+
+[node name="Gun1" type="Node2D"]
+texture_filter = 1
+script = ExtResource("2_pfyut")
+
+[node name="Marker2D" type="Marker2D" parent="."]
+
+[node name="guncast" type="RayCast2D" parent="Marker2D"]
+position = Vector2(25, -1)
+target_position = Vector2(480, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Marker2D"]
+position = Vector2(12, -1)
+texture = ExtResource("1_6ydvt")
+
+[node name="gunpoint" type="Node2D" parent="Marker2D"]
+
+[node name="cd" type="Timer" parent="."]
+wait_time = 0.3
+
+[connection signal="timeout" from="cd" to="." method="_on_cd_timeout"]

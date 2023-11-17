@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://do8wqioftbj22"]
+
+[ext_resource type="Texture2D" uid="uid://b5a3d1tlr7bcq" path="res://sprites/bullet.png" id="1_3l3dt"]
+[ext_resource type="Script" path="res://player_bullet.gd" id="1_d6bx5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ryqb7"]
+size = Vector2(10, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xhrc5"]
+size = Vector2(10, 1)
+
+[node name="PlayerBullet" type="CharacterBody2D"]
+modulate = Color(1, 1, 1, 0)
+collision_layer = 16
+collision_mask = 16
+script = ExtResource("1_d6bx5")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_3l3dt")
+centered = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(5, 1)
+shape = SubResource("RectangleShape2D_ryqb7")
+
+[node name="EnemyDetector" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EnemyDetector"]
+position = Vector2(5, 0.5)
+shape = SubResource("RectangleShape2D_xhrc5")
+
+[connection signal="body_entered" from="EnemyDetector" to="." method="_on_enemy_detector_body_entered"]
