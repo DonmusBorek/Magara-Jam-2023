@@ -19,13 +19,16 @@ func _physics_process(delta):
 			var tween = get_tree().create_tween()
 			tween.tween_property(self, "speed", +300, 2)
 		velocity.x = speed
+		#Le Turno
+		if(sign(velocity.x) < 0):
+			$marker.scale.x = 1
+		else:
+			$marker.scale.x = -1
+	else:
+		modulate = Color.DIM_GRAY
+			
 	if not is_on_floor():
 		velocity.y += gravity * delta
-
-	if(sign(velocity.x) < 0):
-		$marker.scale.x = 1
-	else:
-		$marker.scale.x = -1
 		
 	if(!playerinsight && $marker/Ust.frame == 7):
 		$marker/Ust.stop()
@@ -37,12 +40,14 @@ func _physics_process(delta):
 	move_and_slide()
 
 func _on_detector_body_entered(body):
-	if(body == State.player):
-		$marker/Ust.play("default")
-		playerinsight = true
+	if(state == "alive"):
+		if(body == State.player):
+			$marker/Ust.play("default")
+			playerinsight = true
 	pass # Replace with function body.
 
 func _on_detector_body_exited(body):
-	if(body == State.player):
-		playerinsight = false
+	if(state == "alive"):
+		if(body == State.player):
+			playerinsight = false
 	pass # Replace with function body.
