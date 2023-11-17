@@ -39,6 +39,9 @@ func _process(delta):
 			if body_ref.name == "Head" && nagme == "vision" && !draggable:
 				State.VisionCompHave = true
 				can_move = false
+			elif body_ref.name == "Left_Hand" && nagme == "pump" && !draggable:
+				State.EyePump = true
+				can_move = false
 
 
 func _on_area_2d_mouse_entered():

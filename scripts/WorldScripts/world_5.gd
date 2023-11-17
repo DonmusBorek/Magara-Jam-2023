@@ -32,3 +32,7 @@ func _on_fadeout_1_animation_finished(anim_name):
 
 	else:
 		end = true
+
+
+func _on_player_deadsignal():
+	$CanvasLayer/Marker2D/Fadeout1.play("fadeout")

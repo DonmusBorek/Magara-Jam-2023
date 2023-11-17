@@ -4,16 +4,18 @@
 
 [node name="Eyelaser" type="RayCast2D" groups=["Hurt"]]
 z_index = -1
+position = Vector2(0, -1)
 target_position = Vector2(1000, 0)
 script = ExtResource("1_c0srk")
-wait_time = 2.0
+wait_time = 0.5
 
 [node name="Line2D" type="Line2D" parent="."]
 points = PackedVector2Array(0, 0, 53, 0)
 width = 1.0
+default_color = Color(1, 0.65098, 0, 0.670588)
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 2.0
+wait_time = 1.75
 one_shot = true
 autostart = true
 

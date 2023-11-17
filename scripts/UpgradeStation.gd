@@ -2,9 +2,11 @@ extends Control
 
 var a = true
 var geri = false
+
+var onworld3 = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass
+	fadeout()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -21,11 +23,14 @@ func  fadeout():
 
 
 func _on_fadeout_animation_finished(anim_name):
-	if !geri:
-		$"../../Player".can_move = false
-		$texttimer.start()
+	if onworld3:
+		if !geri:
+			$"../../Player".can_move = false
+			$texttimer.start()
+		else:
+			$"../../Player".can_move = true
 	else:
-		$"../../Player".can_move = true
+		pass
 
 func _on_world_3_timer_timeout():
 	
