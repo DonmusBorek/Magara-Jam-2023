@@ -21,7 +21,7 @@ buses/default_bus_layout="res://Sound/default_bus_layout.tres"
 [autoload]
 
 GlobalDrag="*res://scripts/global_drag.gd"
-State="*res://state.gd"
+State="*res://scripts/state.gd"
 
 [display]
 

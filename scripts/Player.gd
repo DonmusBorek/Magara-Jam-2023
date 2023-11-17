@@ -26,10 +26,10 @@ func _ready():
 	State.player = self
 	
 func _physics_process(delta):
+	update_animation()
 	if can_move:
 		apply_gravity(delta)
 		process_movement_input(delta)
-		update_animation()
 		var was_on_floor = is_on_floor()
 		move_and_slide()
 		var just_left_ledge = was_on_floor and not is_on_floor() and velocity.y >= 0
@@ -80,6 +80,8 @@ func update_animation():
 	else:
 		$turn.scale.x = sign(velocity.x)
 		anim.animation = "walking"
+	if State.VisionCompHave:
+		$turn/VisionComp.visible = true
 		
 
 
@@ -90,4 +92,5 @@ func _on_ui_dead():
 		_particle.emitting = true
 		get_tree().current_scene.add_child(_particle)
 		fadeanim.play("fadeout")
+		can_move = false
 		alive = false

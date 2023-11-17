@@ -156,6 +156,7 @@ shape = SubResource("RectangleShape2D_d4n0d")
 [node name="turn" type="Marker2D" parent="."]
 
 [node name="VisionComp" type="Sprite2D" parent="turn"]
+visible = false
 texture_filter = 1
 material = ExtResource("1_d6mo7")
 position = Vector2(-1, -13)
