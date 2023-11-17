@@ -1,9 +1,95 @@
-[gd_scene load_steps=5 format=3 uid="uid://bkua0s8hor0i0"]
+[gd_scene load_steps=9 format=3 uid="uid://bkua0s8hor0i0"]
 
 [ext_resource type="Script" path="res://scripts/UpgradeStation.gd" id="1_m8ssf"]
 [ext_resource type="PackedScene" uid="uid://crcefqtatwi7g" path="res://scenes/drop_place.tscn" id="2_8wsbc"]
-[ext_resource type="Texture2D" uid="uid://868u4jdwn0ck" path="res://icon.svg" id="2_cakvr"]
 [ext_resource type="PackedScene" uid="uid://oq7okgpi7rss" path="res://scenes/object.tscn" id="3_8op1s"]
+[ext_resource type="Texture2D" uid="uid://cotvulxyq83nm" path="res://sprites/gozparca.png" id="4_v7agf"]
+[ext_resource type="Texture2D" uid="uid://qitpvvu66w1" path="res://asansor.png" id="5_oe8lk"]
+
+[sub_resource type="Animation" id="Animation_x4nud"]
+resource_name = "fadeot"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2, 3, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(241, 303), Vector2(241, 172), Vector2(241, 172), Vector2(241, 303)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2, 3, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(241, -77), Vector2(241, 65), Vector2(241, 65), Vector2(241, -77)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Control:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 2.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="Animation" id="Animation_xo05q"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(241, 303)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(241, -77)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Control:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_tqwns"]
+_data = {
+"RESET": SubResource("Animation_xo05q"),
+"fadeot": SubResource("Animation_x4nud")
+}
 
 [node name="UpgradeStation" type="Control"]
 layout_mode = 3
@@ -14,67 +100,101 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_m8ssf")
 
-[node name="Background" type="ColorRect" parent="."]
+[node name="Control" type="Control" parent="."]
+visible = false
+anchors_preset = 0
+offset_left = -94.0
+offset_top = 8.0
+offset_right = -54.0
+offset_bottom = 48.0
+
+[node name="Background" type="ColorRect" parent="Control"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 94.0
+offset_top = -8.0
+offset_right = 540.0
+offset_bottom = 225.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.2, 0.2, 0.2, 1)
 
-[node name="Ground" type="ColorRect" parent="."]
+[node name="Empty" type="Node2D" parent="Control"]
+position = Vector2(94, -8)
+
+[node name="Drop_place" parent="Control/Empty" instance=ExtResource("2_8wsbc")]
+position = Vector2(418, 66)
+
+[node name="Drop_place2" parent="Control/Empty" instance=ExtResource("2_8wsbc")]
+position = Vector2(343, 66)
+
+[node name="Drop_place4" parent="Control/Empty" instance=ExtResource("2_8wsbc")]
+position = Vector2(418, 134)
+
+[node name="Drop_place6" parent="Control/Empty" instance=ExtResource("2_8wsbc")]
+position = Vector2(343, 134)
+
+[node name="Drop_place9" parent="Control/Empty" instance=ExtResource("2_8wsbc")]
+position = Vector2(343, 134)
+
+[node name="Drop_place10" parent="Control/Empty" instance=ExtResource("2_8wsbc")]
+position = Vector2(418, 202)
+
+[node name="Drop_place12" parent="Control/Empty" instance=ExtResource("2_8wsbc")]
+position = Vector2(343, 202)
+
+[node name="Placable" type="Node2D" parent="Control"]
+position = Vector2(94, -8)
+
+[node name="Head" parent="Control/Placable" instance=ExtResource("2_8wsbc")]
+position = Vector2(208, 66)
+
+[node name="Left_Hand" parent="Control/Placable" instance=ExtResource("2_8wsbc")]
+position = Vector2(179, 134)
+
+[node name="Right_Hand" parent="Control/Placable" instance=ExtResource("2_8wsbc")]
+position = Vector2(237, 134)
+
+[node name="Ability" parent="Control/Placable" instance=ExtResource("2_8wsbc")]
+position = Vector2(208, 201)
+
+[node name="Objects" type="Node2D" parent="Control"]
+position = Vector2(94, -8)
+
+[node name="Object" parent="Control/Objects" instance=ExtResource("3_8op1s")]
+texture_filter = 1
+position = Vector2(418, 66)
+nagme = "Vision"
+sprite = ExtResource("4_v7agf")
+sprite_scale = Vector2(1, 1)
+can_go = "Head"
+
+[node name="Ground" type="ColorRect" parent="Control"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 134.0
-offset_top = 288.0
-offset_right = -651.0
+offset_left = 75.5
+offset_top = 271.0
+offset_right = 35.5
+offset_bottom = 231.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
-[node name="Placable" type="Node2D" parent="."]
+[node name="Fadeout" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_tqwns")
+}
 
-[node name="Drop_place" parent="Placable" instance=ExtResource("2_8wsbc")]
-position = Vector2(208, 66)
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(241, 303)
+scale = Vector2(4.36607, 6.61957)
+texture = ExtResource("5_oe8lk")
 
-[node name="Drop_place2" parent="Placable" instance=ExtResource("2_8wsbc")]
-position = Vector2(179, 134)
-
-[node name="Drop_place4" parent="Placable" instance=ExtResource("2_8wsbc")]
-position = Vector2(237, 134)
-
-[node name="Drop_place3" parent="Placable" instance=ExtResource("2_8wsbc")]
-position = Vector2(208, 201)
-
-[node name="Empty" type="Node2D" parent="."]
-
-[node name="Drop_place" parent="Empty" instance=ExtResource("2_8wsbc")]
-position = Vector2(418, 66)
-
-[node name="Drop_place3" parent="Empty" instance=ExtResource("2_8wsbc")]
-position = Vector2(343, 66)
-
-[node name="Drop_place4" parent="Empty" instance=ExtResource("2_8wsbc")]
-position = Vector2(418, 134)
-
-[node name="Drop_place6" parent="Empty" instance=ExtResource("2_8wsbc")]
-position = Vector2(343, 134)
-
-[node name="Drop_place9" parent="Empty" instance=ExtResource("2_8wsbc")]
-position = Vector2(343, 134)
-
-[node name="Drop_place10" parent="Empty" instance=ExtResource("2_8wsbc")]
-position = Vector2(418, 202)
-
-[node name="Drop_place12" parent="Empty" instance=ExtResource("2_8wsbc")]
-position = Vector2(343, 202)
-
-[node name="Objects" type="Node2D" parent="."]
-
-[node name="Object" parent="Objects" instance=ExtResource("3_8op1s")]
-position = Vector2(418, 66)
-nagme = "Vision"
-sprite = ExtResource("2_cakvr")
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(241, -77)
+scale = Vector2(4.36607, 6.61957)
+texture = ExtResource("5_oe8lk")

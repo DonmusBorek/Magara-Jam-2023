@@ -50,3 +50,9 @@ func _on_squish_1_body_entered(body):
 func _on_squish_2_body_entered(body):
 	if body.is_in_group("Enemy"):
 		squish2 = true
+
+
+func _on_eyegain_area_entered(area):
+	if area.is_in_group("Player"):
+		$CanvasLayer/UpgradeStation.visible = true
+		$CanvasLayer/UpgradeStation.fadeout()

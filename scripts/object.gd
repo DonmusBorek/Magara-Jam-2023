@@ -2,6 +2,8 @@ extends Node2D
 
 @export var nagme:String
 @export var sprite:Texture2D
+@export var sprite_scale:Vector2
+@export var can_go:String
 
 var draggable = false
 var is_inside_dropable = false
@@ -11,6 +13,7 @@ var initialPos: Vector2
 
 func _ready():
 	$Sprite2D.texture = sprite
+	$Sprite2D.scale = sprite_scale
 
 func _process(delta):
 	if draggable:
@@ -23,7 +26,7 @@ func _process(delta):
 		elif Input.is_action_just_released("Left_Click"):
 			GlobalDrag.is_dragging = false
 			var tween = get_tree().create_tween()
-			if is_inside_dropable:
+			if is_inside_dropable && body_ref.name == can_go or body_ref.name == "Drop_place" or body_ref.name == "Drop_place2":
 				tween.tween_property(self,"position",body_ref.position,0.2).set_ease(Tween.EASE_OUT)
 			else:
 				tween.tween_property(self,"global_position",initialPos,0.2).set_ease(Tween.EASE_OUT)

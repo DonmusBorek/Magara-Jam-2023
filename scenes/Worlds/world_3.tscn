@@ -1,11 +1,13 @@
-[gd_scene load_steps=15 format=3 uid="uid://lefoi2dhtlfc"]
+[gd_scene load_steps=18 format=3 uid="uid://lefoi2dhtlfc"]
 
 [ext_resource type="Script" path="res://scripts/WorldScripts/world_3.gd" id="1_3okja"]
 [ext_resource type="TileSet" uid="uid://dbcekwogp6tu4" path="res://Tilseset1.tres" id="2_xig3k"]
 [ext_resource type="Shader" path="res://thermal.gdshader" id="3_xpb27"]
+[ext_resource type="PackedScene" uid="uid://bkua0s8hor0i0" path="res://scenes/upgrade_station.tscn" id="4_ah3sb"]
 [ext_resource type="PackedScene" uid="uid://fbvrsjqpv48e" path="res://scenes/Player.tscn" id="4_dmlg2"]
 [ext_resource type="Texture2D" uid="uid://qitpvvu66w1" path="res://asansor.png" id="5_5wp83"]
 [ext_resource type="PackedScene" uid="uid://bl1i20vwjfqms" path="res://NPCs/MiniBoss1.tscn" id="6_oxajl"]
+[ext_resource type="Texture2D" uid="uid://cotvulxyq83nm" path="res://sprites/gozparca.png" id="7_qrdl2"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_b2hur"]
 shader = ExtResource("3_xpb27")
@@ -60,6 +62,9 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ypusj"]
 size = Vector2(108, 20)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5lyng"]
+size = Vector2(42, 32)
+
 [node name="World3" type="Node2D"]
 script = ExtResource("1_3okja")
 
@@ -77,6 +82,9 @@ offset_left = -21.0
 offset_top = -10.0
 offset_right = 513.0
 offset_bottom = 295.0
+
+[node name="UpgradeStation" parent="CanvasLayer" instance=ExtResource("4_ah3sb")]
+visible = false
 
 [node name="Player" parent="." instance=ExtResource("4_dmlg2")]
 position = Vector2(68, 215)
@@ -126,8 +134,21 @@ position = Vector2(247, 231)
 position = Vector2(-1, 2)
 shape = SubResource("RectangleShape2D_ypusj")
 
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(719, 213)
+texture = ExtResource("7_qrdl2")
+
+[node name="eyegain" type="Area2D" parent="."]
+position = Vector2(715, 213)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="eyegain"]
+position = Vector2(5, -5)
+shape = SubResource("RectangleShape2D_5lyng")
+
 [connection signal="area_entered" from="Platform/platformdetect" to="." method="_on_platformdetect_area_entered"]
 [connection signal="area_exited" from="Platform/platformdetect" to="." method="_on_platformdetect_area_exited"]
 [connection signal="area_entered" from="Platform/Squish2" to="." method="_on_squish_2_area_entered"]
 [connection signal="body_entered" from="Platform/Squish2" to="." method="_on_squish_2_body_entered"]
 [connection signal="body_entered" from="Squish1" to="." method="_on_squish_1_body_entered"]
+[connection signal="area_entered" from="eyegain" to="." method="_on_eyegain_area_entered"]
