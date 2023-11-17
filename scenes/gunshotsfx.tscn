@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://bayc0r30bel2d"]
+
+[ext_resource type="AudioStream" uid="uid://c2bade43ua4mm" path="res://Sound/SoundEffect/Gunshot Sound Effect Single Shot.mp3" id="1_5r7p3"]
+[ext_resource type="Script" path="res://gunshotsfx.gd" id="2_cf3bg"]
+
+[node name="gunshotsfx" type="AudioStreamPlayer"]
+stream = ExtResource("1_5r7p3")
+volume_db = -6.559
+autoplay = true
+script = ExtResource("2_cf3bg")

@@ -13,3 +13,7 @@ res://gun_1.tscn
 res://player_bullet.tscn
 res://hit_enemy.tscn
 res://scenes/Worlds/world_6.tscn
+res://scenes/upgrade_station.tscn
+res://gun_1.gd
+res://gunshotsfx.gd
+res://scenes/gunshotsfx.tscn

@@ -12,7 +12,6 @@ func _physics_process(delta):
 		$Marker2D/Sprite2D.flip_v = true
 	else:
 		$Marker2D/Sprite2D.flip_v = false
-		
 	if(Input.is_action_pressed("Left_Click")):
 		if(!cooldown):
 			var bullet = preload("res://player_bullet.tscn").instantiate()
@@ -20,6 +19,8 @@ func _physics_process(delta):
 			bullet.global_rotation_degrees = $Marker2D.global_rotation_degrees
 			get_tree().root.add_child(bullet)
 			cooldown = true
+			var sfx = preload("res://scenes/gunshotsfx.tscn").instantiate()
+			add_child(sfx)
 			$cd.start()
 			if($Marker2D/guncast.is_colliding()):
 				if($Marker2D/guncast.get_collider().is_in_group("Enemy")):
