@@ -1,10 +1,11 @@
-[gd_scene load_steps=13 format=3 uid="uid://lefoi2dhtlfc"]
+[gd_scene load_steps=14 format=3 uid="uid://lefoi2dhtlfc"]
 
 [ext_resource type="Script" path="res://scripts/WorldScripts/world_3.gd" id="1_3okja"]
 [ext_resource type="TileSet" uid="uid://dbcekwogp6tu4" path="res://Tilseset1.tres" id="2_xig3k"]
 [ext_resource type="Shader" path="res://thermal.gdshader" id="3_xpb27"]
 [ext_resource type="PackedScene" uid="uid://fbvrsjqpv48e" path="res://scenes/Player.tscn" id="4_dmlg2"]
 [ext_resource type="Texture2D" uid="uid://qitpvvu66w1" path="res://asansor.png" id="5_5wp83"]
+[ext_resource type="PackedScene" uid="uid://bl1i20vwjfqms" path="res://NPCs/MiniBoss1.tscn" id="6_oxajl"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_b2hur"]
 shader = ExtResource("3_xpb27")
@@ -111,6 +112,9 @@ anchor_mode = 0
 libraries = {
 "": SubResource("AnimationLibrary_o37dm")
 }
+
+[node name="MiniBoss1" parent="." instance=ExtResource("6_oxajl")]
+position = Vector2(369, 201)
 
 [connection signal="area_entered" from="Platform/platformdetect" to="." method="_on_platformdetect_area_entered"]
 [connection signal="area_exited" from="Platform/platformdetect" to="." method="_on_platformdetect_area_exited"]

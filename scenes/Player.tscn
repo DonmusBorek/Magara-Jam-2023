@@ -1,5 +1,6 @@
-[gd_scene load_steps=11 format=3 uid="uid://fbvrsjqpv48e"]
+[gd_scene load_steps=18 format=3 uid="uid://fbvrsjqpv48e"]
 
+[ext_resource type="Material" uid="uid://cboj1j1od3eyn" path="res://scenes/HitFlashShader.tres" id="1_d6mo7"]
 [ext_resource type="Script" path="res://scripts/Player.gd" id="1_scjqm"]
 [ext_resource type="Texture2D" uid="uid://dmgqoqbsn7tgn" path="res://sprites/hareketparca.png" id="3_a55iy"]
 [ext_resource type="Texture2D" uid="uid://cotvulxyq83nm" path="res://sprites/gozparca.png" id="3_kdv7o"]
@@ -51,7 +52,82 @@ animations = [{
 "speed": 12.0
 }]
 
+[sub_resource type="Animation" id="Animation_crwph"]
+resource_name = "HitFlash"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:material:shader_parameter/enabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_lxlu0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:material:shader_parameter/enabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_i7qco"]
+_data = {
+"HitFlash": SubResource("Animation_crwph"),
+"RESET": SubResource("Animation_lxlu0")
+}
+
+[sub_resource type="Animation" id="Animation_g3ucs"]
+resource_name = "Inv"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_oggnf"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_q6kpy"]
+_data = {
+"Inv": SubResource("Animation_g3ucs"),
+"RESET": SubResource("Animation_oggnf")
+}
+
 [node name="Player" type="CharacterBody2D"]
+material = ExtResource("1_d6mo7")
 script = ExtResource("1_scjqm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -78,17 +154,31 @@ shape = SubResource("RectangleShape2D_d4n0d")
 
 [node name="turn" type="Marker2D" parent="."]
 
-[node name="Gozparca" type="Sprite2D" parent="turn"]
-visible = false
+[node name="VisionComp" type="Sprite2D" parent="turn"]
 texture_filter = 1
+material = ExtResource("1_d6mo7")
 position = Vector2(-1, -13)
 rotation = 3.14159
 scale = Vector2(1, -1)
 texture = ExtResource("3_kdv7o")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="turn"]
+[node name="WalkComp" type="AnimatedSprite2D" parent="turn"]
 z_index = 1
 texture_filter = 1
+material = ExtResource("1_d6mo7")
 sprite_frames = SubResource("SpriteFrames_0rbt1")
 animation = &"idle"
 frame_progress = 0.369198
+
+[node name="invtimer" type="Timer" parent="."]
+wait_time = 0.5
+
+[node name="HitFlashPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_i7qco")
+}
+
+[node name="InvFrames" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_q6kpy")
+}

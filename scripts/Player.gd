@@ -8,12 +8,14 @@ signal deadsignal
 @export var friction = 0.5
 @export var acceleration = 0.25
 @export var max_fall_speed = 500
+@export var health = 100
 
 const JUMP_BUFFER_TIME = 10
 
+var isbeinghit
 var jump_buffer_counter = 0
 
-@onready var anim = $turn/AnimatedSprite2D
+@onready var anim = $turn/WalkComp
 @onready var coyote_timer = $coyotetimer
 
 var can_move = true
@@ -36,11 +38,12 @@ func apply_gravity(delta):
 
 func process_movement_input(delta):
 	var direction = Input.get_axis("Left", "Right")
-	if direction != 0:
-		velocity.x = lerp(velocity.x, direction * speed, acceleration)
-	else:
-		velocity.x = lerp(velocity.x, 0.0, friction)
-	velocity.x = clamp(velocity.x, -speed, speed)
+	if($InvFrames.is_playing() == false):
+		if direction != 0:
+			velocity.x = lerp(velocity.x, direction * speed, acceleration)
+		else:
+			velocity.x = lerp(velocity.x, 0.0, friction)
+		velocity.x = clamp(velocity.x, -speed, speed)
 	
 	if velocity.x != 0 and is_on_floor() and $Timer.time_left <= 0:
 		$steps.pitch_scale = randf_range(0.8, 1.2)
