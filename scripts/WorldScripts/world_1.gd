@@ -7,7 +7,8 @@ var opened = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$CanvasLayer/Marker2D/Fadeout1.play_backwards("fadeout")
+	State.currentWorld = 0
+	$CanvasLayer/ackapa/Fadeout1.play_backwards("fadeout")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -19,8 +20,10 @@ func _process(delta):
 
 
 func _on_area_2d_area_entered(area):
-	player.can_move = false
-	$CanvasLayer/Marker2D/Fadeout1.play("fadeout")
+	State.worldEnd = true
+	if(area == State.player.get_node("Area2D")):
+		player.can_move = false
+		$CanvasLayer/ackapa/Fadeout1.play("fadeout")
 
 
 func _on_fadeout_1_animation_finished(anim_name):

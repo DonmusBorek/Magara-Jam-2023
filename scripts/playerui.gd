@@ -12,6 +12,7 @@ func _ready():
 func _process(delta):
 	if $HPBar.value == 0 && a:
 		emit_signal("dead")
+		State.playerDead = true
 		a = false
 	if State.VisionCompHave:
 		$ColorRect.visible = false

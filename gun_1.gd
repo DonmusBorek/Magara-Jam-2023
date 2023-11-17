@@ -30,6 +30,7 @@ func _physics_process(delta):
 			
 			#Shot
 			$Marker2D/Shot.visible = true
+			$Marker2D/Light.enabled = true
 			
 			#Hitscan
 			if($Marker2D/guncast.is_colliding()):
@@ -50,6 +51,7 @@ func _physics_process(delta):
 			$cd.start()
 		else:
 			$Marker2D/Shot.visible = false
+			$Marker2D/Light.enabled = false
 func _on_cd_timeout():
 	cooldown = false
 	pass # Replace with function body.

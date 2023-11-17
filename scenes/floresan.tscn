@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=3 uid="uid://0ufd07f2xa57"]
+
+[ext_resource type="Script" path="res://scenes/floresan.gd" id="1_2fkgi"]
+[ext_resource type="Texture2D" uid="uid://bv0w3n08a3vb0" path="res://sprites/floresanacik.png" id="1_doqv7"]
+[ext_resource type="Texture2D" uid="uid://dmd58uynfgo2x" path="res://sprites/floresankapali.png" id="2_wd4q7"]
+[ext_resource type="Texture2D" uid="uid://cq22h2oxlg8qa" path="res://sprites/2d_lights_and_shadows_neutral_point_light.webp" id="4_5tjqt"]
+[ext_resource type="AudioStream" uid="uid://befx0e1lsjykr" path="res://Sound/SoundEffect/fluorescent-lamp-with-broken-ignitor-16995.mp3" id="5_cjf4m"]
+
+[node name="Floresan" type="Node2D"]
+script = ExtResource("1_2fkgi")
+
+[node name="acik" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_doqv7")
+
+[node name="kapali" type="Sprite2D" parent="."]
+visible = false
+texture_filter = 1
+texture = ExtResource("2_wd4q7")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true
+
+[node name="kivilcimcikarici" type="Timer" parent="."]
+wait_time = 0.2
+autostart = true
+
+[node name="light" type="PointLight2D" parent="."]
+shadow_enabled = true
+texture = ExtResource("4_5tjqt")
+
+[node name="sfx" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_cjf4m")
+volume_db = 2.0
+autoplay = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="kivilcimcikarici" to="." method="_on_kivilcimcikarici_timeout"]
