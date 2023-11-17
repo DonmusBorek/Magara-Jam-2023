@@ -96,3 +96,4 @@ func _on_ui_dead():
 		fadeanim.play("fadeout")
 		can_move = false
 		alive = false
+

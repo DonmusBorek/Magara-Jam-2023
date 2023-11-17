@@ -6,7 +6,7 @@ extends Node2D
 
 
 
-var rotation_speed = 1.0
+var rotation_speed = 0.75
 var track = false
 
 var a = false
