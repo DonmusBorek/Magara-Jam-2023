@@ -4,8 +4,12 @@ var state = "alive"
 var speed = 50
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var turned = false
+var attack = 50
 var playerinsight
 
+func _ready():
+	$marker/Hurtful.attack = 50
+	
 func _physics_process(delta):
 	if(state == "alive"):
 		if(State.player.global_position.x < position.x):
@@ -25,7 +29,11 @@ func _physics_process(delta):
 		
 	if(!playerinsight && $marker/Ust.frame == 7):
 		$marker/Ust.stop()
-		
+	
+	if($marker/Ust.frame == 4):
+		$marker/Hurtful/CollisionShape2D.disabled = false
+	else:
+		$marker/Hurtful/CollisionShape2D.disabled = true
 	move_and_slide()
 
 func _on_detector_body_entered(body):

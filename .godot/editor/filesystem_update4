@@ -7,3 +7,7 @@ res://state.gd
 res://scenes/Player.tscn
 res://scripts/Player.gd
 res://NPCs/MiniBoss1.gd
+res://Hurtful.gd
+res://hurtful.tscn
+res://scenes/Player.tres
+res://scenes/HitFlashShader.tres

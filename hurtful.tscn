@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dls3uiopain3t"]
+
+[ext_resource type="Script" path="res://Hurtful.gd" id="1_58cga"]
+
+[node name="Hurtful" type="Area2D"]
+script = ExtResource("1_58cga")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
