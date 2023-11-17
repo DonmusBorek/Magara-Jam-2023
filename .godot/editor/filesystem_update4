@@ -5,3 +5,17 @@ res://Tilseset1.tres
 res://scenes/Player.tres
 res://scenes/HitFlashShader.tres
 res://state.gd
+res://scenes/Worlds/world_1.tscn
+res://scenes/Worlds/world_2.tscn
+res://NPCs/MiniBoss1.tscn
+res://scenes/Player.tscn
+res://hurtful.tscn
+res://scenes/ui.tscn
+res://scenes/drop_place.tscn
+res://scenes/upgrade_station.tscn
+res://scenes/world_7.tscn
+res://scenes/test.tscn
+res://scenes/platform.tscn
+res://scenes/object.tscn
+res://scenes/menu.tscn
+res://scenes/laser.tscn
