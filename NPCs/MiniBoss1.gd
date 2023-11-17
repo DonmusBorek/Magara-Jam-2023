@@ -38,6 +38,13 @@ func _physics_process(delta):
 	else:
 		$marker/Hurtful/CollisionShape2D.disabled = true
 	move_and_slide()
+	
+	if state == "dead":
+		var _particle = preload("res://scenes/explosion.tscn").instantiate()
+		_particle.position = global_position
+		_particle.emitting = true
+		get_tree().current_scene.add_child(_particle)
+		queue_free()
 
 func _on_detector_body_entered(body):
 	if(state == "alive"):

@@ -12,3 +12,8 @@ res://scenes/upgrade_station.tscn
 res://scenes/drop_place.tscn
 res://scenes/object.tscn
 res://scenes/Player.tscn
+res://scenes/ui.tscn
+res://scenes/explosion.tscn
+res://scenes/explosion.gd
+res://NPCs/MiniBoss1.gd
+res://scripts/WorldScripts/world_3.gd

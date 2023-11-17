@@ -1,9 +1,10 @@
+GPUParticles2D
+ColorRect
 Sprite2D
 AnimationPlayer
 Control
 CollisionShape2D
 Area2D
-GPUParticles2D
 TextureProgressBar
 CanvasLayer
 TileMap
@@ -16,7 +17,6 @@ RayCast2D
 GridContainer
 VBoxContainer
 Node2D
-ColorRect
 Marker2D
 Label
 CheckButton
