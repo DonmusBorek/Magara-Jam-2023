@@ -120,7 +120,7 @@ libraries = {
 }
 
 [node name="Laser" parent="." instance=ExtResource("3_mlyif")]
-position = Vector2(48, 204)
+position = Vector2(48, 210)
 wait_time = 3.1
 width = 20
 
