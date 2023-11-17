@@ -1,17 +1,19 @@
-[gd_scene load_steps=9 format=3 uid="uid://bkua0s8hor0i0"]
+[gd_scene load_steps=11 format=3 uid="uid://bkua0s8hor0i0"]
 
 [ext_resource type="Script" path="res://scripts/UpgradeStation.gd" id="1_m8ssf"]
 [ext_resource type="PackedScene" uid="uid://dwghnlpbj28k4" path="res://scenes/drop_place.tscn" id="2_8wsbc"]
 [ext_resource type="PackedScene" uid="uid://bs3lucmafb1ja" path="res://scenes/object.tscn" id="3_8op1s"]
 [ext_resource type="Texture2D" uid="uid://cotvulxyq83nm" path="res://sprites/gozparca.png" id="4_v7agf"]
+[ext_resource type="Script" path="res://scripts/AItext.gd" id="5_ndr25"]
 [ext_resource type="Texture2D" uid="uid://qitpvvu66w1" path="res://asansor.png" id="5_oe8lk"]
+[ext_resource type="AudioStream" uid="uid://tp77digxy0mj" path="res://Sound/SoundEffect/textsound.wav" id="7_ygu2k"]
 
 [sub_resource type="Animation" id="Animation_xo05q"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/path = NodePath("Marker2D/Sprite2D:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -23,7 +25,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite2D2:position")
+tracks/1/path = NodePath("Marker2D/Sprite2D2:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -51,7 +53,7 @@ length = 5.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/path = NodePath("Marker2D/Sprite2D:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -63,7 +65,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite2D2:position")
+tracks/1/path = NodePath("Marker2D/Sprite2D2:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -184,17 +186,46 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
-[node name="Fadeout" type="AnimationPlayer" parent="."]
+[node name="ColorRect" type="ColorRect" parent="Control"]
+layout_mode = 0
+offset_left = 110.0
+offset_top = 7.0
+offset_right = 260.0
+offset_bottom = 91.0
+color = Color(0, 0, 0, 1)
+
+[node name="AItext" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 111.0
+offset_top = 8.0
+offset_right = 259.0
+offset_bottom = 90.0
+autowrap_mode = 3
+script = ExtResource("5_ndr25")
+
+[node name="Marker2D" type="Marker2D" parent="."]
+
+[node name="Fadeout" type="AnimationPlayer" parent="Marker2D"]
+root_node = NodePath("../..")
 libraries = {
 "": SubResource("AnimationLibrary_tqwns")
 }
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="Marker2D"]
 position = Vector2(241, 303)
 scale = Vector2(4.36607, 6.61957)
 texture = ExtResource("5_oe8lk")
 
-[node name="Sprite2D2" type="Sprite2D" parent="."]
+[node name="Sprite2D2" type="Sprite2D" parent="Marker2D"]
 position = Vector2(241, -77)
 scale = Vector2(4.36607, 6.61957)
 texture = ExtResource("5_oe8lk")
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[node name="letter" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_ygu2k")
+
+[connection signal="animation_finished" from="Marker2D/Fadeout" to="." method="_on_fadeout_animation_finished"]
+[connection signal="timeout" from="Timer" to="Control/AItext" method="_on_timer_timeout"]

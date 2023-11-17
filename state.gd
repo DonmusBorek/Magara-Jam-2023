@@ -1,5 +1,7 @@
 extends Node
 
+var arsenal_opened = 0
+
 var player
 var VisionCompHave = false
 # Called when the node enters the scene tree for the first time.

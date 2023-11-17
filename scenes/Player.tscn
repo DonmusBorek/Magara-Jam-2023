@@ -185,3 +185,5 @@ libraries = {
 }
 
 [node name="UI" parent="." instance=ExtResource("5_wmgpi")]
+
+[connection signal="dead" from="UI" to="." method="_on_ui_dead"]

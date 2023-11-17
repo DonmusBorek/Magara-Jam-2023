@@ -32,7 +32,6 @@ func _process(delta):
 				tween.tween_property(self,"global_position",initialPos,0.2).set_ease(Tween.EASE_OUT)
 	if body_ref.is_in_group("weapon") && nagme == "vision":
 		State.VisionCompHave = true
-		
 
 
 func _on_area_2d_mouse_entered():

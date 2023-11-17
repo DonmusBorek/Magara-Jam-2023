@@ -8,7 +8,7 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_bufnw"]
 shader = ExtResource("3_y0ewo")
-shader_parameter/size = Vector2(7, 7)
+shader_parameter/size = Vector2(4, 4)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bsd53"]
 size = Vector2(111, 14.5)
@@ -74,7 +74,6 @@ position = Vector2(70, 214)
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
-visible = false
 material = SubResource("ShaderMaterial_bufnw")
 offset_left = -21.0
 offset_top = -10.0
