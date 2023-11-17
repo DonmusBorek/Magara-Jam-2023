@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=3 uid="uid://4q2aka2myeel"]
+
+[ext_resource type="Texture2D" uid="uid://cu3teedylt182" path="res://sprites/kivilcim.png" id="1_cpfdq"]
+[ext_resource type="Script" path="res://scenes/kivilcim.gd" id="2_ejot7"]
+
+[sub_resource type="Gradient" id="Gradient_vjvol"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[node name="kivilcim" type="CPUParticles2D"]
+emitting = false
+amount = 2
+lifetime = 0.5
+one_shot = true
+texture = ExtResource("1_cpfdq")
+emission_shape = 1
+emission_sphere_radius = 1.0
+gravity = Vector2(0, 20)
+initial_velocity_min = 200.0
+initial_velocity_max = 600.0
+angular_velocity_min = 100.0
+angular_velocity_max = 158.19
+linear_accel_min = 10.0
+linear_accel_max = 20.0
+color_ramp = SubResource("Gradient_vjvol")
+script = ExtResource("2_ejot7")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

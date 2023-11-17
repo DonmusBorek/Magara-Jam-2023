@@ -1,6 +1,7 @@
-[gd_scene load_steps=22 format=3 uid="uid://bl1i20vwjfqms"]
+[gd_scene load_steps=26 format=3 uid="uid://bl1i20vwjfqms"]
 
 [ext_resource type="Script" path="res://NPCs/MiniBoss1.gd" id="1_7p1ym"]
+[ext_resource type="Material" uid="uid://dm2kquhjmemy0" path="res://scenes/HitFlashShaderM1.tres" id="1_gp17d"]
 [ext_resource type="Texture2D" uid="uid://cqv553xm7oemm" path="res://sprites/minibosssheet.png" id="1_qejgk"]
 [ext_resource type="Texture2D" uid="uid://dmgqoqbsn7tgn" path="res://sprites/hareketparca.png" id="2_ufl3i"]
 [ext_resource type="PackedScene" uid="uid://dls3uiopain3t" path="res://hurtful.tscn" id="4_ed3l5"]
@@ -110,7 +111,45 @@ size = Vector2(27, 9)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qa145"]
 size = Vector2(409, 460)
 
+[sub_resource type="Animation" id="Animation_c3ldn"]
+resource_name = "HitFlash"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:material:shader_parameter/enabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_8jcrv"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:material:shader_parameter/enabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_k8oef"]
+_data = {
+"HitFlash": SubResource("Animation_c3ldn"),
+"RESET": SubResource("Animation_8jcrv")
+}
+
 [node name="MiniBoss1" type="CharacterBody2D" groups=["Enemy"]]
+material = ExtResource("1_gp17d")
 script = ExtResource("1_7p1ym")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -127,12 +166,14 @@ shape = SubResource("RectangleShape2D_djxka")
 
 [node name="Ust" type="AnimatedSprite2D" parent="marker"]
 texture_filter = 1
+material = ExtResource("1_gp17d")
 position = Vector2(-11, 0)
 sprite_frames = SubResource("SpriteFrames_iomcq")
 frame_progress = 0.672548
 
 [node name="Asagi" type="AnimatedSprite2D" parent="marker"]
 texture_filter = 1
+material = ExtResource("1_gp17d")
 position = Vector2(2, 15)
 sprite_frames = SubResource("SpriteFrames_orebc")
 autoplay = "default"
@@ -149,6 +190,11 @@ shape = SubResource("RectangleShape2D_ebad2")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="detection"]
 position = Vector2(-192.5, -74)
 shape = SubResource("RectangleShape2D_qa145")
+
+[node name="HitFlash" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_k8oef")
+}
 
 [connection signal="body_entered" from="marker/Detector" to="." method="_on_detector_body_entered"]
 [connection signal="body_exited" from="marker/Detector" to="." method="_on_detector_body_exited"]

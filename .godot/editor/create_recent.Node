@@ -1,11 +1,12 @@
+Timer
+CPUParticles2D
+GPUParticles2D
+AnimationPlayer
 AudioStreamPlayer
 AudioStreamPlayer2D
-Timer
 ColorRect
 Label
-AnimationPlayer
 Marker2D
-GPUParticles2D
 Sprite2D
 Control
 CollisionShape2D

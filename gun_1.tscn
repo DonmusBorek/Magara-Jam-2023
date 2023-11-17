@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://dwpuixeiq62vc"]
+[gd_scene load_steps=4 format=3 uid="uid://dwpuixeiq62vc"]
 
 [ext_resource type="Texture2D" uid="uid://7y0peecvwhth" path="res://sprites/tufek.png" id="1_6ydvt"]
 [ext_resource type="Script" path="res://gun_1.gd" id="2_pfyut"]
+[ext_resource type="Texture2D" uid="uid://bfm3lrbq7lyi6" path="res://sprites/shot.png" id="3_geek0"]
 
 [node name="Gun1" type="Node2D"]
 texture_filter = 1
@@ -18,6 +19,12 @@ position = Vector2(12, -1)
 texture = ExtResource("1_6ydvt")
 
 [node name="gunpoint" type="Node2D" parent="Marker2D"]
+
+[node name="Shot" type="Sprite2D" parent="Marker2D"]
+visible = false
+texture_filter = 1
+position = Vector2(39, -2)
+texture = ExtResource("3_geek0")
 
 [node name="cd" type="Timer" parent="."]
 wait_time = 0.3

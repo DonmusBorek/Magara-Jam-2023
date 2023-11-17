@@ -17,3 +17,6 @@ res://scenes/upgrade_station.tscn
 res://gun_1.gd
 res://gunshotsfx.gd
 res://scenes/gunshotsfx.tscn
+res://scenes/HitFlashShaderM1.tres
+res://scenes/kivilcim.tscn
+res://scenes/kivilcim.gd
