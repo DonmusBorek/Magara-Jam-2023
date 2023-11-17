@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://qitpvvu66w1" path="res://asansor.png" id="5_5wp83"]
 [ext_resource type="PackedScene" uid="uid://bl1i20vwjfqms" path="res://NPCs/MiniBoss1.tscn" id="6_oxajl"]
 [ext_resource type="Texture2D" uid="uid://cotvulxyq83nm" path="res://sprites/gozparca.png" id="7_qrdl2"]
-[ext_resource type="Script" path="res://scenes/Worlds/eyegain.gd" id="9_ywfwi"]
+[ext_resource type="Script" path="res://scripts/eyegain.gd" id="9_ywfwi"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_b2hur"]
 shader = ExtResource("3_xpb27")
