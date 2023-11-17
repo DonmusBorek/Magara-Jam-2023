@@ -19,3 +19,4 @@ res://scenes/platform.tscn
 res://scenes/object.tscn
 res://scenes/menu.tscn
 res://scenes/laser.tscn
+res://scripts/WorldScripts/world_1.gd
