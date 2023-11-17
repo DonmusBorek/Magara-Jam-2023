@@ -1,17 +1,15 @@
-extends Control
+extends CanvasLayer
+
+signal dead
+
+var a = true
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass
+	pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
-
-func  fadeout():
-	$Marker2D/Fadeout.play("fadeot")
-
-
-func _on_fadeout_animation_finished(anim_name):
-	$Timer.start()
-	print("a")
+	if $HPBar.value == 0 && a:
+		emit_signal("dead")
+		a = false

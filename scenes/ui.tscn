@@ -1,15 +1,32 @@
-[gd_scene load_steps=3 format=3 uid="uid://c37hg3fyrbv4b"]
+[gd_scene load_steps=7 format=3 uid="uid://c37hg3fyrbv4b"]
 
+[ext_resource type="Script" path="res://scripts/playerui.gd" id="1_2b5h3"]
 [ext_resource type="Texture2D" uid="uid://bdgml5laob40d" path="res://sprites/hpbar.png" id="1_v88v2"]
 [ext_resource type="Texture2D" uid="uid://cqrj155xxnynm" path="res://sprites/HPFill.png" id="2_8aans"]
+[ext_resource type="Shader" path="res://thermal.gdshader" id="3_kovly"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_uwnwv"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nmad5"]
+shader = ExtResource("3_kovly")
+shader_parameter/size = Vector2(6, 6)
 
 [node name="UI" type="CanvasLayer"]
+script = ExtResource("1_2b5h3")
 
 [node name="HPBar" type="TextureProgressBar" parent="."]
 texture_filter = 1
-offset_left = 12.0
+material = SubResource("ShaderMaterial_uwnwv")
+offset_left = 325.0
 offset_top = 12.0
-offset_right = 159.0
+offset_right = 472.0
 offset_bottom = 52.0
 texture_over = ExtResource("1_v88v2")
 texture_progress = ExtResource("2_8aans")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_nmad5")
+offset_left = 303.0
+offset_top = 2.0
+offset_right = 479.0
+offset_bottom = 42.0

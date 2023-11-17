@@ -6,6 +6,8 @@ extends Node2D
 var squish1 = false
 var squish2 = false
 
+var a = true
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -39,7 +41,7 @@ func _on_platformdetect_area_exited(area):
 
 func _on_squish_2_area_entered(area):
 	if area.is_in_group("Player"):
-		print("robededdo")
+		player._on_ui_dead()
 
 
 
@@ -55,6 +57,16 @@ func _on_squish_2_body_entered(body):
 
 func _on_eyegain_area_entered(area):
 	if area.is_in_group("Player"):
-		
+		player.can_move = false
+		State.arsenal_opened += 1
 		$CanvasLayer/UpgradeStation.visible = true
 		$CanvasLayer/UpgradeStation.fadeout()
+		a = false
+
+
+func _on_mini_boss_1_bossdead():
+	$eyegain.global_position = Vector2(715,213)
+
+
+func _on_fadeout_1_animation_finished(anim_name):
+	get_tree().change_scene_to_file("res://scenes/Worlds/world_3.tscn")

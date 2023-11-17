@@ -17,6 +17,9 @@ var jump_buffer_counter = 0
 
 @onready var anim = $turn/WalkComp
 @onready var coyote_timer = $coyotetimer
+@export var fadeanim:AnimationPlayer
+
+var alive = true
 
 var can_move = true
 func _ready():
@@ -77,4 +80,14 @@ func update_animation():
 	else:
 		$turn.scale.x = sign(velocity.x)
 		anim.animation = "walking"
+		
 
+
+func _on_ui_dead():
+	if alive:
+		var _particle = preload("res://scenes/explosion.tscn").instantiate()
+		_particle.position = global_position
+		_particle.emitting = true
+		get_tree().current_scene.add_child(_particle)
+		fadeanim.play("fadeout")
+		alive = false

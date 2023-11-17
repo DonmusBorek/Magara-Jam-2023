@@ -7,7 +7,7 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ijs7t"]
 shader = ExtResource("4_5kh60")
-shader_parameter/size = Vector2(7, 7)
+shader_parameter/size = Vector2(4, 4)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v3muy"]
 size = Vector2(20, 96)
