@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scripts/WorldScripts/world_6.gd" id="1_443kl"]
 [ext_resource type="TileSet" uid="uid://dbcekwogp6tu4" path="res://Tilseset1.tres" id="2_0odwo"]
 [ext_resource type="PackedScene" uid="uid://fbvrsjqpv48e" path="res://scenes/Player.tscn" id="3_kx24b"]
-[ext_resource type="PackedScene" uid="uid://cbdh07pr7qqfy" path="res://scenes/laser.tscn" id="4_dpax0"]
+[ext_resource type="PackedScene" uid="uid://b37o5dkrdxh0i" path="res://scenes/laser.tscn" id="4_dpax0"]
 
 [node name="World6" type="Node2D"]
 script = ExtResource("1_443kl")
