@@ -28,3 +28,4 @@ res://scenes/Worlds/fadeout.gd
 res://scripts/WorldScripts/world_5.gd
 res://scenes/laser.tscn
 res://scripts/laser.gd
+res://hurtful.tscn
