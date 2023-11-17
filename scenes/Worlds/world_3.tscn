@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://lefoi2dhtlfc"]
+[gd_scene load_steps=19 format=3 uid="uid://lefoi2dhtlfc"]
 
 [ext_resource type="Script" path="res://scripts/WorldScripts/world_3.gd" id="1_3okja"]
 [ext_resource type="TileSet" uid="uid://dbcekwogp6tu4" path="res://Tilseset1.tres" id="2_xig3k"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://qitpvvu66w1" path="res://asansor.png" id="5_5wp83"]
 [ext_resource type="PackedScene" uid="uid://bl1i20vwjfqms" path="res://NPCs/MiniBoss1.tscn" id="6_oxajl"]
 [ext_resource type="Texture2D" uid="uid://cotvulxyq83nm" path="res://sprites/gozparca.png" id="7_qrdl2"]
+[ext_resource type="Script" path="res://scenes/Worlds/eyegain.gd" id="9_ywfwi"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_b2hur"]
 shader = ExtResource("3_xpb27")
@@ -140,7 +141,9 @@ position = Vector2(719, 213)
 texture = ExtResource("7_qrdl2")
 
 [node name="eyegain" type="Area2D" parent="."]
+visible = false
 position = Vector2(715, 213)
+script = ExtResource("9_ywfwi")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="eyegain"]
 position = Vector2(5, -5)
@@ -152,3 +155,4 @@ shape = SubResource("RectangleShape2D_5lyng")
 [connection signal="body_entered" from="Platform/Squish2" to="." method="_on_squish_2_body_entered"]
 [connection signal="body_entered" from="Squish1" to="." method="_on_squish_1_body_entered"]
 [connection signal="area_entered" from="eyegain" to="." method="_on_eyegain_area_entered"]
+[connection signal="body_entered" from="eyegain" to="eyegain" method="_on_body_entered"]

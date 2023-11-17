@@ -1,17 +1,17 @@
-extends Node
+extends Area2D
 
-var player
-var WalkComp = true
-var VisionCompHave = false
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
 
-func frameFreeze(timeScale, duration):
-	Engine.time_scale = timeScale
-	await get_tree().create_timer(duration).timeout
-	Engine.time_scale = 1.0
+
+func _on_body_entered(body):
+	if(body == State.player):
+		State.VisionCompHave = true
+	pass # Replace with function body.
