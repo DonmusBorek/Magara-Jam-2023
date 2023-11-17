@@ -84,11 +84,6 @@ layer_0/tile_data = PackedInt32Array(0, 0, 2, 65536, 0, 3, 131072, 0, 4, 524288,
 [node name="Player" parent="." instance=ExtResource("2_xy3ak")]
 position = Vector2(26, 117)
 
-[node name="Laser" parent="." instance=ExtResource("3_mlyif")]
-position = Vector2(48, 204)
-wait_time = 3.1
-width = 20
-
 [node name="Platform" parent="." instance=ExtResource("4_2hkqo")]
 position = Vector2(177, 170)
 
@@ -122,6 +117,11 @@ root_node = NodePath("../../..")
 libraries = {
 "": SubResource("AnimationLibrary_j6jud")
 }
+
+[node name="Laser" parent="." instance=ExtResource("3_mlyif")]
+position = Vector2(48, 204)
+wait_time = 3.1
+width = 20
 
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2(448, 97)

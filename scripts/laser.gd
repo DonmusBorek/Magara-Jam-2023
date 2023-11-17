@@ -5,6 +5,8 @@ var casting = true: set = _set_casting
 @export var wait_time:float
 @export var width:int
 
+var playerhit = false
+
 
 func _ready():
 	timer.wait_time = wait_time
@@ -19,6 +21,8 @@ func _physics_process(delta):
 	
 	if is_colliding():
 		cast_point = to_local(get_collision_point())
+		var collision = get_collider()
+		print(collision.name)
 	
 	$Line2D.points[1] = cast_point
 	

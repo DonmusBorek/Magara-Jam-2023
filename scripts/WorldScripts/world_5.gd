@@ -18,7 +18,8 @@ func _process(delta):
 
 func _on_area_2d_area_entered(area):
 	if area.is_in_group("Player"):
-		$CanvasLayer/Marker2D/Fadeout1.play("fadeout")	
+		$CanvasLayer/Marker2D/Fadeout1.play("fadeout")
+		print("aa")
 
 
 func _on_fadeout_1_animation_finished(anim_name):
