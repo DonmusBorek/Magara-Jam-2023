@@ -14,7 +14,8 @@ func _process(delta):
 func _on_body_entered(body):
 	if(body == State.player):
 		body.get_node("InvFrames").play("Inv")
-		body.health -= attack
+		var tween = get_tree().create_tween().set_trans(Tween.TRANS_SINE)
+		tween.tween_property(body, "health", body.health - attack, 0.25)
 		body.can_move = true
 		body.velocity.y -= 10
 		State.player.velocity -= (self.global_position-body.global_position).normalized() * 300

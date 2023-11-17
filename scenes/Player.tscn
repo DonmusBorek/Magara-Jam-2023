@@ -1,9 +1,10 @@
-[gd_scene load_steps=18 format=3 uid="uid://fbvrsjqpv48e"]
+[gd_scene load_steps=19 format=3 uid="uid://fbvrsjqpv48e"]
 
 [ext_resource type="Material" uid="uid://cboj1j1od3eyn" path="res://scenes/HitFlashShader.tres" id="1_d6mo7"]
 [ext_resource type="Script" path="res://scripts/Player.gd" id="1_scjqm"]
 [ext_resource type="Texture2D" uid="uid://dmgqoqbsn7tgn" path="res://sprites/hareketparca.png" id="3_a55iy"]
 [ext_resource type="Texture2D" uid="uid://cotvulxyq83nm" path="res://sprites/gozparca.png" id="3_kdv7o"]
+[ext_resource type="PackedScene" uid="uid://c37hg3fyrbv4b" path="res://scenes/ui.tscn" id="5_wmgpi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fmgm2"]
 size = Vector2(26.465, 11.5)
@@ -182,3 +183,5 @@ libraries = {
 libraries = {
 "": SubResource("AnimationLibrary_q6kpy")
 }
+
+[node name="UI" parent="." instance=ExtResource("5_wmgpi")]

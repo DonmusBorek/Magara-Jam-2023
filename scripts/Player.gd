@@ -31,6 +31,7 @@ func _physics_process(delta):
 		move_and_slide()
 		var just_left_ledge = was_on_floor and not is_on_floor() and velocity.y >= 0
 		process_jump_input(just_left_ledge,was_on_floor)
+	$UI/HPBar.value = health
 
 func apply_gravity(delta):
 	velocity.y += gravity * delta

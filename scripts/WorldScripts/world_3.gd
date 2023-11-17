@@ -19,7 +19,8 @@ func _process(delta):
 		camera.global_position.x -= 480
 		
 	if squish1 && squish2:
-		print("aa")
+		$Platformanim.pause()
+		$MiniBoss1.state = "dead"
 
 
 func _on_platformdetect_area_entered(area):

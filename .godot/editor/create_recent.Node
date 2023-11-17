@@ -1,3 +1,5 @@
+TextureProgressBar
+CanvasLayer
 CollisionShape2D
 Area2D
 TileMap
@@ -13,7 +15,6 @@ VBoxContainer
 Node2D
 ColorRect
 AnimationPlayer
-CanvasLayer
 Marker2D
 Label
 Control
