@@ -1,7 +1,6 @@
 extends Node
 
 var player
-var WalkComp = true
 var VisionCompHave = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
