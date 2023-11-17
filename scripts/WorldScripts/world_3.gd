@@ -21,6 +21,7 @@ func _process(delta):
 	if squish1 && squish2:
 		$Platformanim.pause()
 		$MiniBoss1.state = "dead"
+		squish1 = false
 
 
 func _on_platformdetect_area_entered(area):
@@ -54,5 +55,6 @@ func _on_squish_2_body_entered(body):
 
 func _on_eyegain_area_entered(area):
 	if area.is_in_group("Player"):
+		
 		$CanvasLayer/UpgradeStation.visible = true
 		$CanvasLayer/UpgradeStation.fadeout()
