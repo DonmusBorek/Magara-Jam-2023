@@ -93,6 +93,5 @@ func _on_ui_dead():
 		_particle.position = global_position
 		_particle.emitting = true
 		get_tree().current_scene.add_child(_particle)
-		fadeanim.play("fadeout")
 		can_move = false
 		alive = false

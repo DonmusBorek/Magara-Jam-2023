@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://dwpuixeiq62vc"]
+[gd_scene load_steps=5 format=3 uid="uid://dwpuixeiq62vc"]
 
 [ext_resource type="Texture2D" uid="uid://7y0peecvwhth" path="res://sprites/tufek.png" id="1_6ydvt"]
 [ext_resource type="Script" path="res://gun_1.gd" id="2_pfyut"]
+[ext_resource type="Texture2D" uid="uid://cq22h2oxlg8qa" path="res://sprites/2d_lights_and_shadows_neutral_point_light.webp" id="3_ersrn"]
 [ext_resource type="Texture2D" uid="uid://bfm3lrbq7lyi6" path="res://sprites/shot.png" id="3_geek0"]
 
 [node name="Gun1" type="Node2D"]
@@ -19,6 +20,16 @@ position = Vector2(12, -1)
 texture = ExtResource("1_6ydvt")
 
 [node name="gunpoint" type="Node2D" parent="Marker2D"]
+
+[node name="Light" type="PointLight2D" parent="Marker2D"]
+position = Vector2(5, -1)
+rotation = -0.0523599
+scale = Vector2(0.5, 0.24)
+enabled = false
+energy = 0.5
+shadow_enabled = true
+texture = ExtResource("3_ersrn")
+offset = Vector2(128, 0)
 
 [node name="Shot" type="Sprite2D" parent="Marker2D"]
 visible = false

@@ -7,6 +7,7 @@
 colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
 
 [node name="kivilcim" type="CPUParticles2D"]
+z_index = 3
 emitting = false
 amount = 2
 lifetime = 0.5
