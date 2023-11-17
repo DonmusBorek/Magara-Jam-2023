@@ -1,8 +1,9 @@
+CollisionShape2D
+Area2D
 TileMap
 WorldEnvironment
 Camera2D
 Sprite2D
-CollisionShape2D
 StaticBody2D
 Timer
 Line2D
@@ -10,7 +11,6 @@ RayCast2D
 GridContainer
 VBoxContainer
 Node2D
-Area2D
 ColorRect
 AnimationPlayer
 CanvasLayer

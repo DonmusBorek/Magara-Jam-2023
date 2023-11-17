@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://NPCs/MiniBoss1.gd" id="1_7p1ym"]
 [ext_resource type="Texture2D" uid="uid://cqv553xm7oemm" path="res://sprites/minibosssheet.png" id="1_qejgk"]
 [ext_resource type="Texture2D" uid="uid://dmgqoqbsn7tgn" path="res://sprites/hareketparca.png" id="2_ufl3i"]
-[ext_resource type="PackedScene" uid="uid://dls3uiopain3t" path="res://hurtful.tscn" id="4_ed3l5"]
+[ext_resource type="PackedScene" path="res://hurtful.tscn" id="4_ed3l5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_btoay"]
 size = Vector2(19, 35)
@@ -107,7 +107,7 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ebad2"]
 size = Vector2(27, 9)
 
-[node name="MiniBoss1" type="CharacterBody2D"]
+[node name="MiniBoss1" type="CharacterBody2D" groups=["Enemy"]]
 script = ExtResource("1_7p1ym")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
