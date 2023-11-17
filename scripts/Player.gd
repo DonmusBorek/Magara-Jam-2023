@@ -95,3 +95,4 @@ func _on_ui_dead():
 		get_tree().current_scene.add_child(_particle)
 		can_move = false
 		alive = false
+
