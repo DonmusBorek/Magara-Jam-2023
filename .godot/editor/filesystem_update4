@@ -13,3 +13,11 @@ res://scenes/Player.tres
 res://scenes/HitFlashShader.tres
 res://scripts/WorldScripts/world_3.gd
 res://scenes/ui.tscn
+res://scenes/drop_place.tscn
+res://scenes/upgrade_station.tscn
+res://scenes/world_7.tscn
+res://scenes/test.tscn
+res://scenes/platform.tscn
+res://scenes/object.tscn
+res://scenes/menu.tscn
+res://scenes/laser.tscn

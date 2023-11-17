@@ -1,9 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://bkua0s8hor0i0"]
+[gd_scene load_steps=4 format=3 uid="uid://bkua0s8hor0i0"]
 
 [ext_resource type="Script" path="res://scripts/UpgradeStation.gd" id="1_m8ssf"]
-[ext_resource type="PackedScene" uid="uid://crcefqtatwi7g" path="res://scenes/drop_place.tscn" id="2_8wsbc"]
-[ext_resource type="Texture2D" uid="uid://868u4jdwn0ck" path="res://icon.svg" id="2_cakvr"]
-[ext_resource type="PackedScene" uid="uid://oq7okgpi7rss" path="res://scenes/object.tscn" id="3_8op1s"]
+[ext_resource type="PackedScene" uid="uid://dwghnlpbj28k4" path="res://scenes/drop_place.tscn" id="2_8wsbc"]
+[ext_resource type="PackedScene" path="res://scenes/object.tscn" id="3_8op1s"]
 
 [node name="UpgradeStation" type="Control"]
 layout_mode = 3
@@ -76,5 +75,3 @@ position = Vector2(343, 202)
 
 [node name="Object" parent="Objects" instance=ExtResource("3_8op1s")]
 position = Vector2(418, 66)
-nagme = "Vision"
-sprite = ExtResource("2_cakvr")
