@@ -20,3 +20,5 @@ res://scenes/gunshotsfx.tscn
 res://scenes/HitFlashShaderM1.tres
 res://scenes/kivilcim.tscn
 res://scenes/kivilcim.gd
+res://scenes/menu.tscn
+res://scenes/Worlds/world_5.tscn
