@@ -6,7 +6,7 @@
 
 extends Label
 
-@onready var timer = $"../../Timer"
+@onready var timer = $"../../texttimer"
 
 var _current_text : String
  

@@ -10,12 +10,14 @@ var health = 20
 var attack = 50
 var playerinsight
 
+var can_move = false
+
 func _ready():
 	$marker/Hurtful.attack = 50
 	
 func _physics_process(delta):
 	if(health <= 0): state = "dead"
-	if(state == "alive"):
+	if(state == "alive") && can_move:
 		if(State.player.global_position.x < position.x):
 			var tween = get_tree().create_tween()
 			tween.tween_property(self, "speed", -300, 2)
@@ -28,7 +30,7 @@ func _physics_process(delta):
 			$marker.scale.x = 1
 		else:
 			$marker.scale.x = -1
-	else:
+	elif (state == "dead"):
 		modulate = Color.DIM_GRAY
 			
 	if not is_on_floor():
@@ -63,3 +65,8 @@ func _on_detector_body_exited(body):
 		if(body == State.player):
 			playerinsight = false
 	pass # Replace with function body.
+
+
+func _on_detection_area_entered(area):
+	if area.is_in_group("Player"):
+		can_move = true

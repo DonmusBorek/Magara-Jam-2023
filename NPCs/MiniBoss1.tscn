@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://bl1i20vwjfqms"]
+[gd_scene load_steps=22 format=3 uid="uid://bl1i20vwjfqms"]
 
 [ext_resource type="Script" path="res://NPCs/MiniBoss1.gd" id="1_7p1ym"]
 [ext_resource type="Texture2D" uid="uid://cqv553xm7oemm" path="res://sprites/minibosssheet.png" id="1_qejgk"]
@@ -107,6 +107,9 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ebad2"]
 size = Vector2(27, 9)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qa145"]
+size = Vector2(409, 460)
+
 [node name="MiniBoss1" type="CharacterBody2D" groups=["Enemy"]]
 script = ExtResource("1_7p1ym")
 
@@ -141,5 +144,12 @@ position = Vector2(10, 21)
 position = Vector2(-33, -13)
 shape = SubResource("RectangleShape2D_ebad2")
 
+[node name="detection" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="detection"]
+position = Vector2(-192.5, -74)
+shape = SubResource("RectangleShape2D_qa145")
+
 [connection signal="body_entered" from="marker/Detector" to="." method="_on_detector_body_entered"]
 [connection signal="body_exited" from="marker/Detector" to="." method="_on_detector_body_exited"]
+[connection signal="area_entered" from="detection" to="." method="_on_detection_area_entered"]
