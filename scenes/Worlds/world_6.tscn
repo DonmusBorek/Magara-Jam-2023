@@ -121,5 +121,6 @@ position = Vector2(444, 97)
 position = Vector2(546, 90)
 shape = SubResource("RectangleShape2D_b0ul0")
 
+[connection signal="deadsignal" from="Player" to="." method="_on_player_deadsignal"]
 [connection signal="animation_finished" from="CanvasLayer/Marker2D/Fadeout1" to="." method="_on_fadeout_1_animation_finished"]
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

@@ -4,7 +4,10 @@ var arsenal_opened = 0
 
 var player
 var playerDead
+
 var VisionCompHave = false
+var EyePump = false
+
 var currentWorld
 var worldEnd = false
 var Worlds = ["res://scenes/Worlds/world_1.tscn", "res://scenes/Worlds/world_2.tscn", "res://scenes/Worlds/world_3.tscn"]

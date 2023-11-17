@@ -4,9 +4,9 @@
 [ext_resource type="TileSet" uid="uid://dbcekwogp6tu4" path="res://Tilseset1.tres" id="1_yij0s"]
 [ext_resource type="PackedScene" uid="uid://fbvrsjqpv48e" path="res://scenes/Player.tscn" id="2_xy3ak"]
 [ext_resource type="PackedScene" uid="uid://b37o5dkrdxh0i" path="res://scenes/laser.tscn" id="3_mlyif"]
-[ext_resource type="PackedScene" uid="uid://dsfp33wcioj1i" path="res://scenes/platform.tscn" id="4_2hkqo"]
 [ext_resource type="Script" path="res://scripts/fadeout.gd" id="5_n8ss2"]
 [ext_resource type="Texture2D" uid="uid://qitpvvu66w1" path="res://asansor.png" id="7_br255"]
+[ext_resource type="TileSet" uid="uid://caqgtfl7smp0e" path="res://scenes/Worlds/platform.tres" id="8_wgtyw"]
 
 [sub_resource type="Animation" id="Animation_sokf1"]
 length = 0.001
@@ -83,16 +83,9 @@ layer_0/tile_data = PackedInt32Array(0, 0, 2, 65536, 0, 3, 131072, 0, 4, 524288,
 
 [node name="Player" parent="." node_paths=PackedStringArray("fadeanim") instance=ExtResource("2_xy3ak")]
 position = Vector2(26, 117)
+collision_layer = 3
+collision_mask = 3
 fadeanim = NodePath("../CanvasLayer/Marker2D/Fadeout1")
-
-[node name="Platform" parent="." instance=ExtResource("4_2hkqo")]
-position = Vector2(177, 170)
-
-[node name="Platform2" parent="." instance=ExtResource("4_2hkqo")]
-position = Vector2(481, 170)
-
-[node name="Platform3" parent="." instance=ExtResource("4_2hkqo")]
-position = Vector2(801, 170)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 anchor_mode = 0
@@ -120,16 +113,23 @@ libraries = {
 }
 
 [node name="Laser" parent="." instance=ExtResource("3_mlyif")]
-position = Vector2(48, 210)
+position = Vector2(48, 214)
 wait_time = 3.1
 width = 20
 
 [node name="Area2D" type="Area2D" parent="."]
-position = Vector2(448, 97)
+position = Vector2(447, 98)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(546, 90)
 shape = SubResource("RectangleShape2D_0eo5q")
 
+[node name="TileMap2" type="TileMap" parent="."]
+texture_filter = 1
+tile_set = ExtResource("8_wgtyw")
+format = 2
+layer_0/tile_data = PackedInt32Array(655368, 196608, 0, 655369, 262144, 0, 655370, 262144, 0, 655371, 262144, 0, 655372, 262144, 0, 655373, 327680, 0, 655387, 196608, 0, 655392, 327680, 0, 655388, 262144, 0, 655389, 262144, 0, 655390, 262144, 0, 655391, 262144, 0, 655407, 262144, 0, 655412, 327680, 0, 655408, 262144, 0, 655409, 262144, 0, 655410, 262144, 0, 655411, 262144, 0)
+
+[connection signal="deadsignal" from="Player" to="." method="_on_player_deadsignal"]
 [connection signal="animation_finished" from="CanvasLayer/Marker2D/Fadeout1" to="." method="_on_fadeout_1_animation_finished"]
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

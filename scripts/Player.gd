@@ -93,6 +93,7 @@ func _on_ui_dead():
 		_particle.position = global_position
 		_particle.emitting = true
 		get_tree().current_scene.add_child(_particle)
+		emit_signal("deadsignal")
 		can_move = false
 		alive = false
 

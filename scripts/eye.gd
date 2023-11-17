@@ -6,7 +6,7 @@ extends Node2D
 
 
 
-var rotation_speed = 0.75
+var rotation_speed = 0.5
 var track = false
 
 var a = false
@@ -20,12 +20,12 @@ func _physics_process(delta):
 			if !a:
 				timer.start(2.5)
 			else:
-				timer.start(3.5)
+				timer.start(3.0)
 		
 
 func rotateToTarget(target, delta):
 	var direction = (target.global_position - rotatet.global_position)
-	var angleTo = rotatet.transform.x.angle_to(direction)
+	var angleTo = rotatet.global_transform.x.angle_to(direction)
 	rotatet.rotate(sign(angleTo) * min(delta * rotation_speed, abs(angleTo)))
 
 

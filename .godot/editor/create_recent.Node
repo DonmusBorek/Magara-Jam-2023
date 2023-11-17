@@ -1,3 +1,4 @@
+TileMap
 CanvasLayer
 Timer
 CPUParticles2D
@@ -13,7 +14,6 @@ Control
 CollisionShape2D
 Area2D
 TextureProgressBar
-TileMap
 WorldEnvironment
 Camera2D
 StaticBody2D
