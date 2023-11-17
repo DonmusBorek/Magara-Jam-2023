@@ -28,3 +28,11 @@ res://scenes/object.tscn
 res://scripts/object.gd
 res://Tilseset1.tres
 res://scripts/UpgradeStation.gd
+res://scenes/Worlds/world_5.tscn
+res://scenes/laser.tscn
+res://scripts/laser.gd
+res://scenes/platform.tscn
+res://scripts/WorldScripts/world_5.gd
+res://scenes/Worlds/world_6.tscn
+res://scripts/WorldScripts/world_6.gd
+res://scenes/world_7.tscn

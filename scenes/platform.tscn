@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://dqbbpmjsklp1u"]
+
+[ext_resource type="Texture2D" uid="uid://qitpvvu66w1" path="res://asansor.png" id="1_bsb0l"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qja3v"]
+size = Vector2(111.5, 15)
+
+[node name="Platform" type="StaticBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.25, 3.5)
+shape = SubResource("RectangleShape2D_qja3v")
+one_way_collision = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_bsb0l")
