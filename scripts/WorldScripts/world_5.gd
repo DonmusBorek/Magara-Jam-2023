@@ -3,6 +3,8 @@ extends Node2D
 @onready var camera = $Camera2D
 @onready var player = $Player
 
+var end = false
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -23,4 +25,9 @@ func _on_area_2d_area_entered(area):
 
 
 func _on_fadeout_1_animation_finished(anim_name):
-	get_tree().change_scene_to_file("res://scenes/Worlds/world_6.tscn")
+	if end:
+		get_tree().change_scene_to_file("res://scenes/Worlds/world_6.tscn")
+	elif !player.alive:
+		get_tree().change_scene_to_file("res://scenes/Worlds/world5.tscn")
+	else:
+		end = true

@@ -3,6 +3,7 @@
 [ext_resource type="Script" path="res://scripts/laser.gd" id="1_pjgai"]
 
 [node name="Laser" type="RayCast2D"]
+enabled = false
 target_position = Vector2(1000, 0)
 script = ExtResource("1_pjgai")
 

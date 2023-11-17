@@ -1,6 +1,6 @@
 [gd_scene load_steps=19 format=3 uid="uid://fbvrsjqpv48e"]
 
-[ext_resource type="Material" uid="uid://cboj1j1od3eyn" path="res://scenes/HitFlashShader.tres" id="1_d6mo7"]
+[ext_resource type="Material" uid="uid://d18a0ol1keis" path="res://scenes/HitFlashShader.tres" id="1_d6mo7"]
 [ext_resource type="Script" path="res://scripts/Player.gd" id="1_scjqm"]
 [ext_resource type="Texture2D" uid="uid://dmgqoqbsn7tgn" path="res://sprites/hareketparca.png" id="3_a55iy"]
 [ext_resource type="Texture2D" uid="uid://cotvulxyq83nm" path="res://sprites/gozparca.png" id="3_kdv7o"]

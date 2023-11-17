@@ -9,6 +9,7 @@ var playerhit = false
 
 
 func _ready():
+	enabled = false
 	timer.wait_time = wait_time
 	timer.start()
 	set_physics_process(true)
@@ -22,7 +23,15 @@ func _physics_process(delta):
 	if is_colliding():
 		cast_point = to_local(get_collision_point())
 		var collision = get_collider()
-		print(collision.name)
+		if collision.name == "Player":
+			collision.get_node("InvFrames").play("Inv")
+			var tween = get_tree().create_tween().set_trans(Tween.TRANS_SINE)
+			tween.tween_property(collision, "health", collision.health - 50, 0.25)
+			collision.can_move = true
+			collision.velocity.y -= 10
+			State.player.velocity -= (self.global_position-collision.global_position).normalized() * 300
+			collision.get_node("HitFlashPlayer").play("HitFlash")
+			State.frameFreeze(0.1, 0.05)
 	
 	$Line2D.points[1] = cast_point
 	
@@ -33,6 +42,7 @@ func _set_casting(cast:bool):
 
 func appear():
 	var tween = get_tree().create_tween()
+	enabled = true
 	tween.connect("finished", tween_finished2)
 	tween.tween_property($Line2D,"width",width,0.2)
 	
@@ -49,5 +59,6 @@ func tween_finished():
 	timer.start(1.5)
 	
 func tween_finished2():
+	enabled = false
 	await get_tree().create_timer(1.5).timeout
 	disapper()
