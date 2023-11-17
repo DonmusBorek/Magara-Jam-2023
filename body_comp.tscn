@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://cjb3n3m2qqj20"]
+
+[ext_resource type="Texture2D" uid="uid://durcmxankspog" path="res://sprites/BodyComp.png" id="1_hait5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h4gsn"]
+size = Vector2(18, 29)
+
+[node name="BodyComp" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_hait5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 2.5)
+shape = SubResource("RectangleShape2D_h4gsn")

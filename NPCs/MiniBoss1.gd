@@ -6,6 +6,7 @@ var state = "alive"
 var speed = 50
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var turned = false
+var health = 20
 var attack = 50
 var playerinsight
 
@@ -13,6 +14,7 @@ func _ready():
 	$marker/Hurtful.attack = 50
 	
 func _physics_process(delta):
+	if(health <= 0): state = "dead"
 	if(state == "alive"):
 		if(State.player.global_position.x < position.x):
 			var tween = get_tree().create_tween()
