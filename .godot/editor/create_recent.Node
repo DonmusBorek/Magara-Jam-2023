@@ -1,3 +1,4 @@
+ColorRect
 AudioStreamPlayer2D
 TileMap
 PointLight2D
@@ -5,7 +6,6 @@ Timer
 Sprite2D
 DirectionalLight2D
 WorldEnvironment
-ColorRect
 CPUParticles2D
 GPUParticles2D
 AnimationPlayer
