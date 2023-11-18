@@ -17,3 +17,6 @@ res://scenes/Worlds/boss_room.tscn
 res://hurtful.tscn
 res://NPCs/froggy.gd
 res://scenes/floresan.gd
+res://gun_1.tscn
+res://gun_1.gd
+res://NPCs/MiniBoss1.gd

@@ -8,7 +8,7 @@
 [ext_resource type="Script" path="res://scripts/AItext.gd" id="5_ndr25"]
 [ext_resource type="Texture2D" uid="uid://dmgqoqbsn7tgn" path="res://sprites/hareketparca.png" id="6_sssq6"]
 [ext_resource type="AudioStream" uid="uid://tp77digxy0mj" path="res://Sound/SoundEffect/textsound.wav" id="7_ygu2k"]
-[ext_resource type="PackedScene" path="res://scenes/ackapa.tscn" id="9_nin7a"]
+[ext_resource type="PackedScene" uid="uid://d3brcwakr54pn" path="res://scenes/ackapa.tscn" id="9_nin7a"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6em1k"]
 atlas = ExtResource("6_sssq6")

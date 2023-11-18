@@ -5,22 +5,24 @@ var atstate = 3
 var can_move = true
 var speed = 0
 var attack = 34
-var mass = 8
+var mass = 80
 var health = 300
 var jumponce = true
 var jumponce2 = true
 var overwall = true
 var fall = false
 var hitbody = false
+var isfroggy = 0
 const JUMP_VELOCITY = -400.0
 
 @onready var anima = $turn/anima
 # Get the gravity from the project settings to be synced with RigidBody nodes.
-var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
+var gravity = ProjectSettings.get_setting("physics/2d/default_gravity") * 0.7
 
 func _ready():
 	$turn/Hurtful.attack = attack
 func _physics_process(delta):
+	print(State.player.velocity.x)
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y += gravity * delta
@@ -30,13 +32,11 @@ func _physics_process(delta):
 			$shuffletimer.stop()
 			print(atstate)
 			atstate = 3
-			anima.play("jump")
 			overwall = false
 	if(state == "alive") && can_move:
 		match atstate:
 			0:
 				#run
-				print(atstate)
 				anima.speed_scale = 2
 				if(anima.animation != "walk"): anima.play("walk")
 				if(State.player.global_position.x < position.x):
@@ -48,7 +48,6 @@ func _physics_process(delta):
 				velocity.x = speed
 			1:
 				#walk
-				print(atstate)
 				if(anima.animation != "walk"): anima.play("walk")
 				if(State.player.global_position.x < position.x):
 					var tween = get_tree().create_tween()
@@ -67,15 +66,16 @@ func _physics_process(delta):
 					anima.play("jump")
 					jumponce = false
 					$realjumptimer.start()
-				if(anima.animation == "jump" && anima.frame == 9 && jumponce2):
-					anima.pause()
-					var distance = State.player.global_position.x - position.x
-					var height = abs(State.player.global_position.y - position.y - 32)
-					velocity.x = distance + State.player.velocity.x
-					velocity.y = -400
+				if(anima.animation == "jump" && anima.frame == 6 && jumponce2):
+					if(anima.frame == 9): anima.pause()
+					var distance = State.player.global_position.x - global_position.x
+					var height = abs(State.player.global_position.y - position.y - 64)
+					velocity.x = distance + State.player.velocity.x * 40 * delta
+					velocity.y = -450 - height
 					jumponce2 = false
 					$jumptimer.start()
 				if(anima.animation == "jump" && anima.frame == 9 && is_on_floor() && fall):
+					anima.play("walk")
 					$shuffletimer.start()
 					atstate = 1
 					fall = false
@@ -85,9 +85,9 @@ func _physics_process(delta):
 			anima.flip_h = false
 		else:
 			anima.flip_h = true
-	if(velocity.x <= 0):
+	if(velocity.x < 0):
 		anima.flip_h = false
-	else:
+	elif(velocity.x > 0):
 		anima.flip_h = true
 	move_and_slide()
 

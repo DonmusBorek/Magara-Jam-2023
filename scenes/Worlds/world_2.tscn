@@ -5,8 +5,8 @@
 [ext_resource type="PackedScene" uid="uid://fbvrsjqpv48e" path="res://scenes/Player.tscn" id="1_sw046"]
 [ext_resource type="Shader" path="res://thermal.gdshader" id="3_y0ewo"]
 [ext_resource type="Texture2D" uid="uid://qitpvvu66w1" path="res://asansor.png" id="5_j8ysg"]
-[ext_resource type="PackedScene" path="res://scenes/ackapa.tscn" id="5_md2ke"]
-[ext_resource type="PackedScene" path="res://scenes/floresan.tscn" id="7_j5302"]
+[ext_resource type="PackedScene" uid="uid://d3brcwakr54pn" path="res://scenes/ackapa.tscn" id="5_md2ke"]
+[ext_resource type="PackedScene" uid="uid://0ufd07f2xa57" path="res://scenes/floresan.tscn" id="7_j5302"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_bufnw"]
 shader = ExtResource("3_y0ewo")
