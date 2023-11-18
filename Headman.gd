@@ -3,9 +3,10 @@ extends CharacterBody2D
 var is_froggy
 var mass = 0.5
 var health = 10
-var attack = 20
+var attack = 10
 var state = "alive"
 var can_move = false
+var can_can_move = false
 var speed = 10
 
 const SPEED = 300.0
@@ -17,12 +18,14 @@ func _ready():
 	$Hurtful.attack = attack
 
 func _physics_process(delta):
-	
+	if(can_can_move && State.player.can_move):
+		can_move = true
+		
 	if not is_on_floor():
 		velocity.y += gravity * delta
 	
 	if(health <= 0): state = "dead"
-	if(state == "alive") && can_move:
+	if(state == "alive" && can_move):
 		if(State.player.global_position.x < position.x):
 			var tween = get_tree().create_tween()
 			tween.tween_property(self, "speed", -500, 3)
@@ -52,5 +55,5 @@ func _on_jumptimer_timeout():
 func _on_player_detector_body_entered(body):
 	if(body == State.player):
 		print("niggaaaaaa")
-		if(State.player.can_move): can_move = true
+		can_can_move = true
 	pass # Replace with function body.
