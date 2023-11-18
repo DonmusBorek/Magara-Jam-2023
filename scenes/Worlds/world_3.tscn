@@ -12,7 +12,7 @@
 [ext_resource type="Script" path="res://Camera2D.gd" id="8_gbpmh"]
 [ext_resource type="Script" path="res://scripts/eyegain.gd" id="9_ywfwi"]
 [ext_resource type="PackedScene" uid="uid://dbbsw3u3qfvod" path="res://scenes/door.tscn" id="12_vxmuu"]
-[ext_resource type="PackedScene" path="res://scenes/floresan.tscn" id="13_kpi1x"]
+[ext_resource type="PackedScene" uid="uid://0ufd07f2xa57" path="res://scenes/floresan.tscn" id="13_kpi1x"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_b2hur"]
 shader = ExtResource("3_xpb27")
