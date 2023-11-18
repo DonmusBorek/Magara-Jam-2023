@@ -74,6 +74,7 @@ position = Vector2(0, -48)
 script = ExtResource("6_uq4ho")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 2
 
 [node name="ackapa" parent="CanvasLayer" instance=ExtResource("1_dkufi")]
 

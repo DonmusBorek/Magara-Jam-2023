@@ -1,0 +1,89 @@
+[gd_scene load_steps=13 format=3 uid="uid://grf5ffdywsy3"]
+
+[ext_resource type="Script" path="res://scenes/sok_sok.gd" id="1_2mkus"]
+[ext_resource type="Texture2D" uid="uid://bny0t7lsxlv1b" path="res://sprites/soksokanimasyon.png" id="1_cxolp"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ts6k5"]
+atlas = ExtResource("1_cxolp")
+region = Rect2(0, 0, 53, 11)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hwy45"]
+atlas = ExtResource("1_cxolp")
+region = Rect2(53, 0, 53, 11)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wblmg"]
+atlas = ExtResource("1_cxolp")
+region = Rect2(106, 0, 53, 11)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s0e71"]
+atlas = ExtResource("1_cxolp")
+region = Rect2(159, 0, 53, 11)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c6wc5"]
+atlas = ExtResource("1_cxolp")
+region = Rect2(212, 0, 53, 11)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_edkck"]
+atlas = ExtResource("1_cxolp")
+region = Rect2(265, 0, 53, 11)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h4eva"]
+atlas = ExtResource("1_cxolp")
+region = Rect2(318, 0, 53, 11)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5em2t"]
+atlas = ExtResource("1_cxolp")
+region = Rect2(371, 0, 53, 11)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vyvcl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ts6k5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hwy45")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wblmg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s0e71")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c6wc5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_edkck")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h4eva")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5em2t")
+}],
+"loop": false,
+"name": &"default",
+"speed": 12.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s77c6"]
+size = Vector2(27, 6)
+
+[node name="SokSok" type="Node2D"]
+script = ExtResource("1_2mkus")
+
+[node name="anima" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_vyvcl")
+frame = 5
+frame_progress = 0.683333
+
+[node name="Attack" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Attack"]
+position = Vector2(-13, -1)
+shape = SubResource("RectangleShape2D_s77c6")
+disabled = true
+
+[connection signal="body_entered" from="Attack" to="." method="_on_attack_body_entered"]
