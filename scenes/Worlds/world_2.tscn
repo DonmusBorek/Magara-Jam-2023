@@ -85,6 +85,7 @@ offset_right = 513.0
 offset_bottom = 295.0
 
 [node name="ackapa" parent="CanvasLayer" instance=ExtResource("5_md2ke")]
+visible = false
 
 [node name="Platform" type="StaticBody2D" parent="."]
 position = Vector2(402, 254)
