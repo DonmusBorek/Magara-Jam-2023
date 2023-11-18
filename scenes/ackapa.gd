@@ -26,7 +26,7 @@ func _on_fadeout_1_animation_finished(anim_name):
 		State.currentWorld += 1
 		changable = false
 	if(State.playerDead):
-		get_tree().change_scene_to_file(State.Worlds[State.currentWorld])
+		get_tree().reload_current_scene()
 		State.playerDead = false
 		deadAnimPlayOnce = true
 	pass # Replace with function body.

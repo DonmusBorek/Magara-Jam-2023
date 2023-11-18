@@ -27,6 +27,7 @@ var alive = true
 var can_move = true
 func _ready():
 	State.player = self
+	State.playerDead = false
 	
 func _physics_process(delta):
 	update_animation()
