@@ -71,13 +71,12 @@ animations = [{
 size = Vector2(27, 6)
 
 [node name="SokSok" type="Node2D"]
+scale = Vector2(-1, 1)
 script = ExtResource("1_2mkus")
 
 [node name="anima" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_vyvcl")
-frame = 5
-frame_progress = 0.683333
 
 [node name="Attack" type="Area2D" parent="."]
 
