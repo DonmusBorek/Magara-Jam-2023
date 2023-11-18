@@ -1,3 +1,4 @@
+AudioStreamPlayer2D
 TileMap
 CanvasLayer
 Timer
@@ -10,7 +11,6 @@ StaticBody2D
 CPUParticles2D
 GPUParticles2D
 AudioStreamPlayer
-AudioStreamPlayer2D
 ColorRect
 Label
 Marker2D

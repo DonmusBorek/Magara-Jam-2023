@@ -22,6 +22,9 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity") * 0.7
 func _ready():
 	$turn/Hurtful.attack = attack
 func _physics_process(delta):
+	if(anima.animation == "walk" && anima.frame in [4, 8]):
+		var taktuk = preload("res://Sound/SoundEffect/taktuk.tscn").instantiate()
+		add_child(taktuk)
 	print(State.player.velocity.x)
 	# Add the gravity.
 	if not is_on_floor():
@@ -75,6 +78,9 @@ func _physics_process(delta):
 					jumponce2 = false
 					$jumptimer.start()
 				if(anima.animation == "jump" && anima.frame == 9 && is_on_floor() && fall):
+					var heavytaktuk = preload("res://Sound/SoundEffect/heavytaktuk.tscn").instantiate()
+					add_child(heavytaktuk)
+					State.apply_random_shake()
 					anima.play("walk")
 					$shuffletimer.start()
 					atstate = 1

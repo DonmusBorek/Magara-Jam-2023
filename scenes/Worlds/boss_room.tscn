@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://crg67ip8oljyc"]
+[gd_scene load_steps=11 format=3 uid="uid://crg67ip8oljyc"]
 
 [ext_resource type="PackedScene" uid="uid://d3brcwakr54pn" path="res://scenes/ackapa.tscn" id="1_dkufi"]
 [ext_resource type="TileSet" uid="uid://dbcekwogp6tu4" path="res://Tilseset1.tres" id="2_4g6rd"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://fbvrsjqpv48e" path="res://scenes/Player.tscn" id="4_1qpcc"]
 [ext_resource type="Texture2D" uid="uid://hx3kokm4ptkq" path="res://sprites/realplatfrom.png" id="4_x2m2m"]
 [ext_resource type="PackedScene" uid="uid://bn8tg8i6udskp" path="res://NPCs/froggy.tscn" id="6_2b544"]
+[ext_resource type="Script" path="res://Camera2D.gd" id="6_uq4ho"]
 [ext_resource type="PackedScene" uid="uid://0ufd07f2xa57" path="res://scenes/floresan.tscn" id="7_v3xdo"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_t5fu4"]
@@ -54,11 +55,22 @@ texture = ExtResource("4_x2m2m")
 4:2/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSet" id="TileSet_v770g"]
-physics_layer_0/collision_layer = 6
-physics_layer_0/collision_mask = 6
+physics_layer_0/collision_layer = 2
+physics_layer_0/collision_mask = 2
 sources/0 = SubResource("TileSetAtlasSource_t5fu4")
 
 [node name="BossRoom" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("4_1qpcc")]
+process_priority = 1
+process_physics_priority = 1
+position = Vector2(167, 181)
+collision_layer = 3
+collision_mask = 3
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2(0, -48)
+script = ExtResource("6_uq4ho")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -86,14 +98,6 @@ texture_filter = 1
 tile_set = SubResource("TileSet_v770g")
 format = 2
 layer_0/tile_data = PackedInt32Array(720958, 65536, 2, 655422, 65536, 2, 589886, 65536, 2, 524350, 65536, 2, 458814, 65536, 2, 393278, 65536, 2, 327742, 65536, 2, 262206, 65536, 2, 196670, 65536, 2, 131134, 65536, 1, 65598, 65536, 0, 65597, 0, 0, 65599, 131072, 0, 65600, 196608, 0, 65601, 262144, 0, 131137, 262144, 1, 196673, 262144, 2, 262209, 262144, 2, 327745, 262144, 2, 393281, 262144, 2, 458817, 262144, 2, 524353, 262144, 2, 589889, 262144, 2, 655425, 262144, 2, 720961, 262144, 2, 65602, 327680, 0)
-
-[node name="Player" parent="." instance=ExtResource("4_1qpcc")]
-position = Vector2(167, 181)
-collision_layer = 3
-collision_mask = 3
-
-[node name="Camera2D" type="Camera2D" parent="Player"]
-position = Vector2(0, -48)
 
 [node name="froggy" parent="." instance=ExtResource("6_2b544")]
 position = Vector2(762, 112)

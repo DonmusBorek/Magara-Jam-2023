@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://iownvu1n04o"]
+
+[ext_resource type="AudioStream" uid="uid://bu58fheo273hf" path="res://Sound/SoundEffect/SFX_Hit_Metal_Barrel.wav" id="1_uxred"]
+
+[node name="taktuk" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_uxred")
+volume_db = 1.5
+pitch_scale = 0.9
+autoplay = true
