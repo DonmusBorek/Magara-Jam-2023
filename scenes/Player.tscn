@@ -1,12 +1,11 @@
-[gd_scene load_steps=21 format=3 uid="uid://fbvrsjqpv48e"]
+[gd_scene load_steps=20 format=3 uid="uid://fbvrsjqpv48e"]
 
-[ext_resource type="Material" uid="uid://d18a0ol1keis" path="res://scenes/HitFlashShader.tres" id="1_d6mo7"]
+[ext_resource type="Material" uid="uid://cboj1j1od3eyn" path="res://scenes/HitFlashShader.tres" id="1_d6mo7"]
 [ext_resource type="Script" path="res://scripts/Player.gd" id="1_scjqm"]
 [ext_resource type="Texture2D" uid="uid://dmgqoqbsn7tgn" path="res://sprites/hareketparca.png" id="3_a55iy"]
 [ext_resource type="Texture2D" uid="uid://cotvulxyq83nm" path="res://sprites/gozparca.png" id="3_kdv7o"]
 [ext_resource type="PackedScene" uid="uid://grf5ffdywsy3" path="res://scenes/sok_sok.tscn" id="5_w7a5o"]
 [ext_resource type="PackedScene" uid="uid://c37hg3fyrbv4b" path="res://scenes/ui.tscn" id="5_wmgpi"]
-[ext_resource type="PackedScene" uid="uid://dwpuixeiq62vc" path="res://gun_1.tscn" id="6_a2dfe"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fmgm2"]
 size = Vector2(26.465, 11.5)
@@ -192,11 +191,4 @@ libraries = {
 
 [node name="UI" parent="." instance=ExtResource("5_wmgpi")]
 
-[node name="Gun1" parent="." instance=ExtResource("6_a2dfe")]
-position = Vector2(0, -12)
-
-[node name="Dashtimer" type="Timer" parent="."]
-one_shot = true
-
 [connection signal="dead" from="UI" to="." method="_on_ui_dead"]
-[connection signal="timeout" from="Dashtimer" to="." method="_on_dashtimer_timeout"]
