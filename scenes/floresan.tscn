@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://0ufd07f2xa57"]
+[gd_scene load_steps=6 format=3 uid="uid://b8k7fady4vvuw"]
 
 [ext_resource type="Script" path="res://scenes/floresan.gd" id="1_2fkgi"]
 [ext_resource type="Texture2D" uid="uid://bv0w3n08a3vb0" path="res://sprites/floresanacik.png" id="1_doqv7"]
@@ -27,8 +27,10 @@ wait_time = 0.2
 autostart = true
 
 [node name="light" type="PointLight2D" parent="."]
+color = Color(0.1, 0.1, 0.1, 1)
 shadow_enabled = true
 texture = ExtResource("4_5tjqt")
+texture_scale = 2.0
 
 [node name="sfx" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_cjf4m")

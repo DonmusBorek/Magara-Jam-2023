@@ -1,6 +1,52 @@
-[gd_scene load_steps=2 format=3 uid="uid://b37o5dkrdxh0i"]
+[gd_scene load_steps=12 format=3 uid="uid://b37o5dkrdxh0i"]
 
 [ext_resource type="Script" path="res://scripts/laser.gd" id="1_pjgai"]
+[ext_resource type="Material" uid="uid://g4diueghkikn" path="res://scenes/laserbegin.tres" id="2_viak0"]
+[ext_resource type="Texture2D" uid="uid://c1hg6r0ct7cq8" path="res://sprites/particule.png" id="3_2o5r3"]
+
+[sub_resource type="Gradient" id="Gradient_5wwgd"]
+offsets = PackedFloat32Array(0.451852, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_ta2rn"]
+gradient = SubResource("Gradient_5wwgd")
+
+[sub_resource type="Curve" id="Curve_afdkm"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_bgigg"]
+curve = SubResource("Curve_afdkm")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_u545a"]
+lifetime_randomness = 0.3
+particle_flag_disable_z = true
+gravity = Vector3(0, 0, 0)
+initial_velocity_min = 250.0
+initial_velocity_max = 250.0
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+scale_curve = SubResource("CurveTexture_bgigg")
+color_ramp = SubResource("GradientTexture1D_ta2rn")
+
+[sub_resource type="Gradient" id="Gradient_d6k7s"]
+offsets = PackedFloat32Array(0.288889, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_jtt22"]
+gradient = SubResource("Gradient_d6k7s")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_vq0im"]
+emission_shape = 3
+emission_box_extents = Vector3(1, 1, 1)
+particle_flag_disable_z = true
+gravity = Vector3(0, 98, 0)
+initial_velocity_max = 50.0
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+tangential_accel_min = 200.0
+tangential_accel_max = 200.0
+color_ramp = SubResource("GradientTexture1D_jtt22")
 
 [node name="Laser" type="RayCast2D"]
 target_position = Vector2(1000, 0)
@@ -10,8 +56,34 @@ script = ExtResource("1_pjgai")
 [node name="Line2D" type="Line2D" parent="."]
 points = PackedVector2Array(0, 0, 40, 0)
 width = 0.0
+default_color = Color(0.8, 0.8, 0.8, 1)
 
 [node name="Timer" type="Timer" parent="."]
 one_shot = true
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+modulate = Color(1.2, 1.2, 1.2, 1)
+texture_filter = 1
+position = Vector2(6, 0)
+emitting = false
+process_material = ExtResource("2_viak0")
+texture = ExtResource("3_2o5r3")
+
+[node name="GPUParticles2D2" type="GPUParticles2D" parent="."]
+modulate = Color(1.2, 1.2, 1.2, 1)
+texture_filter = 1
+position = Vector2(6, 0)
+emitting = false
+process_material = SubResource("ParticleProcessMaterial_u545a")
+texture = ExtResource("3_2o5r3")
+
+[node name="GPUParticles2D3" type="GPUParticles2D" parent="."]
+modulate = Color(1.2, 1.2, 1.2, 1)
+texture_filter = 1
+position = Vector2(6, 0)
+emitting = false
+process_material = SubResource("ParticleProcessMaterial_vq0im")
+texture = ExtResource("3_2o5r3")
+local_coords = true
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -20,18 +20,12 @@ func _process(delta):
 
 func _on_area_2d_area_entered(area):
 	if area.is_in_group("Player"):
-		$CanvasLayer/Marker2D/Fadeout1.play("fadeout")
-
-
-func _on_fadeout_1_animation_finished(anim_name):
-	if !player.alive:
-		get_tree().change_scene_to_file("res://scenes/Worlds/world_6.tscn")
-	elif end:
+		$CanvasLayer/ackapa/Fadeout1.play("fadeout")
+		await get_tree().create_timer(3).timeout
 		get_tree().change_scene_to_file("res://scenes/Worlds/world_7.tscn")
-
-	else:
-		end = true
 
 
 func _on_player_deadsignal():
-	$CanvasLayer/Marker2D/Fadeout1.play("fadeout")
+	$CanvasLayer/ackapa/Fadeout1.play("fadeout")
+	await get_tree().create_timer(3).timeout
+	get_tree().change_scene_to_file("res://scenes/Worlds/world_.6tscn")
