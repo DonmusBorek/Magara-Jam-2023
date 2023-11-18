@@ -40,6 +40,7 @@ func _set_casting(cast:bool):
 	
 
 func appear():
+	$GPUParticles2D.emitting = true
 	collide_with_bodies = true
 	playerhit = false
 	var tween = get_tree().create_tween()

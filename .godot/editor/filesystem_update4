@@ -47,3 +47,5 @@ res://scripts/WorldScripts/world_4.gd
 res://scenes/door_button.tscn
 res://scenes/Worlds/world_5.tscn
 res://scripts/WorldScripts/world_5.gd
+res://scenes/eyelaser.tscn
+res://scripts/eyelaser.gd

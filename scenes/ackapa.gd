@@ -8,7 +8,8 @@ func _ready():
 		State.player.can_move = false
 		$Fadeout1.play_backwards("fadeout")
 		changable = false
-		pass # Replace with function body.
+	else:
+		$Fadeout1.play_backwards("fadeout")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

@@ -1,75 +1,13 @@
-[gd_scene load_steps=11 format=3 uid="uid://dvf3vvrxhgfq2"]
+[gd_scene load_steps=7 format=3 uid="uid://dvf3vvrxhgfq2"]
 
 [ext_resource type="TileSet" uid="uid://dbcekwogp6tu4" path="res://Tilseset1.tres" id="1_2hd0y"]
 [ext_resource type="Script" path="res://scripts/WorldScripts/world_7.gd" id="1_s4ucd"]
 [ext_resource type="PackedScene" uid="uid://fbvrsjqpv48e" path="res://scenes/Player.tscn" id="2_x58w4"]
 [ext_resource type="PackedScene" uid="uid://cl1wdbdm28en0" path="res://scenes/eye.tscn" id="3_0mwem"]
-[ext_resource type="Script" path="res://scripts/fadeout.gd" id="4_gy2kh"]
-[ext_resource type="Texture2D" uid="uid://qitpvvu66w1" path="res://asansor.png" id="5_3bxy5"]
+[ext_resource type="PackedScene" uid="uid://b6jc6rqa5yav7" path="res://scenes/ackapa.tscn" id="5_7oyqr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qejr7"]
 size = Vector2(20, 92)
-
-[sub_resource type="Animation" id="Animation_sokf1"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("CanvasLayer/Marker2D/Sprite2D:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(241, 303)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("CanvasLayer/Marker2D/Sprite2D2:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(241, -77)]
-}
-
-[sub_resource type="Animation" id="Animation_mitrd"]
-resource_name = "fadeout"
-length = 3.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("CanvasLayer/Marker2D/Sprite2D:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(241, 303), Vector2(241, 177)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("CanvasLayer/Marker2D/Sprite2D2:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(241, -77), Vector2(241, 66)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_j6jud"]
-_data = {
-"RESET": SubResource("Animation_sokf1"),
-"fadeout": SubResource("Animation_mitrd")
-}
 
 [node name="World7" type="Node2D"]
 script = ExtResource("1_s4ucd")
@@ -95,27 +33,17 @@ position = Vector2(546, 90)
 shape = SubResource("RectangleShape2D_qejr7")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 2
 
-[node name="Marker2D" type="Marker2D" parent="CanvasLayer"]
-position = Vector2(-3, -2)
-script = ExtResource("4_gy2kh")
+[node name="ColorRect2" type="ColorRect" parent="CanvasLayer"]
+offset_left = -46.0
+offset_right = 563.0
+offset_bottom = 291.0
+color = Color(0, 0, 0, 0.588235)
+metadata/_edit_use_anchors_ = true
 
-[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/Marker2D"]
-position = Vector2(241, 303)
-scale = Vector2(4.36607, 6.61957)
-texture = ExtResource("5_3bxy5")
-
-[node name="Sprite2D2" type="Sprite2D" parent="CanvasLayer/Marker2D"]
-position = Vector2(241, -77)
-scale = Vector2(4.36607, 6.61957)
-texture = ExtResource("5_3bxy5")
-
-[node name="Fadeout1" type="AnimationPlayer" parent="CanvasLayer/Marker2D"]
-root_node = NodePath("../../..")
-libraries = {
-"": SubResource("AnimationLibrary_j6jud")
-}
+[node name="ackapa" parent="CanvasLayer" instance=ExtResource("5_7oyqr")]
+visible = false
 
 [connection signal="deadsignal" from="Player" to="." method="_on_player_deadsignal"]
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
-[connection signal="animation_finished" from="CanvasLayer/Marker2D/Fadeout1" to="." method="_on_fadeout_1_animation_finished"]

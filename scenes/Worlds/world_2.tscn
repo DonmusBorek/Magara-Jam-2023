@@ -1,10 +1,11 @@
-[gd_scene load_steps=17 format=3 uid="uid://u0fjq3chp7yp"]
+[gd_scene load_steps=18 format=3 uid="uid://u0fjq3chp7yp"]
 
 [ext_resource type="Script" path="res://scripts/WorldScripts/world_2.gd" id="1_1renp"]
 [ext_resource type="TileSet" uid="uid://dbcekwogp6tu4" path="res://Tilseset1.tres" id="1_qo1nv"]
 [ext_resource type="PackedScene" uid="uid://fbvrsjqpv48e" path="res://scenes/Player.tscn" id="1_sw046"]
 [ext_resource type="Script" path="res://Camera2D.gd" id="2_0hmv4"]
 [ext_resource type="Shader" path="res://thermal.gdshader" id="3_y0ewo"]
+[ext_resource type="PackedScene" uid="uid://ck1qqt2h66flu" path="res://scenes/a_iworld.tscn" id="5_6fgna"]
 [ext_resource type="Texture2D" uid="uid://qitpvvu66w1" path="res://asansor.png" id="5_j8ysg"]
 [ext_resource type="PackedScene" uid="uid://b6jc6rqa5yav7" path="res://scenes/ackapa.tscn" id="5_md2ke"]
 [ext_resource type="PackedScene" path="res://scenes/floresan.tscn" id="7_j5302"]
@@ -143,6 +144,8 @@ color = Color(0, 0, 0, 0.588235)
 
 [node name="Floresan" parent="." instance=ExtResource("7_j5302")]
 position = Vector2(232, 50)
+
+[node name="AIworld" parent="." instance=ExtResource("5_6fgna")]
 
 [connection signal="deadsignal" from="Player" to="." method="_on_player_deadsignal"]
 [connection signal="area_entered" from="Platform/platformdetect" to="." method="_on_platformdetect_area_entered"]
