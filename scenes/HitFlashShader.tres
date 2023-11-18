@@ -1,4 +1,4 @@
-[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://cboj1j1od3eyn"]
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://d18a0ol1keis"]
 
 [ext_resource type="Shader" uid="uid://s7s30mt8g442" path="res://scenes/Player.tres" id="1_vwqsx"]
 

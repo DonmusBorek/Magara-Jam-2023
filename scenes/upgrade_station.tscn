@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bkua0s8hor0i0"]
+[gd_scene load_steps=15 format=3 uid="uid://bkua0s8hor0i0"]
 
 [ext_resource type="Script" path="res://scripts/UpgradeStation.gd" id="1_m8ssf"]
 [ext_resource type="PackedScene" uid="uid://dwghnlpbj28k4" path="res://scenes/drop_place.tscn" id="2_8wsbc"]
@@ -7,8 +7,9 @@
 [ext_resource type="Texture2D" uid="uid://7y0peecvwhth" path="res://sprites/tufek.png" id="5_exetd"]
 [ext_resource type="Script" path="res://scripts/AItext.gd" id="5_ndr25"]
 [ext_resource type="Texture2D" uid="uid://dmgqoqbsn7tgn" path="res://sprites/hareketparca.png" id="6_sssq6"]
+[ext_resource type="Texture2D" uid="uid://bv0w3n08a3vb0" path="res://sprites/floresanacik.png" id="6_trcuk"]
 [ext_resource type="AudioStream" uid="uid://tp77digxy0mj" path="res://Sound/SoundEffect/textsound.wav" id="7_ygu2k"]
-[ext_resource type="PackedScene" uid="uid://d3brcwakr54pn" path="res://scenes/ackapa.tscn" id="9_nin7a"]
+[ext_resource type="PackedScene" uid="uid://b6jc6rqa5yav7" path="res://scenes/ackapa.tscn" id="9_nin7a"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6em1k"]
 atlas = ExtResource("6_sssq6")
@@ -119,11 +120,18 @@ sprite_scale = Vector2(1, 1)
 can_go = "Head"
 
 [node name="pump" parent="Control/Objects" instance=ExtResource("3_8op1s")]
-visible = false
 texture_filter = 1
-position = Vector2(418, 153)
+position = Vector2(343, 153)
 nagme = "pump"
 sprite = ExtResource("5_exetd")
+sprite_scale = Vector2(1, 1)
+can_go = "Left_Hand"
+
+[node name="knife" parent="Control/Objects" instance=ExtResource("3_8op1s")]
+texture_filter = 1
+position = Vector2(418, 153)
+nagme = "knife"
+sprite = ExtResource("6_trcuk")
 sprite_scale = Vector2(1, 1)
 can_go = "Right_Hand"
 

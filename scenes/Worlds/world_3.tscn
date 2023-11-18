@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://lefoi2dhtlfc"]
+[gd_scene load_steps=24 format=3 uid="uid://lefoi2dhtlfc"]
 
 [ext_resource type="Script" path="res://scripts/WorldScripts/world_3.gd" id="1_3okja"]
 [ext_resource type="TileSet" uid="uid://dbcekwogp6tu4" path="res://Tilseset1.tres" id="2_xig3k"]
@@ -12,6 +12,7 @@
 [ext_resource type="Script" path="res://Camera2D.gd" id="8_gbpmh"]
 [ext_resource type="Script" path="res://scripts/eyegain.gd" id="9_ywfwi"]
 [ext_resource type="PackedScene" uid="uid://dbbsw3u3qfvod" path="res://scenes/door.tscn" id="12_vxmuu"]
+[ext_resource type="PackedScene" path="res://scenes/floresan.tscn" id="13_kpi1x"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_b2hur"]
 shader = ExtResource("3_xpb27")
@@ -75,6 +76,10 @@ size = Vector2(20, 91)
 [node name="World3" type="Node2D"]
 script = ExtResource("1_3okja")
 
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
+script = ExtResource("8_gbpmh")
+
 [node name="TileMap" type="TileMap" parent="."]
 texture_filter = 1
 tile_set = ExtResource("2_xig3k")
@@ -95,7 +100,6 @@ color = Color(0, 0, 0, 0.588235)
 metadata/_edit_use_anchors_ = true
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
-visible = false
 material = SubResource("ShaderMaterial_b2hur")
 offset_left = -21.0
 offset_top = -10.0
@@ -138,10 +142,6 @@ position = Vector2(-20, 13)
 position = Vector2(-4.5, -31.888)
 shape = SubResource("RectangleShape2D_q6jaw")
 
-[node name="Camera2D" type="Camera2D" parent="."]
-anchor_mode = 0
-script = ExtResource("8_gbpmh")
-
 [node name="Platformanim" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_o37dm")
@@ -181,6 +181,13 @@ shape = SubResource("RectangleShape2D_m0s44")
 position = Vector2(963, 224)
 scale = Vector2(2, 2)
 
+[node name="Floresan" parent="." instance=ExtResource("13_kpi1x")]
+position = Vector2(190, 51)
+
+[node name="Floresan2" parent="." instance=ExtResource("13_kpi1x")]
+position = Vector2(440, 51)
+
+[connection signal="deadsignal" from="Player" to="." method="_on_player_deadsignal"]
 [connection signal="area_entered" from="Platform/platformdetect" to="." method="_on_platformdetect_area_entered"]
 [connection signal="area_exited" from="Platform/platformdetect" to="." method="_on_platformdetect_area_exited"]
 [connection signal="area_entered" from="Platform/Squish2" to="." method="_on_squish_2_area_entered"]

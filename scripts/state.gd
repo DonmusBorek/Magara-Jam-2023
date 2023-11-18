@@ -1,6 +1,7 @@
 extends Node
 
 var arsenal_opened = 0
+var on_arsenal = false
 
 var player
 var playerDead
@@ -8,6 +9,7 @@ var playerDead
 var camera
 
 var VisionCompHave = false
+var knife = false
 var EyePump = false
 
 var currentWorld = 0
@@ -49,6 +51,8 @@ var noise_i: float = 0.0
 var shake_type: int = ShakeType.Random
 var shake_strength: float = 0.0
 
+var cam_offset
+
 func _ready() -> void:
 	rand.randomize()
 	
@@ -56,6 +60,7 @@ func _ready() -> void:
 	noise.seed = rand.randi()
 	# Period affects how quickly the noise changes values
 	noise.frequency = 0.5
+	
 	
 	
 func apply_random_shake() -> void:
@@ -84,7 +89,7 @@ func _process(delta: float) -> void:
 			shake_offset = get_noise_offset(delta, NOISE_SWAY_SPEED, NOISE_SWAY_STRENGTH)
 	
 	# Shake by adjusting camera.offset so we can move the camera around the level via it's position
-	camera.offset = shake_offset
+	cam_offset = shake_offset
 
 func get_noise_offset(delta: float, speed: float, strength: float) -> Vector2:
 	noise_i += delta * speed
