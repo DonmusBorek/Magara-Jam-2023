@@ -21,3 +21,16 @@ res://scenes/door_button.gd
 res://scenes/sok_sok.tscn
 res://scripts/WorldScripts/world_4.gd
 res://scripts/WorldScripts/world_4_2.gd
+res://scenes/upgrade_station.tscn
+res://scripts/state.gd
+res://scenes/object.tscn
+res://scripts/object.gd
+res://scripts/UpgradeStation.gd
+res://scenes/a_iworld.tscn
+res://scenes/aitextworld.gd
+res://scenes/Worlds/world_5.tscn
+res://scenes/Worlds/world_6.tscn
+res://scenes/intro.tscn
+res://scenes/ui.tscn
+res://scenes/Player.tscn
+res://scripts/Player.gd

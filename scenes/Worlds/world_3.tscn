@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://lefoi2dhtlfc"]
+[gd_scene load_steps=26 format=3 uid="uid://lefoi2dhtlfc"]
 
 [ext_resource type="Script" path="res://scripts/WorldScripts/world_3.gd" id="1_3okja"]
 [ext_resource type="TileSet" uid="uid://dbcekwogp6tu4" path="res://Tilseset1.tres" id="2_xig3k"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://dbbsw3u3qfvod" path="res://scenes/door.tscn" id="12_vxmuu"]
 [ext_resource type="PackedScene" uid="uid://b8k7fady4vvuw" path="res://scenes/floresan.tscn" id="13_kpi1x"]
 [ext_resource type="Environment" uid="uid://cfimef8lfv0p4" path="res://scenes/Worlds/glow.tres" id="14_sn1jc"]
+[ext_resource type="PackedScene" uid="uid://ck1qqt2h66flu" path="res://scenes/a_iworld.tscn" id="15_s4uaj"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_b2hur"]
 shader = ExtResource("3_xpb27")
@@ -101,6 +102,7 @@ color = Color(0, 0, 0, 0.588235)
 metadata/_edit_use_anchors_ = true
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+visible = false
 material = SubResource("ShaderMaterial_b2hur")
 offset_left = -21.0
 offset_top = -10.0
@@ -113,6 +115,8 @@ offset_top = 2.0
 offset_right = -1.0
 offset_bottom = 2.0
 metadata/_edit_use_anchors_ = true
+
+[node name="AIworld" parent="CanvasLayer" instance=ExtResource("15_s4uaj")]
 
 [node name="ackapa" parent="CanvasLayer" instance=ExtResource("6_63471")]
 

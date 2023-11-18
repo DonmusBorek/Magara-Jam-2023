@@ -11,10 +11,14 @@ var camera
 var VisionCompHave = false
 var knife = false
 var EyePump = false
+var Dash = false
 
 var currentWorld = 0
 var worldEnd = false
-var Worlds = ["res://scenes/Worlds/world_1.tscn", "res://scenes/Worlds/world_2.tscn", "res://scenes/Worlds/world_3.tscn"]
+var Worlds = ["res://scenes/Worlds/world_1.tscn", 
+"res://scenes/Worlds/world_2.tscn", "res://scenes/Worlds/world_3.tscn","res://scenes/Worlds/world_4.tscn",
+"res://scenes/Worlds/world_4_2.tscn","res://scenes/Worlds/world_5.tscn","res://scenes/Worlds/world_6.tscn",
+"res://scenes/Worlds/world_7.tscn","res://scenes/Worlds/world_8.tscn","res://scenes/Worlds/world_headman.tscn"]
 # Called when the node enters the scene tree for the first time
 
 
@@ -75,10 +79,11 @@ func apply_noise_sway() -> void:
 	shake_type = ShakeType.Sway
 	
 func _process(delta: float) -> void:
-	if(knife):
-		player.get_node("turn/SokSok/isactive").active = true
-	else:
-		player.get_node("turn/SokSok/isactive").active = false
+	if (!on_arsenal):
+		if(knife):
+			player.get_node("turn/SokSok/isactive").active = true
+		else:
+			player.get_node("turn/SokSok/isactive").active = false
 		
 	# Fade out the intensity over time
 	shake_strength = lerp(shake_strength, 0.0, SHAKE_DECAY_RATE * delta)

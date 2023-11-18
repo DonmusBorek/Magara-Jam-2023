@@ -92,7 +92,6 @@ func update_animation():
 		
 		#if statement
 		if(anim.animation != "walking"): anim.play("walking")
-		print("desbug")
 	if State.VisionCompHave:
 		$turn/VisionComp.visible = true
 		

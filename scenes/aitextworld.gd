@@ -26,7 +26,10 @@ func _ready():
 		_text_sequence = ["Burası da neresi.","Hey!","Sen neden buradasın.",""]
 	if State.currentWorld == 1:
 		_text_sequence = ["Hepsi öldü sanıyordum.","Buradan çıkman gerekiyor.",""]
-
+	if State.currentWorld == 2:
+		_text_sequence = ["Görüş Sistemin bozuk.","Yeni bir tane bul.",""]
+	if State.currentWorld == 3:
+		_text_sequence = ["Görüş Sistemin bozuk.","Yeni bir tane bul.",""]
 func _display_next_text():
 	if _text_number < _text_sequence.size():
 		_current_text = _text_sequence[_text_number]

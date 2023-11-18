@@ -91,6 +91,8 @@ offset_top = -10.0
 offset_right = 513.0
 offset_bottom = 295.0
 
+[node name="AIworld" parent="CanvasLayer" instance=ExtResource("5_6fgna")]
+
 [node name="ackapa" parent="CanvasLayer" instance=ExtResource("5_md2ke")]
 
 [node name="Platform" type="StaticBody2D" parent="."]
@@ -145,8 +147,6 @@ color = Color(0, 0, 0, 0.588235)
 
 [node name="Floresan" parent="." instance=ExtResource("7_j5302")]
 position = Vector2(232, 50)
-
-[node name="AIworld" parent="." instance=ExtResource("5_6fgna")]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = ExtResource("10_ehxaf")
