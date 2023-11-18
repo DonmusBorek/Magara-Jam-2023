@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bjxsl3k7lv5ln"]
+[gd_scene load_steps=12 format=3 uid="uid://bjxsl3k7lv5ln"]
 
 [ext_resource type="Script" path="res://scripts/WorldScripts/world_4.gd" id="1_k1d63"]
 [ext_resource type="TileSet" uid="uid://caqgtfl7smp0e" path="res://scenes/Worlds/platform.tres" id="2_njmmv"]
@@ -8,7 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://dbbsw3u3qfvod" path="res://scenes/door.tscn" id="7_yfd5y"]
 [ext_resource type="PackedScene" uid="uid://bvv1ii68l5xih" path="res://scenes/door_button.tscn" id="8_i33ci"]
 [ext_resource type="PackedScene" uid="uid://bl1i20vwjfqms" path="res://NPCs/MiniBoss1.tscn" id="9_2sa5f"]
-[ext_resource type="PackedScene" path="res://scenes/floresan.tscn" id="10_x7duh"]
+[ext_resource type="Environment" uid="uid://cfimef8lfv0p4" path="res://scenes/Worlds/glow.tres" id="10_5n8kt"]
+[ext_resource type="PackedScene" uid="uid://b8k7fady4vvuw" path="res://scenes/floresan.tscn" id="10_x7duh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qejr7"]
 size = Vector2(20, 92)
@@ -64,6 +65,9 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Floresan" parent="." instance=ExtResource("10_x7duh")]
 position = Vector2(240, 51)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = ExtResource("10_5n8kt")
 
 [connection signal="deadsignal" from="Player" to="." method="_on_player_deadsignal" flags=18]
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered" flags=18]

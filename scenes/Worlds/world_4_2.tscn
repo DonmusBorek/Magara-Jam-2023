@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://0o4dhf51r0sv"]
+[gd_scene load_steps=11 format=3 uid="uid://0o4dhf51r0sv"]
 
 [ext_resource type="Script" path="res://scripts/WorldScripts/world_4_2.gd" id="1_gs003"]
 [ext_resource type="TileSet" uid="uid://caqgtfl7smp0e" path="res://scenes/Worlds/platform.tres" id="2_0ohq8"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://b6jc6rqa5yav7" path="res://scenes/ackapa.tscn" id="5_fn11h"]
 [ext_resource type="PackedScene" uid="uid://dbbsw3u3qfvod" path="res://scenes/door.tscn" id="7_e67yp"]
 [ext_resource type="PackedScene" uid="uid://bvv1ii68l5xih" path="res://scenes/door_button.tscn" id="8_iahow"]
+[ext_resource type="Environment" uid="uid://cfimef8lfv0p4" path="res://scenes/Worlds/glow.tres" id="9_ngphn"]
 [ext_resource type="PackedScene" uid="uid://b8k7fady4vvuw" path="res://scenes/floresan.tscn" id="9_xto67"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qejr7"]
@@ -70,6 +71,9 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Floresan" parent="." instance=ExtResource("9_xto67")]
 position = Vector2(240, 51)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = ExtResource("9_ngphn")
 
 [connection signal="deadsignal" from="Player" to="." method="_on_player_deadsignal" flags=18]
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered" flags=18]

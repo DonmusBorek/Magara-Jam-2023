@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bnmni2uoxyr3l"]
+[gd_scene load_steps=12 format=3 uid="uid://bnmni2uoxyr3l"]
 
 [ext_resource type="Script" path="res://scripts/WorldScripts/world_1.gd" id="1_q8r0o"]
 [ext_resource type="TileSet" uid="uid://dbcekwogp6tu4" path="res://Tilseset1.tres" id="1_stto2"]
@@ -7,7 +7,8 @@
 [ext_resource type="Script" path="res://Camera2D.gd" id="4_frot8"]
 [ext_resource type="PackedScene" uid="uid://b6jc6rqa5yav7" path="res://scenes/ackapa.tscn" id="5_kcsqp"]
 [ext_resource type="PackedScene" uid="uid://ck1qqt2h66flu" path="res://scenes/a_iworld.tscn" id="5_konbq"]
-[ext_resource type="PackedScene" uid="uid://0ufd07f2xa57" path="res://scenes/floresan.tscn" id="6_f7a83"]
+[ext_resource type="PackedScene" uid="uid://b8k7fady4vvuw" path="res://scenes/floresan.tscn" id="6_f7a83"]
+[ext_resource type="Environment" uid="uid://cfimef8lfv0p4" path="res://scenes/Worlds/glow.tres" id="9_u51r2"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ijs7t"]
 shader = ExtResource("4_5kh60")
@@ -73,5 +74,8 @@ position = Vector2(267, 51)
 
 [node name="Floresan2" parent="." instance=ExtResource("6_f7a83")]
 position = Vector2(778, 51)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = ExtResource("9_u51r2")
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
