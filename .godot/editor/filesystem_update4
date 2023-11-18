@@ -26,3 +26,5 @@ res://scenes/gunshotsfx.tscn
 res://scripts/Player.gd
 res://scenes/sok_sok.tscn
 res://scenes/sok_sok.gd
+res://scenes/Worlds/world_3.tscn
+res://scenes/menu.tscn

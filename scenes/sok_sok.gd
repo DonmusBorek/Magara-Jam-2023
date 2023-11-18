@@ -18,7 +18,7 @@ func _on_attack_body_entered(body):
 	if(body.is_in_group("Enemy")):
 		body.health -= 1
 		body.get_node("HitFlash").play("HitFlash")
-		body.velocity -= (State.player.global_position-body.global_position).normalized() * 800 * body.get_collider().isfroggy / body.get_collider().mass
+		body.velocity -= (State.player.global_position-body.global_position).normalized() * 800 * body.isfroggy / body.mass
 		var kivilcim = preload("res://scenes/kivilcim.tscn").instantiate()
 		kivilcim.rotation_degrees = rotation_degrees
 		kivilcim.global_position = Vector2(global_position.x+5, global_position.y)
