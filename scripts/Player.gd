@@ -87,8 +87,12 @@ func update_animation():
 	if velocity.x == 0:
 		anim.animation = "idle"
 	else:
+		#le turno
 		$turn.scale.x = sign(velocity.x)
-		anim.animation = "walking"
+		
+		#if statement
+		if(anim.animation != "walking"): anim.play("walking")
+		print("desbug")
 	if State.VisionCompHave:
 		$turn/VisionComp.visible = true
 		

@@ -17,3 +17,7 @@ res://scenes/Player.tscn
 res://scenes/Worlds/world_3.tscn
 res://scenes/upgrade_station.tscn
 res://isactive.tscn
+res://scenes/Worlds/world_headman.tscn
+res://Headman.gd
+res://scenes/headman.tscn
+res://scripts/Player.gd

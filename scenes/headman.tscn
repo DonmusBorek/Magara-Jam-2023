@@ -1,0 +1,102 @@
+[gd_scene load_steps=15 format=3 uid="uid://c4u01v2bjq5ty"]
+
+[ext_resource type="Script" path="res://Headman.gd" id="1_yslyn"]
+[ext_resource type="Texture2D" uid="uid://tmgqli48n64c" path="res://sprites/homunculus-Sheet.png" id="2_l604h"]
+[ext_resource type="PackedScene" uid="uid://dls3uiopain3t" path="res://hurtful.tscn" id="3_fqt75"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q3jqw"]
+size = Vector2(7, 15)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_seyq4"]
+size = Vector2(9, 17)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tqjuu"]
+atlas = ExtResource("2_l604h")
+region = Rect2(0, 0, 12, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6r0mh"]
+atlas = ExtResource("2_l604h")
+region = Rect2(12, 0, 12, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kig5u"]
+atlas = ExtResource("2_l604h")
+region = Rect2(24, 0, 12, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_65lis"]
+atlas = ExtResource("2_l604h")
+region = Rect2(36, 0, 12, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_76xoe"]
+atlas = ExtResource("2_l604h")
+region = Rect2(48, 0, 12, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ixbf5"]
+atlas = ExtResource("2_l604h")
+region = Rect2(60, 0, 12, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e6m17"]
+atlas = ExtResource("2_l604h")
+region = Rect2(72, 0, 12, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2ujdk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tqjuu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6r0mh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kig5u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_65lis")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_76xoe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ixbf5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e6m17")
+}],
+"loop": true,
+"name": &"default",
+"speed": 12.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0toni"]
+radius = 299.015
+
+[node name="Headman" type="CharacterBody2D" groups=["Enemy"]]
+script = ExtResource("1_yslyn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 0.5)
+shape = SubResource("RectangleShape2D_q3jqw")
+
+[node name="Hurtful" parent="." instance=ExtResource("3_fqt75")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtful"]
+position = Vector2(-0.5, 0.5)
+shape = SubResource("RectangleShape2D_seyq4")
+
+[node name="marker" type="Marker2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="marker"]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_2ujdk")
+autoplay = "default"
+frame_progress = 0.955484
+
+[node name="playerDetector" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="playerDetector"]
+shape = SubResource("CircleShape2D_0toni")
+
+[node name="jumptimer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="jumptimer" to="." method="_on_jumptimer_timeout"]
