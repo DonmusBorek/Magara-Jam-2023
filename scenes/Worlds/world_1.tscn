@@ -43,7 +43,6 @@ script = ExtResource("4_frot8")
 layer = 2
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
-visible = false
 material = SubResource("ShaderMaterial_ijs7t")
 offset_left = -21.0
 offset_top = -10.0

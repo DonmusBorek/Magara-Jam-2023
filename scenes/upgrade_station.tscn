@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://bkua0s8hor0i0"]
+[gd_scene load_steps=16 format=3 uid="uid://bkua0s8hor0i0"]
 
 [ext_resource type="Script" path="res://scripts/UpgradeStation.gd" id="1_m8ssf"]
 [ext_resource type="PackedScene" uid="uid://dwghnlpbj28k4" path="res://scenes/drop_place.tscn" id="2_8wsbc"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" path="res://scripts/AItext.gd" id="5_ndr25"]
 [ext_resource type="Texture2D" uid="uid://dmgqoqbsn7tgn" path="res://sprites/hareketparca.png" id="6_sssq6"]
 [ext_resource type="Texture2D" uid="uid://bv0w3n08a3vb0" path="res://sprites/floresanacik.png" id="6_trcuk"]
+[ext_resource type="Texture2D" uid="uid://nnn0x11grg1q" path="res://sprites/festuscanon.png" id="7_n8m03"]
 [ext_resource type="AudioStream" uid="uid://tp77digxy0mj" path="res://Sound/SoundEffect/textsound.wav" id="7_ygu2k"]
 [ext_resource type="PackedScene" uid="uid://b6jc6rqa5yav7" path="res://scenes/ackapa.tscn" id="9_nin7a"]
 
@@ -134,6 +135,14 @@ nagme = "knife"
 sprite = ExtResource("6_trcuk")
 sprite_scale = Vector2(1, 1)
 can_go = "Right_Hand"
+
+[node name="dash" parent="Control/Objects" instance=ExtResource("3_8op1s")]
+texture_filter = 1
+position = Vector2(418, 221)
+nagme = "dash"
+sprite = ExtResource("7_n8m03")
+sprite_scale = Vector2(1, 1)
+can_go = "Ability"
 
 [node name="Ground" type="ColorRect" parent="Control"]
 layout_mode = 1

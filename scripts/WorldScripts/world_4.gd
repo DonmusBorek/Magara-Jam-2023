@@ -30,5 +30,5 @@ func _on_player_deadsignal():
 
 
 func _on_doorbutton_area_entered(area):
-	if area.is_in_group("Player"):
+	if area.is_in_group("soksokattack"):
 		$Door._door_open()

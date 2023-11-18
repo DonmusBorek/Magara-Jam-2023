@@ -52,4 +52,4 @@ func _on_next_pressed():
 	else:
 		$CanvasLayer/ackapa/Fadeout1.play("fadeout")
 		await get_tree().create_timer(3).timeout
-		#targescene
+		get_tree().change_scene_to_file(State.Worlds[State.currentWorld])
