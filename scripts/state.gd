@@ -75,6 +75,11 @@ func apply_noise_sway() -> void:
 	shake_type = ShakeType.Sway
 	
 func _process(delta: float) -> void:
+	if(knife):
+		player.get_node("turn/SokSok/isactive").active = true
+	else:
+		player.get_node("turn/SokSok/isactive").active = false
+		
 	# Fade out the intensity over time
 	shake_strength = lerp(shake_strength, 0.0, SHAKE_DECAY_RATE * delta)
 	

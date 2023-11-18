@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://fbvrsjqpv48e"]
+[gd_scene load_steps=21 format=3 uid="uid://fbvrsjqpv48e"]
 
 [ext_resource type="Material" uid="uid://d18a0ol1keis" path="res://scenes/HitFlashShader.tres" id="1_d6mo7"]
 [ext_resource type="Script" path="res://scripts/Player.gd" id="1_scjqm"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://cotvulxyq83nm" path="res://sprites/gozparca.png" id="3_kdv7o"]
 [ext_resource type="PackedScene" uid="uid://grf5ffdywsy3" path="res://scenes/sok_sok.tscn" id="5_w7a5o"]
 [ext_resource type="PackedScene" uid="uid://c37hg3fyrbv4b" path="res://scenes/ui.tscn" id="5_wmgpi"]
+[ext_resource type="PackedScene" uid="uid://dce8trjqio4he" path="res://isactive.tscn" id="6_khpj1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fmgm2"]
 size = Vector2(26.465, 11.5)
@@ -160,7 +161,7 @@ shape = SubResource("RectangleShape2D_d4n0d")
 visible = false
 texture_filter = 1
 material = ExtResource("1_d6mo7")
-position = Vector2(-1, -13)
+position = Vector2(-1, -19)
 rotation = 3.14159
 scale = Vector2(1, -1)
 texture = ExtResource("3_kdv7o")
@@ -175,6 +176,8 @@ frame_progress = 0.369198
 
 [node name="SokSok" parent="turn" instance=ExtResource("5_w7a5o")]
 position = Vector2(13, -6)
+
+[node name="isactive" parent="turn/SokSok" instance=ExtResource("6_khpj1")]
 
 [node name="invtimer" type="Timer" parent="."]
 wait_time = 0.5
