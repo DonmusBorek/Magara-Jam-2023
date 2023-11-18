@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bnmni2uoxyr3l"]
+[gd_scene load_steps=9 format=3 uid="uid://bnmni2uoxyr3l"]
 
 [ext_resource type="Script" path="res://scripts/WorldScripts/world_1.gd" id="1_q8r0o"]
 [ext_resource type="TileSet" uid="uid://dbcekwogp6tu4" path="res://Tilseset1.tres" id="1_stto2"]
@@ -6,7 +6,6 @@
 [ext_resource type="Shader" path="res://thermal.gdshader" id="4_5kh60"]
 [ext_resource type="PackedScene" uid="uid://d3brcwakr54pn" path="res://scenes/ackapa.tscn" id="5_kcsqp"]
 [ext_resource type="PackedScene" uid="uid://0ufd07f2xa57" path="res://scenes/floresan.tscn" id="6_f7a83"]
-[ext_resource type="PackedScene" uid="uid://bn8tg8i6udskp" path="res://NPCs/froggy.tscn" id="7_iq5e8"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ijs7t"]
 shader = ExtResource("4_5kh60")
@@ -35,9 +34,6 @@ position = Vector2(107, 211)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 anchor_mode = 0
-
-[node name="froggy" parent="." instance=ExtResource("7_iq5e8")]
-position = Vector2(768, 138)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

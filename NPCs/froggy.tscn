@@ -229,7 +229,7 @@ libraries = {
 wait_time = 0.5
 
 [node name="jumptimer" type="Timer" parent="."]
-wait_time = 0.8
+wait_time = 0.3
 
 [node name="turn" type="Marker2D" parent="."]
 
@@ -269,5 +269,6 @@ wait_time = 3.0
 [connection signal="timeout" from="recotimer" to="." method="_on_recotimer_timeout"]
 [connection signal="timeout" from="jumptimer" to="." method="_on_jumptimer_timeout"]
 [connection signal="body_entered" from="turn/Hurtful" to="." method="_on_hurtful_body_entered"]
+[connection signal="body_exited" from="turn/Hurtful" to="." method="_on_hurtful_body_exited"]
 [connection signal="timeout" from="shuffletimer" to="." method="_on_shuffletimer_timeout"]
 [connection signal="timeout" from="realjumptimer" to="." method="_on_realjumptimer_timeout"]

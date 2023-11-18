@@ -24,9 +24,7 @@ func _on_timer_timeout():
 	$Timer.wait_time = randf_range(0.1, 4)
 	$Timer.start()
 
-
 func _on_kivilcimcikarici_timeout():
-	print("kivilced")
 	var kivilcim = preload("res://scenes/kivilcim.tscn").instantiate()
 	kivilcim.rotation_degrees = 90
 	kivilcim.global_position = self.global_position
