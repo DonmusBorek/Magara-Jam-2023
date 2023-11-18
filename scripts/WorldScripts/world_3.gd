@@ -13,7 +13,9 @@ var next_world = false
 var opened = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$CanvasLayer/Marker2D/Fadeout1.play_backwards("fadeout")
+	$CanvasLayer/UpgradeStation/Control.visible = false
+	State.currentWorld = 2
+	$CanvasLayer/ackapa/Fadeout1.play_backwards("fadeout")
 	$CanvasLayer/UpgradeStation.onworld3 = true
 
 
@@ -67,8 +69,10 @@ func _on_eyegain_area_entered(area):
 	if area.is_in_group("Player"):
 		player.can_move = false
 		State.arsenal_opened += 1
-		$CanvasLayer/UpgradeStation.visible = true
-		$CanvasLayer/UpgradeStation.fadeout()
+		$CanvasLayer/UpgradeStation/CanvasLayer/ackapa/Fadeout1.play("fadeout")
+		await get_tree().create_timer(3).timeout
+		$CanvasLayer/UpgradeStation/CanvasLayer/ackapa/Fadeout1.play_backwards("fadeout")
+		$CanvasLayer/UpgradeStation/Control.visible = true
 		$eyegain.global_position = Vector2(0,-200)
 		a = false
 		await get_tree().create_timer(2).timeout
@@ -79,18 +83,11 @@ func _on_mini_boss_1_bossdead():
 	$eyegain.global_position = Vector2(715,213)
 
 
-func _on_fadeout_1_animation_finished(anim_name):
-	if opened:
-		if !next_world:
-			get_tree().change_scene_to_file("res://scenes/Worlds/world_3.tscn")
-		else : 
-			get_tree().change_scene_to_file("res://scenes/Worlds/world_5.tscn")
-	else:
-		opened = true
-
-
 func _on_nextworld_area_entered(area):
 	if area.is_in_group("Player"):
-		$CanvasLayer/Marker2D/Fadeout1.play("fadeout")
-		next_world = true
+		$CanvasLayer/ackapa/Fadeout1.play("fadeout")
+		await get_tree().create_timer(3).timeout
+		get_tree().change_scene_to_file("res://scenes/Worlds/world_4.tscn")
 		
+
+

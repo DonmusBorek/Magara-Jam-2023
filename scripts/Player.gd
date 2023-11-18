@@ -10,6 +10,9 @@ signal deadsignal
 @export var max_fall_speed = 500
 @export var health = 100
 
+var candash = false
+var dashing = false
+
 const JUMP_BUFFER_TIME = 10
 
 var isbeinghit
@@ -29,6 +32,7 @@ func _ready():
 func _physics_process(delta):
 	update_animation()
 	if can_move:
+		dash()
 		apply_gravity(delta)
 		process_movement_input(delta)
 		var was_on_floor = is_on_floor()
@@ -50,7 +54,8 @@ func process_movement_input(delta):
 			velocity.x = lerp(velocity.x, direction * speed, acceleration)
 		else:
 			velocity.x = lerp(velocity.x, 0.0, friction)
-		velocity.x = clamp(velocity.x, -speed, speed)
+		if !dashing:
+			velocity.x = clamp(velocity.x, -speed, speed)
 	
 	if velocity.x != 0 and is_on_floor() and $Timer.time_left <= 0:
 		$steps.pitch_scale = randf_range(0.8, 1.2)
@@ -97,4 +102,20 @@ func _on_ui_dead():
 		emit_signal("deadsignal")
 		can_move = false
 		alive = false
-
+		
+func dash():
+	if is_on_floor():
+		candash = true
+	if Input.is_action_just_pressed("Dash") && candash:
+		velocity.x = sign(velocity.x) * 2000
+		candash = false
+		dashing = true
+		await get_tree().create_timer(0.2).timeout
+		dashing = false
+		
+	
+	
+	
+	
+	
+	
