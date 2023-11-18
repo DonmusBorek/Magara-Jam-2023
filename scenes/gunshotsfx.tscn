@@ -5,6 +5,6 @@
 
 [node name="gunshotsfx" type="AudioStreamPlayer"]
 stream = ExtResource("1_5r7p3")
-volume_db = -6.559
+volume_db = -20.0
 autoplay = true
 script = ExtResource("2_cf3bg")

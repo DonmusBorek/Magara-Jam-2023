@@ -40,7 +40,7 @@ func _physics_process(delta):
 				if($Marker2D/guncast.get_collider().is_in_group("Enemy")):
 					$Marker2D/guncast.get_collider().health -= 1
 					$Marker2D/guncast.get_collider().get_node("HitFlash").play("HitFlash")
-					$Marker2D/guncast.get_collider().velocity -= (State.player.global_position-$Marker2D/guncast.get_collider().global_position).normalized() * 800 / $Marker2D/guncast.get_collider().mass
+					$Marker2D/guncast.get_collider().velocity -= (State.player.global_position-$Marker2D/guncast.get_collider().global_position).normalized() * 800 * $Marker2D/guncast.get_collider().isfroggy / $Marker2D/guncast.get_collider().mass
 					var kivilcim = preload("res://scenes/kivilcim.tscn").instantiate()
 					kivilcim.rotation_degrees = $Marker2D.rotation_degrees
 					kivilcim.global_position = $Marker2D/guncast.get_collision_point()

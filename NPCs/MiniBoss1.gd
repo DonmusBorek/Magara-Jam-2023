@@ -10,6 +10,7 @@ var health = 20
 var attack = 50
 var playerinsight
 var mass = 1
+var isfroggy = 1
 
 var can_move = false
 
