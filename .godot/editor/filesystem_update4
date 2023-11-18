@@ -34,5 +34,4 @@ res://scenes/intro.tscn
 res://scenes/ui.tscn
 res://scenes/Player.tscn
 res://scripts/Player.gd
-res://scenes/Worlds/glow.tres
-res://scenes/Worlds/Fall.gd
+res://scripts/WorldScripts/world_3.gd

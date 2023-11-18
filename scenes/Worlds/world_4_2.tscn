@@ -46,6 +46,7 @@ shape = SubResource("RectangleShape2D_qejr7")
 layer = 2
 
 [node name="ackapa" parent="CanvasLayer" instance=ExtResource("5_fn11h")]
+visible = false
 
 [node name="Door" parent="." instance=ExtResource("7_e67yp")]
 position = Vector2(465, 224)
@@ -54,10 +55,10 @@ position = Vector2(465, 224)
 position = Vector2(431, 138)
 
 [node name="Doorbutton2" parent="." instance=ExtResource("8_iahow")]
-position = Vector2(314, 49)
+position = Vector2(314, 57)
 
 [node name="Doorbutton3" parent="." instance=ExtResource("8_iahow")]
-position = Vector2(156, 47)
+position = Vector2(156, 59)
 
 [node name="Doorbutton4" parent="." instance=ExtResource("8_iahow")]
 position = Vector2(47, 134)
