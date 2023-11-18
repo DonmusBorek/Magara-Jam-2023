@@ -70,11 +70,13 @@ position = Vector2(-3, -2)
 script = ExtResource("1_ghmfg")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 20
 texture_filter = 1
 position = Vector2(243, 218)
 texture = ExtResource("1_bmlcl")
 
 [node name="Sprite2D2" type="Sprite2D" parent="."]
+z_index = 20
 texture_filter = 1
 position = Vector2(243, 82)
 texture = ExtResource("2_27ker")

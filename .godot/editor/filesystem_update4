@@ -23,3 +23,6 @@ res://Sound/SoundEffect/taktuk.tscn
 res://Sound/SoundEffect/heavytaktuk.tscn
 res://NPCs/murmur.gd
 res://scenes/gunshotsfx.tscn
+res://scripts/Player.gd
+res://scenes/sok_sok.tscn
+res://scenes/sok_sok.gd

@@ -1,3 +1,6 @@
+CollisionShape2D
+Area2D
+AnimatedSprite2D
 AudioStreamPlayer
 AudioStreamPlayer2D
 TileMap
@@ -5,8 +8,6 @@ CanvasLayer
 Timer
 Button
 Sprite2D
-CollisionShape2D
-Area2D
 AnimationPlayer
 StaticBody2D
 CPUParticles2D
@@ -24,7 +25,6 @@ GridContainer
 VBoxContainer
 Node2D
 CheckButton
-AnimatedSprite2D
 CharacterBody2D
 HSlider
 LineEdit

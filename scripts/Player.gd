@@ -92,8 +92,6 @@ func update_animation():
 	if State.VisionCompHave:
 		$turn/VisionComp.visible = true
 		
-
-
 func _on_ui_dead():
 	if alive:
 		var _particle = preload("res://scenes/explosion.tscn").instantiate()
