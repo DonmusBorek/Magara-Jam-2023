@@ -1,5 +1,9 @@
-CanvasLayer
+Camera2D
+AudioStreamPlayer2D
 Timer
+Label
+ColorRect
+CanvasLayer
 Button
 Sprite2D
 CollisionShape2D
@@ -10,14 +14,10 @@ StaticBody2D
 CPUParticles2D
 GPUParticles2D
 AudioStreamPlayer
-AudioStreamPlayer2D
-ColorRect
-Label
 Marker2D
 Control
 TextureProgressBar
 WorldEnvironment
-Camera2D
 Line2D
 RayCast2D
 GridContainer

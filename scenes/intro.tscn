@@ -1,0 +1,138 @@
+[gd_scene load_steps=12 format=3 uid="uid://m0j12p7lvnda"]
+
+[ext_resource type="Script" path="res://scripts/introtexts/intro.gd" id="1_gx145"]
+[ext_resource type="FontFile" uid="uid://8dpr5lead7kx" path="res://turkishRoboto-Black.ttf" id="1_q2oq0"]
+[ext_resource type="Script" path="res://scripts/introtexts/introlabel.gd" id="2_4uqmr"]
+[ext_resource type="AudioStream" uid="uid://tp77digxy0mj" path="res://Sound/SoundEffect/textsound.wav" id="3_c3qh2"]
+[ext_resource type="Script" path="res://scripts/introtexts/introlabel2.gd" id="3_l1akl"]
+[ext_resource type="Script" path="res://scripts/introtexts/introlabel3.gd" id="5_xa7qi"]
+[ext_resource type="Script" path="res://scripts/introtexts/introlabel4.gd" id="6_suldn"]
+[ext_resource type="Script" path="res://scripts/introtexts/introlabel5.gd" id="7_pyuk7"]
+[ext_resource type="Script" path="res://scripts/introtexts/introlabel6.gd" id="8_vllx3"]
+[ext_resource type="Script" path="res://scripts/introtexts/introlabel7.gd" id="9_ol78j"]
+[ext_resource type="PackedScene" uid="uid://b6jc6rqa5yav7" path="res://scenes/ackapa.tscn" id="11_kcdbc"]
+
+[node name="Intro" type="Node2D"]
+script = ExtResource("1_gx145")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 499.0
+offset_bottom = 284.0
+color = Color(0, 0, 0, 1)
+
+[node name="introlabel" type="Label" parent="."]
+modulate = Color(0.168627, 1, 0, 1)
+texture_filter = 1
+offset_left = 21.0
+offset_top = 25.0
+offset_right = 444.0
+offset_bottom = 48.0
+theme_override_fonts/font = ExtResource("1_q2oq0")
+horizontal_alignment = 2
+autowrap_mode = 3
+script = ExtResource("2_4uqmr")
+texts = "Seri NO: 117117"
+
+[node name="introlabel2" type="Label" parent="."]
+modulate = Color(0.168627, 1, 0, 1)
+texture_filter = 1
+offset_left = 21.0
+offset_top = 25.0
+offset_right = 444.0
+offset_bottom = 97.0
+theme_override_fonts/font = ExtResource("1_q2oq0")
+theme_override_font_sizes/font_size = 17
+autowrap_mode = 3
+script = ExtResource("3_l1akl")
+texts = "Aktivasyon Başladı."
+
+[node name="introlabel3" type="Label" parent="."]
+modulate = Color(0.168627, 1, 0, 1)
+texture_filter = 1
+offset_left = 23.0
+offset_top = 73.0
+offset_right = 446.0
+offset_bottom = 145.0
+theme_override_fonts/font = ExtResource("1_q2oq0")
+theme_override_font_sizes/font_size = 17
+autowrap_mode = 3
+script = ExtResource("5_xa7qi")
+texts = "Canlılık kontrol ediliyor                         Canlılık Algılandı."
+
+[node name="introlabel4" type="Label" parent="."]
+modulate = Color(0.168627, 1, 0, 1)
+texture_filter = 1
+offset_left = 23.0
+offset_top = 109.0
+offset_right = 446.0
+offset_bottom = 181.0
+theme_override_fonts/font = ExtResource("1_q2oq0")
+theme_override_font_sizes/font_size = 17
+autowrap_mode = 3
+script = ExtResource("6_suldn")
+texts = "Görüş Sistemi kontrol ediliyor               Hasarlı Durumda"
+
+[node name="introlabel5" type="Label" parent="."]
+modulate = Color(0.168627, 1, 0, 1)
+texture_filter = 1
+offset_left = 23.0
+offset_top = 138.0
+offset_right = 446.0
+offset_bottom = 210.0
+theme_override_fonts/font = ExtResource("1_q2oq0")
+theme_override_font_sizes/font_size = 17
+autowrap_mode = 3
+script = ExtResource("7_pyuk7")
+texts = "Hareket Sistemi kontrol ediliyor           Çalışır Durumda"
+
+[node name="introlabel6" type="Label" parent="."]
+modulate = Color(0.168627, 1, 0, 1)
+texture_filter = 1
+offset_left = 23.0
+offset_top = 170.0
+offset_right = 446.0
+offset_bottom = 242.0
+theme_override_fonts/font = ExtResource("1_q2oq0")
+theme_override_font_sizes/font_size = 17
+autowrap_mode = 3
+script = ExtResource("8_vllx3")
+texts = "Silah Sistemi kontrol ediliyor               Silah Bulunamadı"
+
+[node name="introlabel7" type="Label" parent="."]
+modulate = Color(0.168627, 1, 0, 1)
+texture_filter = 1
+offset_left = 23.0
+offset_top = 224.0
+offset_right = 485.0
+offset_bottom = 296.0
+theme_override_fonts/font = ExtResource("1_q2oq0")
+theme_override_font_sizes/font_size = 17
+autowrap_mode = 3
+script = ExtResource("9_ol78j")
+texts = "Gereksinimler Karşılandı    Yardım Sistemi Çalıştırılıyor..."
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 4.0
+autostart = true
+
+[node name="textsound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_c3qh2")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ackapa" parent="CanvasLayer" instance=ExtResource("11_kcdbc")]
+
+[connection signal="display_finished" from="introlabel" to="introlabel2" method="_on_introlabel_display_finished"]
+[connection signal="display_finished" from="introlabel2" to="introlabel3" method="_on_introlabel_2_display_finished"]
+[connection signal="display_finished" from="introlabel3" to="introlabel4" method="_on_introlabel_3_display_finished"]
+[connection signal="display_finished" from="introlabel4" to="introlabel5" method="_on_introlabel_4_display_finished"]
+[connection signal="display_finished" from="introlabel5" to="introlabel6" method="_on_introlabel_5_display_finished"]
+[connection signal="display_finished" from="introlabel6" to="introlabel7" method="_on_introlabel_6_display_finished"]
+[connection signal="display_finished" from="introlabel7" to="." method="_on_introlabel_7_display_finished"]
+[connection signal="timeout" from="Timer" to="introlabel" method="_on_timer_timeout"]
+[connection signal="timeout" from="Timer" to="introlabel2" method="_on_timer_timeout"]
+[connection signal="timeout" from="Timer" to="introlabel3" method="_on_timer_timeout"]
+[connection signal="timeout" from="Timer" to="introlabel4" method="_on_timer_timeout"]
+[connection signal="timeout" from="Timer" to="introlabel5" method="_on_timer_timeout"]
+[connection signal="timeout" from="Timer" to="introlabel6" method="_on_timer_timeout"]
+[connection signal="timeout" from="Timer" to="introlabel7" method="_on_timer_timeout"]

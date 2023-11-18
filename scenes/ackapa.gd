@@ -4,6 +4,7 @@ var changable = false
 var deadAnimPlayOnce = true
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	State.player.can_move = false
 	$Fadeout1.play_backwards("fadeout")
 	changable = false
 	pass # Replace with function body.
@@ -12,6 +13,7 @@ func _ready():
 func _process(delta):
 	if(State.worldEnd):
 		$Fadeout1.play("fadeout")
+		State.player.can_move = false
 		State.worldEnd = false
 		changable = true
 	if(State.playerDead && deadAnimPlayOnce):
@@ -29,4 +31,4 @@ func _on_fadeout_1_animation_finished(anim_name):
 		get_tree().reload_current_scene()
 		State.playerDead = false
 		deadAnimPlayOnce = true
-	pass # Replace with function body.
+	State.player.can_move = true

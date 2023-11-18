@@ -10,7 +10,7 @@ extends Label
 
 var _current_text : String
  
-var _text_sequence
+var _text_sequence = [""]
 var _letter_index = 0
 var _text_number = 0
 

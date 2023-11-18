@@ -7,7 +7,6 @@ var opened = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	State.currentWorld = 0
 	$CanvasLayer/ackapa/Fadeout1.play_backwards("fadeout")
 
 
@@ -28,6 +27,7 @@ func _on_area_2d_area_entered(area):
 
 func _on_fadeout_1_animation_finished(anim_name):
 	if opened:
+		State.currentWorld = 1
 		get_tree().change_scene_to_file("res://scenes/Worlds/world_2.tscn")
 	else:
 		opened = true
