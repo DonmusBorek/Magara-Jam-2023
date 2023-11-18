@@ -17,8 +17,13 @@ func _physics_process(delta):
 	var cast_point := target_position
 	force_raycast_update()
 	
+	$GPUParticles2D2.emitting = is_colliding()
+	
 	if is_colliding():
 		cast_point = to_local(get_collision_point())
+		
+		$GPUParticles2D2.global_rotation = get_collision_normal().angle()
+		$GPUParticles2D2.position = cast_point
 		
 		var collision = get_collider()
 		if collision.name == "Player" && !playerhit:
@@ -34,14 +39,18 @@ func _physics_process(delta):
 	
 	$Line2D.points[1] = cast_point
 	
+	$GPUParticles2D3.position = cast_point * 0.5
+	$GPUParticles2D3.process_material.emission_box_extents.x = cast_point.length() * 0.5
+	
 func _set_casting(cast:bool):
 	casting = cast
 	set_physics_process(casting)
 	
 
 func appear():
-	$GPUParticles2D.emitting = true
+	$GPUParticles2D3.emitting = true
 	collide_with_bodies = true
+	$GPUParticles2D.emitting = true
 	playerhit = false
 	var tween = get_tree().create_tween()
 	tween.tween_property($Line2D,"width",5.0,0.2)
@@ -53,5 +62,8 @@ func disapper():
 	
 func _on_timer_timeout():
 	collide_with_bodies = false
+	$GPUParticles2D3.emitting = false
+	$GPUParticles2D2.emitting = false
+	$GPUParticles2D.emitting = false
 	disapper()
 

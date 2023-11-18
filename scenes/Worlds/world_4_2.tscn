@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://b6jc6rqa5yav7" path="res://scenes/ackapa.tscn" id="5_fn11h"]
 [ext_resource type="PackedScene" uid="uid://dbbsw3u3qfvod" path="res://scenes/door.tscn" id="7_e67yp"]
 [ext_resource type="PackedScene" uid="uid://bvv1ii68l5xih" path="res://scenes/door_button.tscn" id="8_iahow"]
-[ext_resource type="PackedScene" path="res://scenes/floresan.tscn" id="9_xto67"]
+[ext_resource type="PackedScene" uid="uid://b8k7fady4vvuw" path="res://scenes/floresan.tscn" id="9_xto67"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qejr7"]
 size = Vector2(20, 92)

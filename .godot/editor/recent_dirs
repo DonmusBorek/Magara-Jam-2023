@@ -1,7 +1,6 @@
 res://scenes
-res://sprites
-res://Sound/SoundEffect
-res://scripts/introtexts
 res://scenes/Worlds
+res://scripts/introtexts
+res://sprites
 res://
 res://scripts/WorldScripts
