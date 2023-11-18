@@ -14,3 +14,6 @@ res://scripts/WorldScripts/world_2.gd
 res://scenes/Worlds/world_4_2.tscn
 res://scenes/Worlds/platform.tres
 res://scripts/WorldScripts/world_4_2.gd
+res://scenes/Worlds/world_7.tscn
+res://scenes/menu.tscn
+res://scripts/Menu.gd

@@ -57,10 +57,22 @@ tracks/1/keys = {
 "update": 0,
 "values": [Vector2(490, -185)]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Camera2D:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_l1elr"]
 resource_name = "fade"
-length = 1.5
+length = 3.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -68,10 +80,10 @@ tracks/0/path = NodePath("CanvasLayer/Lowerfade:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 1, 1.5, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(490, 728.5), Vector2(490, 460)]
+"values": [Vector2(490, 728.5), Vector2(490, 460), Vector2(490, 460), Vector2(490, 728.5)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -80,10 +92,22 @@ tracks/1/path = NodePath("CanvasLayer/Upperfade:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 1),
+"times": PackedFloat32Array(0, 1, 1.5, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(490, -185), Vector2(490, 84), Vector2(490, 84), Vector2(490, -185)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Camera2D:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(1.1, 1.3),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(490, -185), Vector2(490, 84)]
+"values": [Vector2(0, 0), Vector2(1174, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_4jj7w"]
@@ -97,9 +121,9 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = 24.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(0.5, 0.5)
 script = ExtResource("1_y1xxo")
 
 [node name="Menuback" type="TextureRect" parent="."]
@@ -110,7 +134,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = -1.0
 offset_top = -1.0
-offset_right = -24.0
+offset_right = 482.0
+offset_bottom = 304.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = SubResource("GradientTexture2D_e5dqy")
@@ -123,8 +148,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 1165.0
 offset_top = -1.0
-offset_right = 1143.0
-offset_bottom = 4.0
+offset_right = 1654.0
+offset_bottom = 274.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = SubResource("GradientTexture2D_e5dqy")
@@ -132,20 +157,22 @@ texture = SubResource("GradientTexture2D_e5dqy")
 [node name="MenuButtons" type="Node" parent="."]
 
 [node name="Oyna" type="Button" parent="MenuButtons"]
-offset_left = 390.0
-offset_top = 200.0
-offset_right = 571.0
-offset_bottom = 265.0
+offset_left = 198.0
+offset_top = 99.0
+offset_right = 379.0
+offset_bottom = 164.0
+scale = Vector2(0.5, 0.5)
 theme_override_font_sizes/font_size = 41
 theme_override_styles/focus = SubResource("StyleBoxEmpty_3w5ua")
 toggle_mode = true
 text = "Oyna"
 
 [node name="Ayarlar" type="Button" parent="MenuButtons"]
-offset_left = 390.0
-offset_top = 303.0
-offset_right = 571.0
-offset_bottom = 368.0
+offset_left = 198.0
+offset_top = 147.0
+offset_right = 379.0
+offset_bottom = 212.0
+scale = Vector2(0.5, 0.5)
 theme_override_font_sizes/font_size = 41
 theme_override_styles/focus = SubResource("StyleBoxEmpty_ttjds")
 toggle_mode = true
@@ -153,10 +180,11 @@ text = "Ayarlar
 "
 
 [node name="Cıkıs" type="Button" parent="MenuButtons"]
-offset_left = 390.0
-offset_top = 404.0
-offset_right = 571.0
-offset_bottom = 469.0
+offset_left = 198.0
+offset_top = 199.0
+offset_right = 379.0
+offset_bottom = 264.0
+scale = Vector2(0.5, 0.5)
 theme_override_font_sizes/font_size = 41
 theme_override_styles/focus = SubResource("StyleBoxEmpty_t17ev")
 toggle_mode = true
@@ -166,73 +194,79 @@ text = "Çıkış
 [node name="OptionsButtons" type="Node" parent="."]
 
 [node name="CheckButton" type="CheckButton" parent="OptionsButtons"]
-offset_left = 1215.0
-offset_top = -31.0
-offset_right = 1420.0
-offset_bottom = 61.0
-scale = Vector2(2.595, 2.595)
-theme_override_font_sizes/font_size = 26
+offset_left = 603.0
+offset_top = -14.0
+offset_right = 808.0
+offset_bottom = 78.0
+theme_override_font_sizes/font_size = 28
 theme_override_styles/focus = SubResource("StyleBoxEmpty_nrqba")
 button_pressed = true
-text = "Tam Ekran   "
+text = "Tam Ekran                   "
 flat = true
 alignment = 2
 
 [node name="Geri" type="Button" parent="OptionsButtons"]
-offset_left = 1200.0
-offset_top = 434.0
-offset_right = 1381.0
-offset_bottom = 499.0
+offset_left = 600.0
+offset_top = 221.0
+offset_right = 781.0
+offset_bottom = 286.0
+scale = Vector2(0.5, 0.5)
 theme_override_font_sizes/font_size = 41
 theme_override_styles/focus = SubResource("StyleBoxEmpty_65yv0")
 toggle_mode = true
 text = "Geri"
 
 [node name="Master2" type="HSlider" parent="OptionsButtons"]
-offset_left = 1650.0
-offset_top = 199.0
-offset_right = 2012.0
-offset_bottom = 215.0
+offset_left = 810.0
+offset_top = 89.0
+offset_right = 1172.0
+offset_bottom = 105.0
+scale = Vector2(0.5, 0.5)
 min_value = -25.0
 max_value = 25.0
 
 [node name="Master" type="Label" parent="OptionsButtons"]
-offset_left = 1236.0
-offset_top = 158.0
-offset_right = 1459.0
-offset_bottom = 252.0
+offset_left = 609.0
+offset_top = 58.0
+offset_right = 832.0
+offset_bottom = 152.0
+scale = Vector2(0.5, 0.5)
 theme_override_font_sizes/font_size = 66
 text = "Master"
 
 [node name="Music" type="HSlider" parent="OptionsButtons"]
-offset_left = 1650.0
-offset_top = 274.0
-offset_right = 2012.0
-offset_bottom = 290.0
+offset_left = 810.0
+offset_top = 140.0
+offset_right = 1172.0
+offset_bottom = 156.0
+scale = Vector2(0.5, 0.5)
 min_value = -25.0
 max_value = 25.0
 
 [node name="Music2" type="Label" parent="OptionsButtons"]
-offset_left = 1236.0
-offset_top = 233.0
-offset_right = 1459.0
-offset_bottom = 327.0
+offset_left = 609.0
+offset_top = 109.0
+offset_right = 832.0
+offset_bottom = 203.0
+scale = Vector2(0.5, 0.5)
 theme_override_font_sizes/font_size = 66
 text = "Müzik"
 
 [node name="Sfx" type="HSlider" parent="OptionsButtons"]
-offset_left = 1650.0
-offset_top = 344.0
-offset_right = 2012.0
-offset_bottom = 360.0
+offset_left = 810.0
+offset_top = 188.0
+offset_right = 1172.0
+offset_bottom = 204.0
+scale = Vector2(0.5, 0.5)
 min_value = -25.0
 max_value = 25.0
 
 [node name="Sfx2" type="Label" parent="OptionsButtons"]
-offset_left = 1236.0
-offset_top = 303.0
-offset_right = 1459.0
-offset_bottom = 397.0
+offset_left = 609.0
+offset_top = 157.0
+offset_right = 832.0
+offset_bottom = 251.0
+scale = Vector2(0.5, 0.5)
 theme_override_font_sizes/font_size = 66
 text = "Sfx"
 
@@ -250,7 +284,8 @@ text = "Exorcism 2"
 environment = SubResource("Environment_ebdu5")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(1647, 272)
+z_index = 1
+anchor_mode = 0
 
 [node name="menumusic" type="AudioStreamPlayer2D" parent="Camera2D"]
 position = Vector2(-1159, -16)
@@ -265,15 +300,19 @@ libraries = {
 }
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+scale = Vector2(0.5, 0.5)
+transform = Transform2D(0.5, 0, 0, 0.5, 0, 0)
 
 [node name="Lowerfade" type="Sprite2D" parent="CanvasLayer"]
+z_index = 1
 position = Vector2(490, 728.5)
-scale = Vector2(7.625, 2.91406)
+scale = Vector2(7.73437, 1.45703)
 texture = ExtResource("2_tuuv6")
 
 [node name="Upperfade" type="Sprite2D" parent="CanvasLayer"]
+z_index = 1
 position = Vector2(490, -185)
-scale = Vector2(7.625, 2.91406)
+scale = Vector2(7.46875, 1.45703)
 texture = ExtResource("2_tuuv6")
 
 [connection signal="toggled" from="MenuButtons/Oyna" to="." method="_on_oyna_toggled"]
@@ -284,4 +323,3 @@ texture = ExtResource("2_tuuv6")
 [connection signal="value_changed" from="OptionsButtons/Master2" to="." method="_on_master_2_value_changed"]
 [connection signal="value_changed" from="OptionsButtons/Music" to="." method="_on_music_value_changed"]
 [connection signal="value_changed" from="OptionsButtons/Sfx" to="." method="_on_sfx_value_changed"]
-[connection signal="animation_finished" from="Fade" to="." method="_on_fade_animation_finished"]
