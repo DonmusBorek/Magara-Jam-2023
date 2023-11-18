@@ -1,8 +1,9 @@
-[gd_scene load_steps=15 format=3 uid="uid://c4u01v2bjq5ty"]
+[gd_scene load_steps=16 format=3 uid="uid://c4u01v2bjq5ty"]
 
 [ext_resource type="Script" path="res://Headman.gd" id="1_yslyn"]
 [ext_resource type="Texture2D" uid="uid://tmgqli48n64c" path="res://sprites/homunculus-Sheet.png" id="2_l604h"]
 [ext_resource type="PackedScene" uid="uid://dls3uiopain3t" path="res://hurtful.tscn" id="3_fqt75"]
+[ext_resource type="AudioStream" uid="uid://c2jnt8pn52tfd" path="res://Sound/SoundEffect/plucking-teeth-141417.mp3" id="4_shd4y"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q3jqw"]
 size = Vector2(7, 15)
@@ -89,7 +90,7 @@ shape = SubResource("RectangleShape2D_seyq4")
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_2ujdk")
 autoplay = "default"
-frame_progress = 0.955484
+frame_progress = 0.124712
 
 [node name="playerDetector" type="Area2D" parent="."]
 
@@ -99,4 +100,10 @@ shape = SubResource("CircleShape2D_0toni")
 [node name="jumptimer" type="Timer" parent="."]
 autostart = true
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_shd4y")
+volume_db = -20.0
+autoplay = true
+
+[connection signal="body_entered" from="playerDetector" to="." method="_on_player_detector_body_entered"]
 [connection signal="timeout" from="jumptimer" to="." method="_on_jumptimer_timeout"]

@@ -5,7 +5,7 @@ var mass = 0.5
 var health = 10
 var attack = 20
 var state = "alive"
-var can_move = true
+var can_move = false
 var speed = 10
 
 const SPEED = 300.0
@@ -17,9 +17,6 @@ func _ready():
 	$Hurtful.attack = attack
 
 func _physics_process(delta):
-	
-	if(State.player.can_move): can_move = true
-	else: can_move = false
 	
 	if not is_on_floor():
 		velocity.y += gravity * delta
@@ -49,4 +46,11 @@ func _on_jumptimer_timeout():
 	velocity.x *= 1.2
 	$jumptimer.wait_time = randf_range(0.8, 3)
 	$jumptimer.start()
+	pass # Replace with function body.
+
+
+func _on_player_detector_body_entered(body):
+	if(body == State.player):
+		print("niggaaaaaa")
+		if(State.player.can_move): can_move = true
 	pass # Replace with function body.

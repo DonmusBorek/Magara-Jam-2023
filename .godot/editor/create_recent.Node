@@ -1,5 +1,7 @@
-Timer
+AudioStreamPlayer2D
 CollisionShape2D
+Node2D
+Timer
 Area2D
 Camera2D
 Marker2D
@@ -11,7 +13,6 @@ TileMap
 Node
 GPUParticles2D
 AudioStreamPlayer
-AudioStreamPlayer2D
 Button
 Sprite2D
 AnimationPlayer
@@ -26,7 +27,6 @@ Line2D
 RayCast2D
 GridContainer
 VBoxContainer
-Node2D
 CheckButton
 HSlider
 LineEdit
