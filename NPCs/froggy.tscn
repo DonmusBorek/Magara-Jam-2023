@@ -1,0 +1,122 @@
+[gd_scene load_steps=19 format=3 uid="uid://bn8tg8i6udskp"]
+
+[ext_resource type="Script" path="res://NPCs/froggy.gd" id="1_1c23h"]
+[ext_resource type="Texture2D" uid="uid://dq706vpyyec5h" path="res://sprites/froggydeneme-Sheet.png" id="2_xbxvx"]
+[ext_resource type="PackedScene" uid="uid://dls3uiopain3t" path="res://hurtful.tscn" id="3_4nlqw"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fqcom"]
+atlas = ExtResource("2_xbxvx")
+region = Rect2(0, 0, 240, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8ibg1"]
+atlas = ExtResource("2_xbxvx")
+region = Rect2(240, 0, 240, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3imcl"]
+atlas = ExtResource("2_xbxvx")
+region = Rect2(480, 0, 240, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lu35x"]
+atlas = ExtResource("2_xbxvx")
+region = Rect2(720, 0, 240, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mpxru"]
+atlas = ExtResource("2_xbxvx")
+region = Rect2(960, 0, 240, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t4ny7"]
+atlas = ExtResource("2_xbxvx")
+region = Rect2(1200, 0, 240, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3lstm"]
+atlas = ExtResource("2_xbxvx")
+region = Rect2(1440, 0, 240, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w8rwc"]
+atlas = ExtResource("2_xbxvx")
+region = Rect2(1680, 0, 240, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i2q85"]
+atlas = ExtResource("2_xbxvx")
+region = Rect2(1920, 0, 240, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m7l2b"]
+atlas = ExtResource("2_xbxvx")
+region = Rect2(2160, 0, 240, 160)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lmfej"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fqcom")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8ibg1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3imcl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lu35x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mpxru")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t4ny7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3lstm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w8rwc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i2q85")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m7l2b")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aajja"]
+size = Vector2(114, 133)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6hc4d"]
+size = Vector2(32, 63)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dg6tb"]
+size = Vector2(117, 136)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_27uoa"]
+size = Vector2(35, 64)
+
+[node name="froggy" type="CharacterBody2D"]
+script = ExtResource("1_1c23h")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_lmfej")
+animation = &"walk"
+autoplay = "walk"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(12, 12.5)
+shape = SubResource("RectangleShape2D_aajja")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(-60, 46)
+shape = SubResource("RectangleShape2D_6hc4d")
+
+[node name="Hurtful" parent="." instance=ExtResource("3_4nlqw")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtful"]
+position = Vector2(11.5, 12)
+shape = SubResource("RectangleShape2D_dg6tb")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Hurtful"]
+position = Vector2(-59.5, 46)
+shape = SubResource("RectangleShape2D_27uoa")

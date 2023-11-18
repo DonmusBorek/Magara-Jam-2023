@@ -1,3 +1,7 @@
+CollisionShape2D
+Node3D
+AnimatedSprite2D
+CharacterBody2D
 TileMap
 CanvasLayer
 Timer
@@ -11,7 +15,6 @@ Label
 Marker2D
 Sprite2D
 Control
-CollisionShape2D
 Area2D
 TextureProgressBar
 WorldEnvironment
@@ -24,9 +27,6 @@ VBoxContainer
 Node2D
 CheckButton
 Button
-AnimatedSprite2D
-CharacterBody2D
 HSlider
 LineEdit
 Node
-TextureRect
