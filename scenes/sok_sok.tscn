@@ -64,7 +64,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"default",
-"speed": 12.0
+"speed": 24.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s77c6"]
@@ -77,6 +77,8 @@ script = ExtResource("1_2mkus")
 [node name="anima" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_vyvcl")
+frame = 7
+frame_progress = 1.0
 
 [node name="Attack" type="Area2D" parent="." groups=["soksokattack"]]
 

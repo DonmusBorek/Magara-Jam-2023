@@ -12,6 +12,8 @@ func _ready():
 	if !onworld3:
 		State.on_arsenal = true
 		fadeout()
+		await get_tree().create_timer(3).timeout
+		$texttimer.start()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -48,6 +50,7 @@ func _on_next_pressed():
 			await get_tree().create_timer(3).timeout
 			$CanvasLayer/ackapa/Fadeout1.play_backwards("fadeout")
 			$Control.visible = false
+			$"../AIworld".visible = true
 			$"../../Player".can_move = true
 	else:
 		$CanvasLayer/ackapa/Fadeout1.play("fadeout")

@@ -21,5 +21,4 @@ res://scenes/Worlds/world_headman.tscn
 res://Headman.gd
 res://scenes/headman.tscn
 res://scripts/Player.gd
-res://scenes/Worlds/glow.tres
-res://scenes/Worlds/Fall.gd
+res://scripts/WorldScripts/world_3.gd

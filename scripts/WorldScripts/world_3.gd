@@ -69,6 +69,7 @@ func _on_eyegain_area_entered(area):
 	if area.is_in_group("Player"):
 		player.can_move = false
 		State.arsenal_opened += 1
+		$CanvasLayer/AIworld.visible = false
 		$CanvasLayer/UpgradeStation/CanvasLayer/ackapa/Fadeout1.play("fadeout")
 		await get_tree().create_timer(3).timeout
 		$CanvasLayer/UpgradeStation/CanvasLayer/ackapa/Fadeout1.play_backwards("fadeout")
