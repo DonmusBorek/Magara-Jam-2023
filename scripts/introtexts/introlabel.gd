@@ -6,11 +6,13 @@
 
 extends Label
 
-@onready var timer = $"../../texttimer"
+@onready var timer = $"../Timer"
 
 var _current_text : String
  
-var _text_sequence = [""]
+@export var texts:String
+
+var _text_sequence = []
 var _letter_index = 0
 var _text_number = 0
 
@@ -23,8 +25,7 @@ var _display_finished = false
 signal display_finished()
 
 func _ready():
-	if State.arsenal_opened == 0:
-		_text_sequence = ["dasdasdad.","dasdavv."]
+	_text_sequence.push_front(texts)
 
 func _display_next_text():
 	if _text_number < _text_sequence.size():
@@ -35,6 +36,7 @@ func _display_next_text():
 		_display_letter()
 	else:
 		_display_finished = true
+		await get_tree().create_timer(1).timeout
 		emit_signal("display_finished")
 
 func _display_letter():
@@ -42,7 +44,7 @@ func _display_letter():
 		self.text += _current_text[_letter_index]
 		var next_char_wait = _current_text[_letter_index]
 		_letter_index += 1
-		$"../../letter".play()
+		$"../textsound".play()
 		_start_timer_for_char(next_char_wait)
 	else:
 		_display_next_text()

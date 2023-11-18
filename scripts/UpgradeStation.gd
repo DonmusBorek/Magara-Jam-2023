@@ -31,10 +31,10 @@ func  fadeout():
 func _on_fadeout_animation_finished(anim_name):
 	if onworld3:
 		if !geri:
-			$"../../Player".can_move = false
+			State.player.can_move = false
 			$texttimer.start()
 		else:
-			$"../../Player".can_move = true
+			State.player.can_move = true
 	else:
 		pass
 

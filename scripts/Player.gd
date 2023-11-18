@@ -25,6 +25,7 @@ var jump_buffer_counter = 0
 var alive = true
 
 var can_move = true
+
 func _ready():
 	State.player = self
 	State.playerDead = false
@@ -100,6 +101,7 @@ func _on_ui_dead():
 		_particle.emitting = true
 		get_tree().current_scene.add_child(_particle)
 		emit_signal("deadsignal")
+		State.apply_random_shake()
 		can_move = false
 		alive = false
 		
