@@ -91,4 +91,7 @@ func _on_nextworld_area_entered(area):
 		get_tree().change_scene_to_file("res://scenes/Worlds/world_4.tscn")
 		
 
-
+func _on_player_deadsignal():
+	$CanvasLayer/ackapa/Fadeout1.play("fadeout")
+	await get_tree().create_timer(3).timeout
+	get_tree().change_scene_to_file("res://scenes/Worlds/world_3.tscn")

@@ -10,15 +10,16 @@ func _ready():
 		onworld3 = true
 	
 	if !onworld3:
+		State.on_arsenal = true
 		fadeout()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if State.VisionCompHave && a:
+	if State.VisionCompHave:
 		$Control/head.visible = true
-		$World3timer.start()
-		a = false
+	if !State.VisionCompHave && !onworld3:
+		$Control/head.visible = false
 		
 
 func  fadeout():
@@ -42,11 +43,12 @@ func _on_fadeout_animation_finished(anim_name):
 
 func _on_next_pressed():
 	if onworld3:
-		$CanvasLayer/ackapa/Fadeout1.play("fadeout")
-		await get_tree().create_timer(3).timeout
-		$CanvasLayer/ackapa/Fadeout1.play_backwards("fadeout")
-		$Control.visible = false
-		$"../../Player".can_move = true
+		if State.VisionCompHave && State.knife:
+			$CanvasLayer/ackapa/Fadeout1.play("fadeout")
+			await get_tree().create_timer(3).timeout
+			$CanvasLayer/ackapa/Fadeout1.play_backwards("fadeout")
+			$Control.visible = false
+			$"../../Player".can_move = true
 	else:
 		$CanvasLayer/ackapa/Fadeout1.play("fadeout")
 		await get_tree().create_timer(3).timeout

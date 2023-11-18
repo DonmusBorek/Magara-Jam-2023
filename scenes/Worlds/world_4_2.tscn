@@ -1,77 +1,16 @@
-[gd_scene load_steps=13 format=3 uid="uid://0o4dhf51r0sv"]
+[gd_scene load_steps=10 format=3 uid="uid://0o4dhf51r0sv"]
 
 [ext_resource type="Script" path="res://scripts/WorldScripts/world_4_2.gd" id="1_gs003"]
 [ext_resource type="TileSet" uid="uid://caqgtfl7smp0e" path="res://scenes/Worlds/platform.tres" id="2_0ohq8"]
 [ext_resource type="TileSet" uid="uid://dbcekwogp6tu4" path="res://Tilseset1.tres" id="3_ccls6"]
 [ext_resource type="PackedScene" uid="uid://fbvrsjqpv48e" path="res://scenes/Player.tscn" id="4_sfawh"]
-[ext_resource type="Script" path="res://scripts/fadeout.gd" id="5_0m750"]
-[ext_resource type="Texture2D" uid="uid://qitpvvu66w1" path="res://asansor.png" id="6_tttkt"]
+[ext_resource type="PackedScene" uid="uid://b6jc6rqa5yav7" path="res://scenes/ackapa.tscn" id="5_fn11h"]
 [ext_resource type="PackedScene" uid="uid://dbbsw3u3qfvod" path="res://scenes/door.tscn" id="7_e67yp"]
 [ext_resource type="PackedScene" uid="uid://bvv1ii68l5xih" path="res://scenes/door_button.tscn" id="8_iahow"]
+[ext_resource type="PackedScene" path="res://scenes/floresan.tscn" id="9_xto67"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qejr7"]
 size = Vector2(20, 92)
-
-[sub_resource type="Animation" id="Animation_sokf1"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("CanvasLayer/Marker2D/Sprite2D:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(241, 303)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("CanvasLayer/Marker2D/Sprite2D2:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(241, -77)]
-}
-
-[sub_resource type="Animation" id="Animation_mitrd"]
-resource_name = "fadeout"
-length = 3.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("CanvasLayer/Marker2D/Sprite2D:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(241, 303), Vector2(241, 177)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("CanvasLayer/Marker2D/Sprite2D2:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(241, -77), Vector2(241, 66)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_j6jud"]
-_data = {
-"RESET": SubResource("Animation_sokf1"),
-"fadeout": SubResource("Animation_mitrd")
-}
 
 [node name="World4_2" type="Node2D"]
 script = ExtResource("1_gs003")
@@ -103,26 +42,9 @@ position = Vector2(546, 90)
 shape = SubResource("RectangleShape2D_qejr7")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 2
 
-[node name="Marker2D" type="Marker2D" parent="CanvasLayer"]
-position = Vector2(-3, -2)
-script = ExtResource("5_0m750")
-
-[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/Marker2D"]
-position = Vector2(241, 303)
-scale = Vector2(4.36607, 6.61957)
-texture = ExtResource("6_tttkt")
-
-[node name="Sprite2D2" type="Sprite2D" parent="CanvasLayer/Marker2D"]
-position = Vector2(241, -77)
-scale = Vector2(4.36607, 6.61957)
-texture = ExtResource("6_tttkt")
-
-[node name="Fadeout1" type="AnimationPlayer" parent="CanvasLayer/Marker2D"]
-root_node = NodePath("../../..")
-libraries = {
-"": SubResource("AnimationLibrary_j6jud")
-}
+[node name="ackapa" parent="CanvasLayer" instance=ExtResource("5_fn11h")]
 
 [node name="Door" parent="." instance=ExtResource("7_e67yp")]
 position = Vector2(465, 224)
@@ -139,9 +61,18 @@ position = Vector2(156, 47)
 [node name="Doorbutton4" parent="." instance=ExtResource("8_iahow")]
 position = Vector2(47, 134)
 
+[node name="ColorRect2" type="ColorRect" parent="."]
+offset_left = -46.0
+offset_right = 563.0
+offset_bottom = 291.0
+color = Color(0, 0, 0, 0.588235)
+metadata/_edit_use_anchors_ = true
+
+[node name="Floresan" parent="." instance=ExtResource("9_xto67")]
+position = Vector2(240, 51)
+
 [connection signal="deadsignal" from="Player" to="." method="_on_player_deadsignal" flags=18]
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered" flags=18]
-[connection signal="animation_finished" from="CanvasLayer/Marker2D/Fadeout1" to="." method="_on_fadeout_1_animation_finished" flags=18]
 [connection signal="area_entered" from="Doorbutton" to="." method="_on_doorbutton_area_entered"]
 [connection signal="area_entered" from="Doorbutton2" to="." method="_on_doorbutton_2_area_entered"]
 [connection signal="area_entered" from="Doorbutton3" to="." method="_on_doorbutton_3_area_entered"]

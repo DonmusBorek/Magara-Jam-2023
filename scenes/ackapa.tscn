@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://d3brcwakr54pn"]
+[gd_scene load_steps=7 format=3 uid="uid://b6jc6rqa5yav7"]
 
 [ext_resource type="Texture2D" uid="uid://csqpyi6reodqs" path="res://sprites/basmalisey.png" id="1_bmlcl"]
 [ext_resource type="Script" path="res://scenes/ackapa.gd" id="1_ghmfg"]

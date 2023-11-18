@@ -12,6 +12,7 @@ script = ExtResource("1_mwa04")
 shape = SubResource("RectangleShape2D_2vxbn")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
 texture = ExtResource("1_imkd7")
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
