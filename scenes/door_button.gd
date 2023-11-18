@@ -12,5 +12,5 @@ func _process(delta):
 
 
 func _on_area_entered(area):
-	if area.is_in_group("Player"):
+	if area.is_in_group("soksokattack"):
 		set_deferred("monitoring",false)

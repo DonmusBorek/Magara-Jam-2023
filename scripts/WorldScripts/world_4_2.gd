@@ -36,20 +36,20 @@ func _on_player_deadsignal():
 
 
 func _on_doorbutton_area_entered(area):
-	if area.is_in_group("Player"):
+	if area.is_in_group("soksokattack"):
 		buttonactive += 1
 
 
 func _on_doorbutton_2_area_entered(area):
-	if area.is_in_group("Player"):
+	if area.is_in_group("soksokattack"):
 		buttonactive += 1
 
 
 func _on_doorbutton_3_area_entered(area):
-	if area.is_in_group("Player"):
+	if area.is_in_group("soksokattack"):
 		buttonactive += 1
 
 
 func _on_doorbutton_4_area_entered(area):
-	if area.is_in_group("Player"):
+	if area.is_in_group("soksokattack"):
 		buttonactive += 1
