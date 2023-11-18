@@ -21,3 +21,5 @@ res://scenes/ackapa.gd
 res://NPCs/froggy.gd
 res://Sound/SoundEffect/taktuk.tscn
 res://Sound/SoundEffect/heavytaktuk.tscn
+res://NPCs/murmur.gd
+res://scenes/gunshotsfx.tscn

@@ -1,3 +1,4 @@
+AudioStreamPlayer
 AudioStreamPlayer2D
 TileMap
 CanvasLayer
@@ -10,7 +11,6 @@ AnimationPlayer
 StaticBody2D
 CPUParticles2D
 GPUParticles2D
-AudioStreamPlayer
 ColorRect
 Label
 Marker2D

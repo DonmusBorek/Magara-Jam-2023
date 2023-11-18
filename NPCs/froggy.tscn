@@ -1,10 +1,12 @@
-[gd_scene load_steps=34 format=3 uid="uid://bn8tg8i6udskp"]
+[gd_scene load_steps=36 format=3 uid="uid://bn8tg8i6udskp"]
 
 [ext_resource type="Script" path="res://NPCs/froggy.gd" id="1_1c23h"]
 [ext_resource type="Material" uid="uid://dm2kquhjmemy0" path="res://scenes/HitFlashShaderM1.tres" id="2_4vvp5"]
 [ext_resource type="Texture2D" uid="uid://dq706vpyyec5h" path="res://sprites/froggydeneme-Sheet.png" id="2_xbxvx"]
 [ext_resource type="PackedScene" uid="uid://dls3uiopain3t" path="res://hurtful.tscn" id="3_4nlqw"]
 [ext_resource type="Texture2D" uid="uid://c12vdfafc7mou" path="res://sprites/froggyjump.png" id="3_ok5e1"]
+[ext_resource type="AudioStream" uid="uid://c2jnt8pn52tfd" path="res://Sound/SoundEffect/plucking-teeth-141417.mp3" id="6_1vyqr"]
+[ext_resource type="Script" path="res://NPCs/murmur.gd" id="7_4aalx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_aajja"]
 size = Vector2(109, 128)
@@ -267,6 +269,12 @@ target_position = Vector2(112, 1)
 
 [node name="realjumptimer" type="Timer" parent="."]
 wait_time = 3.0
+
+[node name="murmur" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_1vyqr")
+volume_db = -6.0
+autoplay = true
+script = ExtResource("7_4aalx")
 
 [connection signal="timeout" from="recotimer" to="." method="_on_recotimer_timeout"]
 [connection signal="timeout" from="jumptimer" to="." method="_on_jumptimer_timeout"]

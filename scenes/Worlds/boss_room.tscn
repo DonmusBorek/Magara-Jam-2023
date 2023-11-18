@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://crg67ip8oljyc"]
+[gd_scene load_steps=12 format=3 uid="uid://crg67ip8oljyc"]
 
 [ext_resource type="PackedScene" uid="uid://d3brcwakr54pn" path="res://scenes/ackapa.tscn" id="1_dkufi"]
 [ext_resource type="TileSet" uid="uid://dbcekwogp6tu4" path="res://Tilseset1.tres" id="2_4g6rd"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://bn8tg8i6udskp" path="res://NPCs/froggy.tscn" id="6_2b544"]
 [ext_resource type="Script" path="res://Camera2D.gd" id="6_uq4ho"]
 [ext_resource type="PackedScene" uid="uid://0ufd07f2xa57" path="res://scenes/floresan.tscn" id="7_v3xdo"]
+[ext_resource type="AudioStream" uid="uid://so4s6ytjsuol" path="res://Sound/SoundEffect/main.mp3" id="9_8yk5c"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_t5fu4"]
 texture = ExtResource("4_x2m2m")
@@ -110,3 +111,7 @@ position = Vector2(518, -205)
 
 [node name="Floresan3" parent="." instance=ExtResource("7_v3xdo")]
 position = Vector2(830, -200)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_8yk5c")
+autoplay = true

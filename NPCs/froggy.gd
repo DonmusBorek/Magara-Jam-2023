@@ -118,7 +118,7 @@ func _on_jumptimer_timeout():
 func _on_shuffletimer_timeout():
 	var attacks = [0, 1, 3]
 	atstate = attacks[randi_range(0, 2)]
-	$shuffletimer.wait_time = randf_range(3, 8)
+	$shuffletimer.wait_time = randf_range(2, 4)
 	pass # Replace with function body.
 
 
