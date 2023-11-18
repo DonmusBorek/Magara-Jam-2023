@@ -81,6 +81,7 @@ func _on_eyegain_area_entered(area):
 
 func _on_mini_boss_1_bossdead():
 	$eyegain.global_position = Vector2(715,213)
+	$Door._door_open()
 
 
 func _on_nextworld_area_entered(area):

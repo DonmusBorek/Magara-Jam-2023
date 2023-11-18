@@ -39,3 +39,4 @@ res://scenes/Player.tscn
 res://scripts/Player.gd
 res://scenes/camera_2d.tscn
 res://Camera2D.gd
+res://scenes/door.tscn
