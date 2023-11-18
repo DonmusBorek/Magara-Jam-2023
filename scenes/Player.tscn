@@ -190,4 +190,8 @@ libraries = {
 
 [node name="Gun1" parent="." instance=ExtResource("6_a2dfe")]
 
+[node name="Dashtimer" type="Timer" parent="."]
+one_shot = true
+
 [connection signal="dead" from="UI" to="." method="_on_ui_dead"]
+[connection signal="timeout" from="Dashtimer" to="." method="_on_dashtimer_timeout"]

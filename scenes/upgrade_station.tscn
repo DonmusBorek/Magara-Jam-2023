@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://bkua0s8hor0i0"]
+[gd_scene load_steps=14 format=3 uid="uid://bkua0s8hor0i0"]
 
 [ext_resource type="Script" path="res://scripts/UpgradeStation.gd" id="1_m8ssf"]
 [ext_resource type="PackedScene" uid="uid://dwghnlpbj28k4" path="res://scenes/drop_place.tscn" id="2_8wsbc"]
@@ -6,9 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://cotvulxyq83nm" path="res://sprites/gozparca.png" id="4_v7agf"]
 [ext_resource type="Texture2D" uid="uid://7y0peecvwhth" path="res://sprites/tufek.png" id="5_exetd"]
 [ext_resource type="Script" path="res://scripts/AItext.gd" id="5_ndr25"]
-[ext_resource type="Texture2D" uid="uid://qitpvvu66w1" path="res://asansor.png" id="5_oe8lk"]
 [ext_resource type="Texture2D" uid="uid://dmgqoqbsn7tgn" path="res://sprites/hareketparca.png" id="6_sssq6"]
 [ext_resource type="AudioStream" uid="uid://tp77digxy0mj" path="res://Sound/SoundEffect/textsound.wav" id="7_ygu2k"]
+[ext_resource type="PackedScene" path="res://scenes/ackapa.tscn" id="9_nin7a"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6em1k"]
 atlas = ExtResource("6_sssq6")
@@ -39,91 +39,6 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="Animation" id="Animation_xo05q"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Marker2D/Sprite2D:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(241, 303)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Marker2D/Sprite2D2:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(241, -77)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Control:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-
-[sub_resource type="Animation" id="Animation_x4nud"]
-resource_name = "fadeot"
-length = 5.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Marker2D/Sprite2D:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 2, 3, 5),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(241, 303), Vector2(241, 172), Vector2(241, 172), Vector2(241, 303)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Marker2D/Sprite2D2:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 2, 3, 5),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(241, -77), Vector2(241, 65), Vector2(241, 65), Vector2(241, -77)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Control:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 2.3, 2.8, 5),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [false, false, true, true]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_tqwns"]
-_data = {
-"RESET": SubResource("Animation_xo05q"),
-"fadeot": SubResource("Animation_x4nud")
-}
-
 [node name="UpgradeStation" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -134,7 +49,6 @@ grow_vertical = 2
 script = ExtResource("1_m8ssf")
 
 [node name="Control" type="Control" parent="."]
-visible = false
 anchors_preset = 0
 offset_left = -94.0
 offset_top = 8.0
@@ -158,55 +72,56 @@ color = Color(0.2, 0.2, 0.2, 1)
 position = Vector2(94, -8)
 
 [node name="Drop_place" parent="Control/Empty" groups=["empty"] instance=ExtResource("2_8wsbc")]
-position = Vector2(418, 66)
+position = Vector2(418, 85)
 
 [node name="Drop_place2" parent="Control/Empty" groups=["empty"] instance=ExtResource("2_8wsbc")]
-position = Vector2(343, 66)
+position = Vector2(343, 85)
 
 [node name="Drop_place4" parent="Control/Empty" groups=["empty"] instance=ExtResource("2_8wsbc")]
-position = Vector2(418, 134)
+position = Vector2(418, 153)
 
 [node name="Drop_place6" parent="Control/Empty" groups=["empty"] instance=ExtResource("2_8wsbc")]
-position = Vector2(343, 134)
+position = Vector2(343, 153)
 
 [node name="Drop_place9" parent="Control/Empty" groups=["empty"] instance=ExtResource("2_8wsbc")]
-position = Vector2(343, 134)
+position = Vector2(343, 153)
 
 [node name="Drop_place10" parent="Control/Empty" groups=["empty"] instance=ExtResource("2_8wsbc")]
-position = Vector2(418, 202)
+position = Vector2(418, 221)
 
 [node name="Drop_place12" parent="Control/Empty" groups=["empty"] instance=ExtResource("2_8wsbc")]
-position = Vector2(343, 202)
+position = Vector2(343, 221)
 
 [node name="Placable" type="Node2D" parent="Control"]
 position = Vector2(94, -8)
 
 [node name="Head" parent="Control/Placable" groups=["weapon"] instance=ExtResource("2_8wsbc")]
-position = Vector2(208, 66)
+position = Vector2(208, 85)
 
 [node name="Left_Hand" parent="Control/Placable" groups=["weapon"] instance=ExtResource("2_8wsbc")]
-position = Vector2(179, 134)
+position = Vector2(179, 153)
 
 [node name="Right_Hand" parent="Control/Placable" groups=["weapon"] instance=ExtResource("2_8wsbc")]
-position = Vector2(237, 134)
+position = Vector2(237, 153)
 
 [node name="Ability" parent="Control/Placable" groups=["weapon"] instance=ExtResource("2_8wsbc")]
-position = Vector2(208, 201)
+position = Vector2(208, 220)
 
 [node name="Objects" type="Node2D" parent="Control"]
 position = Vector2(94, -8)
 
-[node name="Object" parent="Control/Objects" instance=ExtResource("3_8op1s")]
+[node name="vision" parent="Control/Objects" instance=ExtResource("3_8op1s")]
 texture_filter = 1
-position = Vector2(418, 66)
+position = Vector2(418, 85)
 nagme = "vision"
 sprite = ExtResource("4_v7agf")
 sprite_scale = Vector2(1, 1)
 can_go = "Head"
 
-[node name="Object2" parent="Control/Objects" instance=ExtResource("3_8op1s")]
+[node name="pump" parent="Control/Objects" instance=ExtResource("3_8op1s")]
+visible = false
 texture_filter = 1
-position = Vector2(418, 134)
+position = Vector2(418, 153)
 nagme = "pump"
 sprite = ExtResource("5_exetd")
 sprite_scale = Vector2(1, 1)
@@ -263,23 +178,13 @@ offset_right = 227.0
 offset_bottom = 267.0
 color = Color(0.145098, 0.145098, 0.145098, 1)
 
-[node name="Marker2D" type="Marker2D" parent="."]
-
-[node name="Fadeout" type="AnimationPlayer" parent="Marker2D"]
-root_node = NodePath("../..")
-libraries = {
-"": SubResource("AnimationLibrary_tqwns")
-}
-
-[node name="Sprite2D" type="Sprite2D" parent="Marker2D"]
-position = Vector2(241, 303)
-scale = Vector2(4.36607, 6.61957)
-texture = ExtResource("5_oe8lk")
-
-[node name="Sprite2D2" type="Sprite2D" parent="Marker2D"]
-position = Vector2(241, -77)
-scale = Vector2(4.36607, 6.61957)
-texture = ExtResource("5_oe8lk")
+[node name="Next" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 466.0
+offset_top = 3.0
+offset_right = 538.0
+offset_bottom = 34.0
+text = "Devam"
 
 [node name="texttimer" type="Timer" parent="."]
 one_shot = true
@@ -291,6 +196,10 @@ stream = ExtResource("7_ygu2k")
 wait_time = 3.0
 one_shot = true
 
-[connection signal="animation_finished" from="Marker2D/Fadeout" to="." method="_on_fadeout_animation_finished"]
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 2
+
+[node name="ackapa" parent="CanvasLayer" instance=ExtResource("9_nin7a")]
+
+[connection signal="pressed" from="Control/Next" to="." method="_on_next_pressed"]
 [connection signal="timeout" from="texttimer" to="Control/AItext" method="_on_timer_timeout"]
-[connection signal="timeout" from="World3timer" to="." method="_on_world_3_timer_timeout"]

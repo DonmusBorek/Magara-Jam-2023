@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scripts/drop_place.gd" id="1_s7xrv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hq147"]
-size = Vector2(40, 40)
+size = Vector2(38, 38)
 
 [node name="Drop_place" type="StaticBody2D" groups=["dropable"]]
 collision_layer = 8

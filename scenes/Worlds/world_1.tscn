@@ -4,8 +4,8 @@
 [ext_resource type="TileSet" uid="uid://dbcekwogp6tu4" path="res://Tilseset1.tres" id="1_stto2"]
 [ext_resource type="PackedScene" uid="uid://fbvrsjqpv48e" path="res://scenes/Player.tscn" id="2_muom3"]
 [ext_resource type="Shader" path="res://thermal.gdshader" id="4_5kh60"]
-[ext_resource type="PackedScene" uid="uid://d3brcwakr54pn" path="res://scenes/ackapa.tscn" id="5_kcsqp"]
-[ext_resource type="PackedScene" uid="uid://0ufd07f2xa57" path="res://scenes/floresan.tscn" id="6_f7a83"]
+[ext_resource type="PackedScene" path="res://scenes/ackapa.tscn" id="5_kcsqp"]
+[ext_resource type="PackedScene" path="res://scenes/floresan.tscn" id="6_f7a83"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ijs7t"]
 shader = ExtResource("4_5kh60")
@@ -36,6 +36,7 @@ position = Vector2(107, 211)
 anchor_mode = 0
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 2
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
 visible = false

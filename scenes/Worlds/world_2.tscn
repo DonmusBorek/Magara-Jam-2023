@@ -5,8 +5,8 @@
 [ext_resource type="PackedScene" uid="uid://fbvrsjqpv48e" path="res://scenes/Player.tscn" id="1_sw046"]
 [ext_resource type="Shader" path="res://thermal.gdshader" id="3_y0ewo"]
 [ext_resource type="Texture2D" uid="uid://qitpvvu66w1" path="res://asansor.png" id="5_j8ysg"]
-[ext_resource type="PackedScene" uid="uid://d3brcwakr54pn" path="res://scenes/ackapa.tscn" id="5_md2ke"]
-[ext_resource type="PackedScene" uid="uid://0ufd07f2xa57" path="res://scenes/floresan.tscn" id="7_j5302"]
+[ext_resource type="PackedScene" path="res://scenes/ackapa.tscn" id="5_md2ke"]
+[ext_resource type="PackedScene" path="res://scenes/floresan.tscn" id="7_j5302"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_bufnw"]
 shader = ExtResource("3_y0ewo")
@@ -74,6 +74,7 @@ layer_0/tile_data = PackedInt32Array(917504, 65536, 2, 1048605, 65536, 4, 983069
 position = Vector2(16, 218)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 2
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
 visible = false
@@ -84,7 +85,6 @@ offset_right = 513.0
 offset_bottom = 295.0
 
 [node name="ackapa" parent="CanvasLayer" instance=ExtResource("5_md2ke")]
-visible = false
 
 [node name="Platform" type="StaticBody2D" parent="."]
 position = Vector2(402, 254)
@@ -139,6 +139,7 @@ color = Color(0, 0, 0, 0.588235)
 [node name="Floresan" parent="." instance=ExtResource("7_j5302")]
 position = Vector2(232, 50)
 
+[connection signal="deadsignal" from="Player" to="." method="_on_player_deadsignal"]
 [connection signal="area_entered" from="Platform/platformdetect" to="." method="_on_platformdetect_area_entered"]
 [connection signal="area_exited" from="Platform/platformdetect" to="." method="_on_platformdetect_area_exited"]
 [connection signal="area_entered" from="Platform/Squish2" to="." method="_on_squish_2_area_entered"]

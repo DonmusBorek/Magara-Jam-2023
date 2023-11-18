@@ -6,7 +6,11 @@ var geri = false
 var onworld3 = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	fadeout()
+	if get_parent().get_parent() != null:
+		onworld3 = true
+	
+	if !onworld3:
+		fadeout()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -18,7 +22,9 @@ func _process(delta):
 		
 
 func  fadeout():
-	$Marker2D/Fadeout.play("fadeot")
+	$CanvasLayer/ackapa/Fadeout1.play_backwards("fadeout")
+	if !onworld3:
+		$CanvasLayer/ackapa/Fadeout1.seek(2.5,true)
 	geri = false
 
 
@@ -32,7 +38,16 @@ func _on_fadeout_animation_finished(anim_name):
 	else:
 		pass
 
-func _on_world_3_timer_timeout():
-	
-	$Marker2D/Fadeout.play_backwards("fadeot")
-	geri = true
+
+
+func _on_next_pressed():
+	if onworld3:
+		$CanvasLayer/ackapa/Fadeout1.play("fadeout")
+		await get_tree().create_timer(3).timeout
+		$CanvasLayer/ackapa/Fadeout1.play_backwards("fadeout")
+		$Control.visible = false
+		$"../../Player".can_move = true
+	else:
+		$CanvasLayer/ackapa/Fadeout1.play("fadeout")
+		await get_tree().create_timer(3).timeout
+		#targescene
