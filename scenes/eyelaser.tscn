@@ -1,6 +1,32 @@
-[gd_scene load_steps=2 format=3 uid="uid://c43ype5314pvf"]
+[gd_scene load_steps=8 format=3 uid="uid://c43ype5314pvf"]
 
 [ext_resource type="Script" path="res://scripts/eyelaser.gd" id="1_c0srk"]
+[ext_resource type="Texture2D" uid="uid://cmih5nnhfauhf" path="res://sprites/glowing_circle.png" id="2_0jp84"]
+
+[sub_resource type="Gradient" id="Gradient_b6518"]
+offsets = PackedFloat32Array(0.451852, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_f1q7x"]
+gradient = SubResource("Gradient_b6518")
+
+[sub_resource type="Curve" id="Curve_li4s3"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_0no3a"]
+curve = SubResource("Curve_li4s3")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_qu4np"]
+lifetime_randomness = 0.3
+particle_flag_disable_z = true
+gravity = Vector3(0, 0, 0)
+initial_velocity_min = 120.0
+initial_velocity_max = 120.0
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+scale_curve = SubResource("CurveTexture_0no3a")
+color_ramp = SubResource("GradientTexture1D_f1q7x")
 
 [node name="Eyelaser" type="RayCast2D" groups=["Hurt"]]
 z_index = -1
@@ -18,5 +44,11 @@ default_color = Color(1, 0.65098, 0, 0.670588)
 wait_time = 1.75
 one_shot = true
 autostart = true
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+modulate = Color(1.27, 0.65, 0, 0.41)
+amount = 20
+process_material = SubResource("ParticleProcessMaterial_qu4np")
+texture = ExtResource("2_0jp84")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
