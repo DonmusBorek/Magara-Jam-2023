@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 var isfroggy = 1
-var mass = 1
+var mass = 0.2
 var health = 1000
 var attack = 10
 var state = "alive"
@@ -54,6 +54,5 @@ func _on_jumptimer_timeout():
 
 func _on_player_detector_body_entered(body):
 	if(body == State.player):
-		print("niggaaaaaa")
 		can_can_move = true
 	pass # Replace with function body.

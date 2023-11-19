@@ -1,3 +1,5 @@
+CollisionShape2D
+Area2D
 AudioStreamPlayer2D
 TextureButton
 AnimationPlayer
@@ -5,11 +7,9 @@ TextureProgressBar
 AnimatedSprite2D
 Timer
 Sprite2D
-CollisionShape2D
 CharacterBody2D
 Node2D
 StaticBody2D
-Area2D
 Camera2D
 Marker2D
 CanvasLayer

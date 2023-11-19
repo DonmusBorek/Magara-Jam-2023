@@ -13,3 +13,13 @@ res://scenes/Worlds/world_8.tscn
 res://scripts/UpgradeStation.gd
 res://scripts/WorldScripts/World8.gd
 res://scripts/state.gd
+res://scenes/Worlds/world_3.tscn
+res://scenes/Worlds/boss_room.tscn
+res://scenes/Worlds/world_10.tscn
+res://scenes/sok_sok.tscn
+res://scenes/sok_sok.gd
+res://scenes/Worlds/world_headman.tscn
+res://scenes/Worlds/world_headman.gd
+res://scenes/headman.tscn
+res://scenes/ackapa.gd
+res://Headman.gd

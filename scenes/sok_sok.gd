@@ -6,7 +6,7 @@ func _ready():
 	pass # Replace with function body.
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if(Input.is_action_just_pressed("Left_Click")):
+	if(Input.is_action_just_pressed("Right_Click")):
 		$anima.play("default")
 	if($anima.frame == 3 or $anima.frame == 4 or $anima.frame == 5 or $anima.frame == 6):
 		$Attack/CollisionShape2D.disabled = false
