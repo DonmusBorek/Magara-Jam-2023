@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://dna7gj16e5sxq"]
+[gd_scene load_steps=40 format=3 uid="uid://dna7gj16e5sxq"]
 
 [ext_resource type="Script" path="res://scenes/Worlds/world_shooter_1.gd" id="1_rrxar"]
 [ext_resource type="TileSet" uid="uid://dbcekwogp6tu4" path="res://Tilseset1.tres" id="1_xd5vh"]
@@ -9,7 +9,6 @@
 [ext_resource type="Texture2D" uid="uid://du6r6m1fltke4" path="res://sprites/kutusheet.png" id="4_jwn72"]
 [ext_resource type="Script" path="res://Camera2D.gd" id="4_kuyla"]
 [ext_resource type="Script" path="res://scenes/Worlds/Fall.gd" id="5_7vgmp"]
-[ext_resource type="PackedScene" uid="uid://dwpuixeiq62vc" path="res://gun_1.tscn" id="5_lghy0"]
 [ext_resource type="PackedScene" uid="uid://dls3uiopain3t" path="res://hurtful.tscn" id="6_7fae2"]
 [ext_resource type="PackedScene" uid="uid://bl1i20vwjfqms" path="res://NPCs/MiniBoss1.tscn" id="9_xcy0j"]
 [ext_resource type="Shader" uid="uid://s7s30mt8g442" path="res://scenes/Player.tres" id="10_edjwt"]
@@ -203,31 +202,31 @@ size = Vector2(238, 63)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0b08t"]
 size = Vector2(238, 63)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_rhg5m"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3v1k0"]
 resource_local_to_scene = true
 shader = ExtResource("10_edjwt")
 shader_parameter/enabled = false
 shader_parameter/tint = Color(0.996945, 6e-06, 2e-06, 1)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_yws6g"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ko1c5"]
 resource_local_to_scene = true
 shader = ExtResource("10_edjwt")
 shader_parameter/enabled = false
 shader_parameter/tint = Color(0.996945, 6e-06, 2e-06, 1)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_oj5to"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4lt6t"]
 resource_local_to_scene = true
 shader = ExtResource("10_edjwt")
 shader_parameter/enabled = false
 shader_parameter/tint = Color(0.996945, 6e-06, 2e-06, 1)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_h1se4"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fv80e"]
 resource_local_to_scene = true
 shader = ExtResource("10_edjwt")
 shader_parameter/enabled = false
 shader_parameter/tint = Color(0.996945, 6e-06, 2e-06, 1)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_3qkld"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_x3bn6"]
 resource_local_to_scene = true
 shader = ExtResource("10_edjwt")
 shader_parameter/enabled = false
@@ -279,19 +278,19 @@ _data = {
 "platfor": SubResource("Animation_gbyj7")
 }
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_0lvuw"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_iopi7"]
 resource_local_to_scene = true
 shader = ExtResource("10_edjwt")
 shader_parameter/enabled = false
 shader_parameter/tint = Color(0.996945, 6e-06, 2e-06, 1)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_p1s8o"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_yx4y7"]
 resource_local_to_scene = true
 shader = ExtResource("10_edjwt")
 shader_parameter/enabled = false
 shader_parameter/tint = Color(0.996945, 6e-06, 2e-06, 1)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_x5rm8"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ktpil"]
 resource_local_to_scene = true
 shader = ExtResource("10_edjwt")
 shader_parameter/enabled = false
@@ -325,8 +324,6 @@ position = Vector2(0, -40)
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
 script = ExtResource("4_kuyla")
-
-[node name="Gun1" parent="Player" instance=ExtResource("5_lghy0")]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = 2
@@ -363,11 +360,11 @@ position = Vector2(17, -119.5)
 shape = SubResource("RectangleShape2D_0b08t")
 
 [node name="MiniBoss1" parent="." instance=ExtResource("9_xcy0j")]
-material = SubResource("ShaderMaterial_rhg5m")
+material = SubResource("ShaderMaterial_3v1k0")
 position = Vector2(-3962, 1153)
 
 [node name="MiniBoss2" parent="." instance=ExtResource("9_xcy0j")]
-material = SubResource("ShaderMaterial_yws6g")
+material = SubResource("ShaderMaterial_ko1c5")
 position = Vector2(-3612, 1160)
 
 [node name="Eye" parent="." instance=ExtResource("11_6sguu")]
@@ -387,15 +384,15 @@ position = Vector2(-1372, 679)
 rotation = 3.14159
 
 [node name="Headman" parent="." instance=ExtResource("12_2hl3p")]
-material = SubResource("ShaderMaterial_oj5to")
+material = SubResource("ShaderMaterial_4lt6t")
 position = Vector2(-2829, 1166)
 
 [node name="Headman2" parent="." instance=ExtResource("12_2hl3p")]
-material = SubResource("ShaderMaterial_h1se4")
+material = SubResource("ShaderMaterial_fv80e")
 position = Vector2(-2799, 1164)
 
 [node name="MiniBoss3" parent="." instance=ExtResource("9_xcy0j")]
-material = SubResource("ShaderMaterial_3qkld")
+material = SubResource("ShaderMaterial_x3bn6")
 position = Vector2(-2321, 1163)
 
 [node name="Platform" type="StaticBody2D" parent="."]
@@ -435,15 +432,15 @@ script = ExtResource("14_3vq4x")
 environment = ExtResource("14_hhmfp")
 
 [node name="MiniBoss4" parent="." instance=ExtResource("9_xcy0j")]
-material = SubResource("ShaderMaterial_0lvuw")
+material = SubResource("ShaderMaterial_iopi7")
 position = Vector2(-1451, 663)
 
 [node name="MiniBoss5" parent="." instance=ExtResource("9_xcy0j")]
-material = SubResource("ShaderMaterial_p1s8o")
+material = SubResource("ShaderMaterial_yx4y7")
 position = Vector2(-998, 649)
 
 [node name="MiniBoss6" parent="." instance=ExtResource("9_xcy0j")]
-material = SubResource("ShaderMaterial_x5rm8")
+material = SubResource("ShaderMaterial_ktpil")
 position = Vector2(251, 663)
 
 [node name="florance" type="Node2D" parent="."]

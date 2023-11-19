@@ -30,6 +30,7 @@ func _ready():
 		$Control/Objects/pump.visible = true
 	if State.currentWorld == 10:
 		$Control/Objects/dash.visible = true
+		$Control/Objects/pump.visible = true
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

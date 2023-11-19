@@ -32,6 +32,19 @@ func _ready():
 	State.playerDead = false
 	
 func _physics_process(delta):
+	
+	if State.knife:
+		$turn/SokSok/isactive.active = true
+	else:
+		$turn/SokSok/isactive.active = false
+	
+	if State.EyePump:
+		$Gun1/isactive.active = true
+	else:
+		$Gun1/isactive.active = false
+	
+	
+	
 	if(Input.is_action_just_pressed("ui_down")):
 		position.y += 1
 	update_animation()

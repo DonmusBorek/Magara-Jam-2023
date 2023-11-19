@@ -42,7 +42,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(269, 256)]
+"values": [Vector2(272, 236)]
 }
 
 [sub_resource type="Animation" id="Animation_psjoq"]
@@ -58,7 +58,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 2),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(-2128, 1192), Vector2(272, 125)]
+"values": [Vector2(272, 236), Vector2(272, 123)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_o37dm"]
@@ -67,7 +67,7 @@ _data = {
 "platform": SubResource("Animation_psjoq")
 }
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_aybcp"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_flxty"]
 resource_local_to_scene = true
 shader = ExtResource("11_irsu6")
 shader_parameter/enabled = false
@@ -129,7 +129,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Platform" type="StaticBody2D" parent="."]
 z_index = 1
-position = Vector2(269, 256)
+position = Vector2(272, 236)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Platform"]
 position = Vector2(-24.5, -24.5)
@@ -160,7 +160,7 @@ libraries = {
 }
 
 [node name="MiniBoss1" parent="." instance=ExtResource("6_oxajl")]
-material = SubResource("ShaderMaterial_aybcp")
+material = SubResource("ShaderMaterial_flxty")
 position = Vector2(923, 201)
 
 [node name="Squish1" type="Area2D" parent="."]
