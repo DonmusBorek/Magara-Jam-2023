@@ -111,13 +111,13 @@ size = Vector2(27, 9)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qa145"]
 size = Vector2(331, 802)
 
-[sub_resource type="Animation" id="Animation_c3ldn"]
-resource_name = "HitFlash"
+[sub_resource type="Animation" id="Animation_nfmpt"]
+resource_name = "HitFlash2"
 length = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath(".:material:shader_parameter/enabled")
+tracks/0/path = NodePath("marker/Ust:material:shader_parameter/enabled")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -126,13 +126,25 @@ tracks/0/keys = {
 "update": 1,
 "values": [true, false]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("marker/Asagi:material:shader_parameter/enabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
 
-[sub_resource type="Animation" id="Animation_8jcrv"]
+[sub_resource type="Animation" id="Animation_1lkip"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath(".:material:shader_parameter/enabled")
+tracks/0/path = NodePath("marker/Ust:material:shader_parameter/enabled")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -141,11 +153,23 @@ tracks/0/keys = {
 "update": 1,
 "values": [false]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("marker/Asagi:material:shader_parameter/enabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_k8oef"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_s52ee"]
 _data = {
-"HitFlash": SubResource("Animation_c3ldn"),
-"RESET": SubResource("Animation_8jcrv")
+"HitFlash2": SubResource("Animation_nfmpt"),
+"RESET": SubResource("Animation_1lkip")
 }
 
 [node name="MiniBoss1" type="CharacterBody2D" groups=["Enemy"]]
@@ -193,7 +217,7 @@ shape = SubResource("RectangleShape2D_qa145")
 
 [node name="HitFlash" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_k8oef")
+"": SubResource("AnimationLibrary_s52ee")
 }
 
 [connection signal="body_entered" from="marker/Detector" to="." method="_on_detector_body_entered"]

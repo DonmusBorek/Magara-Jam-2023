@@ -1,7 +1,7 @@
-Node2D
+AnimationPlayer
 CollisionShape2D
 StaticBody2D
-AnimationPlayer
+Node2D
 AudioStreamPlayer2D
 Area2D
 AudioStreamPlayer2D

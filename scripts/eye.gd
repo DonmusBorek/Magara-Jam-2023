@@ -54,5 +54,5 @@ func _on_timer_timeout():
 
 func _on_eyecollision_area_entered(area):
 	if area.is_in_group("soksokattack") or area.is_in_group("gun"):
-		print(area.name)
+		$HitFlash.play("HitFlash")
 		health -= 5
