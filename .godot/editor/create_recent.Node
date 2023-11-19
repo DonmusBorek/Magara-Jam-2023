@@ -1,3 +1,4 @@
+AudioStreamPlayer
 AudioStreamPlayer2D
 TextureButton
 AnimationPlayer
@@ -17,7 +18,6 @@ CanvasGroup
 TileMap
 Node
 GPUParticles2D
-AudioStreamPlayer
 Button
 CPUParticles2D
 ColorRect
