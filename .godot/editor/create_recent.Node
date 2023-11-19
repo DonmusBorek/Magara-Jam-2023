@@ -1,8 +1,8 @@
+AudioStreamPlayer2D
 TextureButton
 TileMap
 CollisionShape2D
 Area2D
-AudioStreamPlayer2D
 AnimationPlayer
 TextureProgressBar
 AnimatedSprite2D

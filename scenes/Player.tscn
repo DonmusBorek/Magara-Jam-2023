@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://fbvrsjqpv48e"]
+[gd_scene load_steps=26 format=3 uid="uid://fbvrsjqpv48e"]
 
 [ext_resource type="Material" uid="uid://d18a0ol1keis" path="res://scenes/HitFlashShader.tres" id="1_d6mo7"]
 [ext_resource type="Script" path="res://scripts/Player.gd" id="1_scjqm"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://dl5cwjk5oy5hb" path="res://scenes/sok_sok.tscn" id="5_w7a5o"]
 [ext_resource type="PackedScene" uid="uid://c37hg3fyrbv4b" path="res://scenes/ui.tscn" id="5_wmgpi"]
 [ext_resource type="PackedScene" uid="uid://dce8trjqio4he" path="res://isactive.tscn" id="6_khpj1"]
+[ext_resource type="AudioStream" uid="uid://f36w5p3im2y8" path="res://Sound/SoundEffect/SFX_Explosion_SciFi.wav" id="12_838kf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fmgm2"]
 size = Vector2(26.465, 11)
@@ -210,5 +211,8 @@ libraries = {
 }
 
 [node name="UI" parent="." instance=ExtResource("5_wmgpi")]
+
+[node name="labomba" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("12_838kf")
 
 [connection signal="dead" from="UI" to="." method="_on_ui_dead"]

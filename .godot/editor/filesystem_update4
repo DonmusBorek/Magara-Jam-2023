@@ -18,3 +18,7 @@ res://scenes/Worlds/world_headman.tscn
 res://scenes/Worlds/boss_room.tscn
 res://scenes/drop_place.tscn
 res://scenes/floresan.tscn
+res://scripts/Player.gd
+res://scenes/door_button.tscn
+res://scenes/door_button.gd
+res://scenes/Worlds/world_4.tscn

@@ -117,6 +117,7 @@ func update_animation():
 func _on_ui_dead():
 	if alive:
 		var _particle = preload("res://scenes/explosion.tscn").instantiate()
+		$labomba.play()
 		_particle.position = global_position
 		_particle.emitting = true
 		get_tree().current_scene.add_child(_particle)

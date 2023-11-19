@@ -9,14 +9,14 @@
 [ext_resource type="PackedScene" uid="uid://dbbsw3u3qfvod" path="res://scenes/door.tscn" id="7_yfd5y"]
 [ext_resource type="PackedScene" uid="uid://bvv1ii68l5xih" path="res://scenes/door_button.tscn" id="8_i33ci"]
 [ext_resource type="PackedScene" uid="uid://bl1i20vwjfqms" path="res://NPCs/MiniBoss1.tscn" id="9_2sa5f"]
-[ext_resource type="Environment" uid="uid://cfimef8lfv0p4" path="res://scenes/Worlds/glow.tres" id="10_5n8kt"]
-[ext_resource type="PackedScene" uid="uid://b8k7fady4vvuw" path="res://scenes/floresan.tscn" id="10_x7duh"]
+[ext_resource type="Environment" uid="uid://wkxkytfd75u2" path="res://scenes/Worlds/glow.tres" id="10_5n8kt"]
+[ext_resource type="PackedScene" uid="uid://0ufd07f2xa57" path="res://scenes/floresan.tscn" id="10_x7duh"]
 [ext_resource type="Shader" uid="uid://s7s30mt8g442" path="res://scenes/Player.tres" id="10_ymref"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qejr7"]
 size = Vector2(20, 92)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_5wl0q"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xcni1"]
 resource_local_to_scene = true
 shader = ExtResource("10_ymref")
 shader_parameter/enabled = false
@@ -71,7 +71,7 @@ position = Vector2(465, 224)
 position = Vector2(416, 147)
 
 [node name="MiniBoss1" parent="." instance=ExtResource("9_2sa5f")]
-material = SubResource("ShaderMaterial_5wl0q")
+material = SubResource("ShaderMaterial_xcni1")
 position = Vector2(431, 201)
 
 [node name="Floresan" parent="." instance=ExtResource("10_x7duh")]
