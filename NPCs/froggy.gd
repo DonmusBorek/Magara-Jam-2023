@@ -99,6 +99,7 @@ func _physics_process(delta):
 		emit_signal("bossdead")
 		modulate = Color.DIM_GRAY
 		global_rotation = 90
+		$turn/anima.stop()
 		set_physics_process(false)
 	#Le Turno
 	if(velocity.x == 0):

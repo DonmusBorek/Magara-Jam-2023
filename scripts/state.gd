@@ -5,6 +5,8 @@ var on_arsenal = false
 var on_menu = false
 var on_intro = false
 
+var on_end = false
+
 var player
 var playerDead
 
@@ -82,7 +84,7 @@ func apply_noise_sway() -> void:
 	shake_type = ShakeType.Sway
 	
 func _process(delta: float) -> void:
-	if (!on_arsenal && !on_menu && !on_intro):
+	if (!on_arsenal && !on_menu && !on_intro && !on_end):
 		if(knife):
 			player.get_node("turn/SokSok/isactive").active = true
 		else:

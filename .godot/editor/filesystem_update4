@@ -50,3 +50,6 @@ res://NPCs/froggy.gd
 res://scenes/Worlds/BossBar.gd
 res://scenes/a_iworld.tscn
 res://scenes/aitextworld.gd
+res://end.tscn
+res://endLabel.gd
+res://end.gd

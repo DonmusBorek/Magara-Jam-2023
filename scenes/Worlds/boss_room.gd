@@ -17,14 +17,15 @@ func _process(delta):
 
 func _on_froggy_bossdead():
 	$Door._door_open()
+	$AudioStreamPlayer.stop()
 
 
-func _on_elevin_area_entered(area):
+
+
+func _on_area_2d_area_entered(area):
 	if area.is_in_group("Player"):
-		$Player.can_move = false
 		$end.play("end")
 
 
-func _on_endarea_area_entered(area):
-	if area.is_in_group("Player"):
-		pass
+func _on_end_animation_finished(anim_name):
+	get_tree().change_scene_to_file("res://end.tscn")

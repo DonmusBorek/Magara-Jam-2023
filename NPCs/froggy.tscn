@@ -241,7 +241,7 @@ wait_time = 0.3
 texture_filter = 1
 material = ExtResource("2_4vvp5")
 sprite_frames = SubResource("SpriteFrames_lmfej")
-animation = &"jump"
+animation = &"walk"
 autoplay = "walk"
 
 [node name="Hurtful" parent="turn" instance=ExtResource("3_4nlqw")]
