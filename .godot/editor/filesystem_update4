@@ -15,3 +15,9 @@ res://scenes/sok_sok.tscn
 res://NPCs/MiniBoss1.tscn
 res://scenes/laserbegin.tres
 res://gun_1.gd
+res://Headman.gd
+res://gun_1.tscn
+res://platfor.gd
+res://scripts/Player.gd
+res://scenes/ui.tscn
+res://NPCs/MiniBoss1.gd

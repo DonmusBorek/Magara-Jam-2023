@@ -1,8 +1,8 @@
 extends CharacterBody2D
 
-var is_froggy
-var mass = 0.5
-var health = 10
+var isfroggy = 1
+var mass = 1
+var health = 1000
 var attack = 10
 var state = "alive"
 var can_move = false
@@ -25,7 +25,7 @@ func _physics_process(delta):
 		velocity.y += gravity * delta
 	
 	if(health <= 0): state = "dead"
-	if(state == "alive" && can_move):
+	if(state == "alive" && can_move && !$HitFlash.is_playing()):
 		if(State.player.global_position.x < position.x):
 			var tween = get_tree().create_tween()
 			tween.tween_property(self, "speed", -500, 3)
