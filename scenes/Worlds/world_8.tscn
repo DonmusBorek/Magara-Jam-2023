@@ -7,9 +7,9 @@
 [ext_resource type="PackedScene" uid="uid://cl1wdbdm28en0" path="res://scenes/eye.tscn" id="4_se0qs"]
 [ext_resource type="PackedScene" uid="uid://b6jc6rqa5yav7" path="res://scenes/ackapa.tscn" id="6_6f21o"]
 [ext_resource type="PackedScene" uid="uid://ck1qqt2h66flu" path="res://scenes/a_iworld.tscn" id="6_54vnm"]
-[ext_resource type="Environment" uid="uid://wkxkytfd75u2" path="res://scenes/Worlds/glow.tres" id="7_v0e15"]
+[ext_resource type="Environment" uid="uid://cfimef8lfv0p4" path="res://scenes/Worlds/glow.tres" id="7_v0e15"]
 [ext_resource type="PackedScene" uid="uid://dbbsw3u3qfvod" path="res://scenes/door.tscn" id="9_xbyi1"]
-[ext_resource type="PackedScene" uid="uid://0ufd07f2xa57" path="res://scenes/floresan.tscn" id="10_r56ib"]
+[ext_resource type="PackedScene" uid="uid://b8k7fady4vvuw" path="res://scenes/floresan.tscn" id="10_r56ib"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qejr7"]
 size = Vector2(20, 92)
@@ -65,7 +65,6 @@ metadata/_edit_use_anchors_ = true
 [node name="AIworld" parent="CanvasLayer" instance=ExtResource("6_54vnm")]
 
 [node name="ackapa" parent="CanvasLayer" instance=ExtResource("6_6f21o")]
-visible = false
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = ExtResource("7_v0e15")

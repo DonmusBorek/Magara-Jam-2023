@@ -67,10 +67,11 @@ func _on_next_pressed():
 				$Control.visible = false
 				$"../AIworld".visible = true
 				$"../../Player".can_move = true
-		else:
-			$CanvasLayer/ackapa/Fadeout1.play("fadeout")
-			await get_tree().create_timer(3).timeout
-			get_tree().change_scene_to_file(State.Worlds[State.currentWorld])
+		elif State.currentWorld == 8:
+			if State.EyePump:
+				$CanvasLayer/ackapa/Fadeout1.play("fadeout")
+				await get_tree().create_timer(3).timeout
+				get_tree().change_scene_to_file(State.Worlds[State.currentWorld+1])
 
 
 func _on_a_itext_display_finished():

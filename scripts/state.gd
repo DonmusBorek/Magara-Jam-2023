@@ -20,7 +20,7 @@ var worldEnd = false
 var Worlds = ["res://scenes/Worlds/world_1.tscn", 
 "res://scenes/Worlds/world_2.tscn", "res://scenes/Worlds/world_3.tscn","res://scenes/Worlds/world_4.tscn",
 "res://scenes/Worlds/world_4_2.tscn","res://scenes/Worlds/world_5.tscn","res://scenes/Worlds/world_6.tscn",
-"res://scenes/Worlds/world_7.tscn","res://scenes/Worlds/world_8.tscn","res://scenes/Worlds/world_headman.tscn"]
+"res://scenes/Worlds/world_7.tscn","res://scenes/Worlds/world_8.tscn","res://scenes/Worlds/world_9.tscn","res://scenes/Worlds/world_headman.tscn"]
 # Called when the node enters the scene tree for the first time
 
 
