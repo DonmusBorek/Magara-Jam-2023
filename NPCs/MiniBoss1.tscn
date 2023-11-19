@@ -109,7 +109,7 @@ animations = [{
 size = Vector2(27, 9)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qa145"]
-size = Vector2(331, 460)
+size = Vector2(331, 802)
 
 [sub_resource type="Animation" id="Animation_c3ldn"]
 resource_name = "HitFlash"
@@ -188,7 +188,7 @@ shape = SubResource("RectangleShape2D_ebad2")
 [node name="detection" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="detection"]
-position = Vector2(-153.5, -74)
+position = Vector2(-153.5, 4)
 shape = SubResource("RectangleShape2D_qa145")
 
 [node name="HitFlash" type="AnimationPlayer" parent="."]
