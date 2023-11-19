@@ -67,7 +67,7 @@ _data = {
 "platform": SubResource("Animation_psjoq")
 }
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_kat0h"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wmf6q"]
 resource_local_to_scene = true
 shader = ExtResource("11_irsu6")
 shader_parameter/enabled = false
@@ -160,7 +160,7 @@ libraries = {
 }
 
 [node name="MiniBoss1" parent="." instance=ExtResource("6_oxajl")]
-material = SubResource("ShaderMaterial_kat0h")
+material = SubResource("ShaderMaterial_wmf6q")
 position = Vector2(923, 201)
 
 [node name="Squish1" type="Area2D" parent="."]

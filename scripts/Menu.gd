@@ -26,6 +26,7 @@ func _process(delta):
 
 
 func _on_oyna_toggled(button_pressed):
+	get_tree().change_scene_to_file("res://scenes/intro.tscn")
 	pass # Replace with function body.
 
 
