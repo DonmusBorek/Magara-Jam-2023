@@ -40,11 +40,15 @@ func _physics_process(delta):
 	
 	if State.EyePump:
 		$Gun1/isactive.active = true
+		$bodycol.disabled = false
 	else:
 		$Gun1/isactive.active = false
+		$bodycol.disabled = true
 	
-	
-	
+	if State.EyePump && State.VisionCompHave:
+		$turn/VisionComp.position = Vector2(0, -47)
+	elif !State.EyePump && State.VisionCompHave:
+		$turn/VisionComp.position = Vector2(0, -20)
 	if(Input.is_action_just_pressed("ui_down")):
 		position.y += 1
 	update_animation()

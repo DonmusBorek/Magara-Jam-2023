@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://u0fjq3chp7yp"]
+[gd_scene load_steps=20 format=3 uid="uid://u0fjq3chp7yp"]
 
 [ext_resource type="Script" path="res://scripts/WorldScripts/world_2.gd" id="1_1renp"]
 [ext_resource type="TileSet" uid="uid://dbcekwogp6tu4" path="res://Tilseset1.tres" id="1_qo1nv"]
@@ -8,8 +8,9 @@
 [ext_resource type="PackedScene" uid="uid://ck1qqt2h66flu" path="res://scenes/a_iworld.tscn" id="5_6fgna"]
 [ext_resource type="Texture2D" uid="uid://qitpvvu66w1" path="res://asansor.png" id="5_j8ysg"]
 [ext_resource type="PackedScene" uid="uid://b6jc6rqa5yav7" path="res://scenes/ackapa.tscn" id="5_md2ke"]
-[ext_resource type="PackedScene" uid="uid://b8k7fady4vvuw" path="res://scenes/floresan.tscn" id="7_j5302"]
-[ext_resource type="Environment" uid="uid://cfimef8lfv0p4" path="res://scenes/Worlds/glow.tres" id="10_ehxaf"]
+[ext_resource type="PackedScene" uid="uid://0ufd07f2xa57" path="res://scenes/floresan.tscn" id="7_j5302"]
+[ext_resource type="Environment" uid="uid://wkxkytfd75u2" path="res://scenes/Worlds/glow.tres" id="10_ehxaf"]
+[ext_resource type="AudioStream" uid="uid://fw7fdnxmio8p" path="res://Sound/AMB_SciFi_Wind_Heavy_Loop.wav" id="11_sww3g"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_bufnw"]
 shader = ExtResource("3_y0ewo")
@@ -150,6 +151,10 @@ position = Vector2(232, 50)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = ExtResource("10_ehxaf")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_sww3g")
+autoplay = true
 
 [connection signal="deadsignal" from="Player" to="." method="_on_player_deadsignal"]
 [connection signal="area_entered" from="Platform/platformdetect" to="." method="_on_platformdetect_area_entered"]

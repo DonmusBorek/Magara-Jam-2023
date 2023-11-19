@@ -22,3 +22,11 @@ res://scripts/Player.gd
 res://scenes/door_button.tscn
 res://scenes/door_button.gd
 res://scenes/Worlds/world_4.tscn
+res://scenes/Worlds/world_2.tscn
+res://scenes/Worlds/world_4_2.tscn
+res://scenes/Worlds/world_5.tscn
+res://scenes/Worlds/world_6.tscn
+res://scenes/Worlds/world_7.tscn
+res://scenes/Worlds/world_8.tscn
+res://scenes/Worlds/world_10.tscn
+res://scenes/Worlds/world_shooter_1.tscn

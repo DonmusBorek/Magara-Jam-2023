@@ -1,7 +1,8 @@
+CollisionShape2D
+AudioStreamPlayer
 AudioStreamPlayer2D
 TextureButton
 TileMap
-CollisionShape2D
 Area2D
 AnimationPlayer
 TextureProgressBar
@@ -17,7 +18,6 @@ CanvasLayer
 CanvasGroup
 Node
 GPUParticles2D
-AudioStreamPlayer
 Button
 CPUParticles2D
 ColorRect

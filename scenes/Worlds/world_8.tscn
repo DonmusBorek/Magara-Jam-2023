@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://v65wqd3t0otg"]
+[gd_scene load_steps=13 format=3 uid="uid://v65wqd3t0otg"]
 
 [ext_resource type="Script" path="res://scripts/WorldScripts/World8.gd" id="1_cwhmq"]
 [ext_resource type="TileSet" uid="uid://caqgtfl7smp0e" path="res://scenes/Worlds/platform.tres" id="2_70nfy"]
@@ -7,9 +7,10 @@
 [ext_resource type="PackedScene" uid="uid://cl1wdbdm28en0" path="res://scenes/eye.tscn" id="4_se0qs"]
 [ext_resource type="PackedScene" uid="uid://b6jc6rqa5yav7" path="res://scenes/ackapa.tscn" id="6_6f21o"]
 [ext_resource type="PackedScene" uid="uid://ck1qqt2h66flu" path="res://scenes/a_iworld.tscn" id="6_54vnm"]
-[ext_resource type="Environment" uid="uid://cfimef8lfv0p4" path="res://scenes/Worlds/glow.tres" id="7_v0e15"]
+[ext_resource type="Environment" uid="uid://wkxkytfd75u2" path="res://scenes/Worlds/glow.tres" id="7_v0e15"]
 [ext_resource type="PackedScene" uid="uid://dbbsw3u3qfvod" path="res://scenes/door.tscn" id="9_xbyi1"]
-[ext_resource type="PackedScene" uid="uid://b8k7fady4vvuw" path="res://scenes/floresan.tscn" id="10_r56ib"]
+[ext_resource type="PackedScene" uid="uid://0ufd07f2xa57" path="res://scenes/floresan.tscn" id="10_r56ib"]
+[ext_resource type="AudioStream" uid="uid://fw7fdnxmio8p" path="res://Sound/AMB_SciFi_Wind_Heavy_Loop.wav" id="11_4hejk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qejr7"]
 size = Vector2(20, 92)
@@ -75,6 +76,14 @@ position = Vector2(476, 224)
 
 [node name="Floresan" parent="." instance=ExtResource("10_r56ib")]
 position = Vector2(182, 52)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_4hejk")
+autoplay = true
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_4hejk")
+autoplay = true
 
 [connection signal="deadsignal" from="Player" to="." method="_on_player_deadsignal"]
 [connection signal="is_dead" from="Eye" to="." method="_on_eye_is_dead"]
