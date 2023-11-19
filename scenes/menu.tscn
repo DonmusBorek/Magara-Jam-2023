@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://cnikyolov1heq"]
+[gd_scene load_steps=22 format=3 uid="uid://cnikyolov1heq"]
 
 [ext_resource type="Script" path="res://scripts/Menu.gd" id="1_y1xxo"]
 [ext_resource type="AudioStream" uid="uid://xj1y13uqyfsh" path="res://Sound/Music/intro.mp3" id="2_0wqf1"]
@@ -10,10 +10,11 @@
 [ext_resource type="Texture2D" uid="uid://kp3w4apwl3ev" path="res://sprites/ayarlar_butonu1.png" id="6_rw014"]
 [ext_resource type="Texture2D" uid="uid://jiw87dgx3ex4" path="res://sprites/ayarlar_butonu3.png" id="7_4qugu"]
 [ext_resource type="Texture2D" uid="uid://bxtntgvvw1qxt" path="res://sprites/ayarlar_butonu2.png" id="8_kgeq7"]
+[ext_resource type="Texture2D" uid="uid://ctkw3n62e6l5y" path="res://sprites/Sprite-0004.png" id="10_f57ed"]
 [ext_resource type="Texture2D" uid="uid://cr23dmr6t1yan" path="res://sprites/yukaribasmalisey.png" id="10_gl6fa"]
+[ext_resource type="Texture2D" uid="uid://c2gpyqojbhre1" path="res://sprites/Sprite-0006.png" id="11_3kghk"]
 [ext_resource type="Texture2D" uid="uid://csqpyi6reodqs" path="res://sprites/basmalisey.png" id="11_36wcb"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_t17ev"]
+[ext_resource type="Texture2D" uid="uid://13dbns5n1gm4" path="res://sprites/Sprite-0005.png" id="12_m8th0"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nrqba"]
 
@@ -176,17 +177,15 @@ texture_normal = ExtResource("6_rw014")
 texture_pressed = ExtResource("7_4qugu")
 texture_hover = ExtResource("8_kgeq7")
 
-[node name="Cıkıs" type="Button" parent="MenuButtons"]
-offset_left = 198.0
-offset_top = 199.0
-offset_right = 379.0
-offset_bottom = 264.0
-scale = Vector2(0.5, 0.5)
-theme_override_font_sizes/font_size = 41
-theme_override_styles/focus = SubResource("StyleBoxEmpty_t17ev")
+[node name="Cıkıs" type="TextureButton" parent="MenuButtons"]
+offset_left = 342.0
+offset_top = 104.0
+offset_right = 464.0
+offset_bottom = 252.0
 toggle_mode = true
-text = "Çıkış
-"
+texture_normal = ExtResource("10_f57ed")
+texture_pressed = ExtResource("11_3kghk")
+texture_hover = ExtResource("12_m8th0")
 
 [node name="OptionsButtons" type="Node" parent="."]
 

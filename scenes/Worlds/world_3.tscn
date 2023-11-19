@@ -13,8 +13,8 @@
 [ext_resource type="Script" path="res://scripts/eyegain.gd" id="9_ywfwi"]
 [ext_resource type="Shader" uid="uid://s7s30mt8g442" path="res://scenes/Player.tres" id="11_irsu6"]
 [ext_resource type="PackedScene" uid="uid://dbbsw3u3qfvod" path="res://scenes/door.tscn" id="12_vxmuu"]
-[ext_resource type="PackedScene" uid="uid://b8k7fady4vvuw" path="res://scenes/floresan.tscn" id="13_kpi1x"]
-[ext_resource type="Environment" uid="uid://cfimef8lfv0p4" path="res://scenes/Worlds/glow.tres" id="14_sn1jc"]
+[ext_resource type="PackedScene" uid="uid://0ufd07f2xa57" path="res://scenes/floresan.tscn" id="13_kpi1x"]
+[ext_resource type="Environment" uid="uid://wkxkytfd75u2" path="res://scenes/Worlds/glow.tres" id="14_sn1jc"]
 [ext_resource type="PackedScene" uid="uid://ck1qqt2h66flu" path="res://scenes/a_iworld.tscn" id="15_s4uaj"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_b2hur"]
@@ -67,7 +67,7 @@ _data = {
 "platform": SubResource("Animation_psjoq")
 }
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_aybcp"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gwmkn"]
 resource_local_to_scene = true
 shader = ExtResource("11_irsu6")
 shader_parameter/enabled = false
@@ -160,7 +160,7 @@ libraries = {
 }
 
 [node name="MiniBoss1" parent="." instance=ExtResource("6_oxajl")]
-material = SubResource("ShaderMaterial_aybcp")
+material = SubResource("ShaderMaterial_gwmkn")
 position = Vector2(923, 201)
 
 [node name="Squish1" type="Area2D" parent="."]

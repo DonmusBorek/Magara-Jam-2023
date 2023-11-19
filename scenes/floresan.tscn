@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://b8k7fady4vvuw"]
+[gd_scene load_steps=6 format=3 uid="uid://0ufd07f2xa57"]
 
 [ext_resource type="Script" path="res://scenes/floresan.gd" id="1_2fkgi"]
 [ext_resource type="Texture2D" uid="uid://bv0w3n08a3vb0" path="res://sprites/floresanacik.png" id="1_doqv7"]
