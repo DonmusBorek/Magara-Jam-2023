@@ -61,10 +61,12 @@ func process_movement_input(delta):
 		if !dashing:
 			velocity.x = clamp(velocity.x, -speed, speed)
 	
-	if velocity.x != 0 and is_on_floor() and $Timer.time_left <= 0:
-		$steps.pitch_scale = randf_range(0.8, 1.2)
+	if velocity.x != 0 and is_on_floor() and !$steps.playing:
+		$steps.pitch_scale = 1
 		$steps.play()
-		$Timer.start(0.2)
+	if($steps.playing and velocity.x == 0):
+		$steps.stop()
+		$stepsend.play()
 
 func process_jump_input(just_left_ledge,was_on_floor):
 	if Input.is_action_just_pressed("Jump"):

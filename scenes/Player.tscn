@@ -1,8 +1,11 @@
-[gd_scene load_steps=21 format=3 uid="uid://fbvrsjqpv48e"]
+[gd_scene load_steps=24 format=3 uid="uid://fbvrsjqpv48e"]
 
 [ext_resource type="Material" uid="uid://d18a0ol1keis" path="res://scenes/HitFlashShader.tres" id="1_d6mo7"]
 [ext_resource type="Script" path="res://scripts/Player.gd" id="1_scjqm"]
+[ext_resource type="AudioStream" uid="uid://bu58fheo273hf" path="res://Sound/SoundEffect/SFX_Hit_Metal_Barrel.wav" id="3_3g4w1"]
+[ext_resource type="AudioStream" uid="uid://brv1ig7cslc7m" path="res://Sound/SoundEffect/SFX_Car_Engine_Organic_1_Loop.wav" id="3_08lay"]
 [ext_resource type="Texture2D" uid="uid://dmgqoqbsn7tgn" path="res://sprites/hareketparca.png" id="3_a55iy"]
+[ext_resource type="AudioStream" uid="uid://bk2wc5xs2mcuy" path="res://Sound/SoundEffect/SFX_Car_Engine_Organic_1_Stop.wav" id="3_hjty7"]
 [ext_resource type="Texture2D" uid="uid://cotvulxyq83nm" path="res://sprites/gozparca.png" id="3_kdv7o"]
 [ext_resource type="PackedScene" uid="uid://dl5cwjk5oy5hb" path="res://scenes/sok_sok.tscn" id="5_w7a5o"]
 [ext_resource type="PackedScene" uid="uid://c37hg3fyrbv4b" path="res://scenes/ui.tscn" id="5_wmgpi"]
@@ -143,8 +146,15 @@ one_shot = true
 [node name="jump" type="AudioStreamPlayer2D" parent="."]
 
 [node name="land" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_3g4w1")
+
+[node name="stepsend" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_hjty7")
+volume_db = -20.0
 
 [node name="steps" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_08lay")
+volume_db = -20.0
 
 [node name="Timer" type="Timer" parent="."]
 one_shot = true

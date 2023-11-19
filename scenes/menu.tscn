@@ -1,23 +1,17 @@
-[gd_scene load_steps=21 format=3 uid="uid://cnikyolov1heq"]
+[gd_scene load_steps=20 format=3 uid="uid://cnikyolov1heq"]
 
 [ext_resource type="Script" path="res://scripts/Menu.gd" id="1_y1xxo"]
 [ext_resource type="AudioStream" uid="uid://xj1y13uqyfsh" path="res://Sound/Music/intro.mp3" id="2_0wqf1"]
-[ext_resource type="Texture2D" path="res://scenes/menuyeni.png" id="2_ph14s"]
-[ext_resource type="Texture2D" path="res://sprites/kucuk_oyna_tasarm1.png" id="3_3nch4"]
-[ext_resource type="Texture2D" path="res://sprites/kucuk_oyna_tasarm3.png" id="4_j25sr"]
-[ext_resource type="Texture2D" path="res://sprites/kucuk_oyna_tasarm2.png" id="5_ftt2k"]
-[ext_resource type="Texture2D" path="res://sprites/ayarlar_butonu1.png" id="6_rw014"]
-[ext_resource type="Texture2D" path="res://sprites/ayarlar_butonu3.png" id="7_4qugu"]
-[ext_resource type="Texture2D" path="res://sprites/ayarlar_butonu2.png" id="8_kgeq7"]
+[ext_resource type="Texture2D" uid="uid://c8ocb4kjb1jwl" path="res://scenes/menuyeni.png" id="2_ph14s"]
+[ext_resource type="Texture2D" uid="uid://0acuma2uprdd" path="res://sprites/kucuk_oyna_tasarm1.png" id="3_3nch4"]
+[ext_resource type="Texture2D" uid="uid://868u4jdwn0ck" path="res://icon.svg" id="3_ft7s2"]
+[ext_resource type="Texture2D" uid="uid://by3ugxa3caysx" path="res://sprites/kucuk_oyna_tasarm3.png" id="4_j25sr"]
+[ext_resource type="Texture2D" uid="uid://dpv5q2cq1rdl8" path="res://sprites/kucuk_oyna_tasarm2.png" id="5_ftt2k"]
+[ext_resource type="Texture2D" uid="uid://kp3w4apwl3ev" path="res://sprites/ayarlar_butonu1.png" id="6_rw014"]
+[ext_resource type="Texture2D" uid="uid://jiw87dgx3ex4" path="res://sprites/ayarlar_butonu3.png" id="7_4qugu"]
+[ext_resource type="Texture2D" uid="uid://bxtntgvvw1qxt" path="res://sprites/ayarlar_butonu2.png" id="8_kgeq7"]
 [ext_resource type="Texture2D" uid="uid://cr23dmr6t1yan" path="res://sprites/yukaribasmalisey.png" id="10_gl6fa"]
 [ext_resource type="Texture2D" uid="uid://csqpyi6reodqs" path="res://sprites/basmalisey.png" id="11_36wcb"]
-
-[sub_resource type="Gradient" id="Gradient_df5w4"]
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_e5dqy"]
-gradient = SubResource("Gradient_df5w4")
-fill_from = Vector2(0.509174, 1)
-fill_to = Vector2(0.504587, 0)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_t17ev"]
 
@@ -144,18 +138,18 @@ grow_vertical = 2
 texture = ExtResource("2_ph14s")
 
 [node name="Optionsback" type="TextureRect" parent="."]
-modulate = Color(0.301961, 0.345098, 1, 1)
+modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 1165.0
-offset_top = -1.0
-offset_right = 1654.0
-offset_bottom = 274.0
+offset_left = 1090.0
+offset_top = -44.0
+offset_right = 1714.0
+offset_bottom = 358.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = SubResource("GradientTexture2D_e5dqy")
+texture = ExtResource("3_ft7s2")
 
 [node name="MenuButtons" type="Node" parent="."]
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://m0j12p7lvnda"]
+[gd_scene load_steps=13 format=3 uid="uid://m0j12p7lvnda"]
 
 [ext_resource type="Script" path="res://scripts/introtexts/intro.gd" id="1_gx145"]
 [ext_resource type="FontFile" uid="uid://8dpr5lead7kx" path="res://turkishRoboto-Black.ttf" id="1_q2oq0"]
@@ -11,6 +11,7 @@
 [ext_resource type="Script" path="res://scripts/introtexts/introlabel6.gd" id="8_vllx3"]
 [ext_resource type="Script" path="res://scripts/introtexts/introlabel7.gd" id="9_ol78j"]
 [ext_resource type="PackedScene" uid="uid://b6jc6rqa5yav7" path="res://scenes/ackapa.tscn" id="11_kcdbc"]
+[ext_resource type="AudioStream" uid="uid://c42hiotg2b3ix" path="res://Sound/SoundEffect/Microsoft Windows 7 Startup Sound.mp3" id="12_fn7ls"]
 
 [node name="Intro" type="Node2D"]
 script = ExtResource("1_gx145")
@@ -121,6 +122,10 @@ stream = ExtResource("3_c3qh2")
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="ackapa" parent="CanvasLayer" instance=ExtResource("11_kcdbc")]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_fn7ls")
+autoplay = true
 
 [connection signal="display_finished" from="introlabel" to="introlabel2" method="_on_introlabel_display_finished"]
 [connection signal="display_finished" from="introlabel2" to="introlabel3" method="_on_introlabel_2_display_finished"]
