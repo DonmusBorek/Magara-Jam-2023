@@ -4,7 +4,7 @@ extends Node2D
 @onready var timer = $Timer
 @onready var rotatet = $Rotatet
 
-
+var health = 20
 
 var rotation_speed = 0.5
 var track = false
@@ -40,3 +40,7 @@ func _on_timer_timeout():
 	rotatet.add_child(eyelaser)
 	a = true
 	
+
+
+func _on_hit_area_entered(area):
+	area.is_in_group("soksokattack")

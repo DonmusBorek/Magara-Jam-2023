@@ -7,6 +7,7 @@ var opened = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	State.currentWorld = 0
 	$CanvasLayer/ackapa/Fadeout1.play_backwards("fadeout")
 
 

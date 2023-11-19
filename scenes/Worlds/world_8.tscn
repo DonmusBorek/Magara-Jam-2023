@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://v65wqd3t0otg"]
+[gd_scene load_steps=10 format=3 uid="uid://v65wqd3t0otg"]
 
 [ext_resource type="Script" path="res://scripts/WorldScripts/World8.gd" id="1_cwhmq"]
 [ext_resource type="TileSet" uid="uid://caqgtfl7smp0e" path="res://scenes/Worlds/platform.tres" id="2_70nfy"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://fbvrsjqpv48e" path="res://scenes/Player.tscn" id="3_8vfjr"]
 [ext_resource type="PackedScene" uid="uid://cl1wdbdm28en0" path="res://scenes/eye.tscn" id="4_se0qs"]
 [ext_resource type="PackedScene" uid="uid://b6jc6rqa5yav7" path="res://scenes/ackapa.tscn" id="6_6f21o"]
+[ext_resource type="PackedScene" uid="uid://ck1qqt2h66flu" path="res://scenes/a_iworld.tscn" id="6_54vnm"]
 [ext_resource type="Environment" uid="uid://cfimef8lfv0p4" path="res://scenes/Worlds/glow.tres" id="7_v0e15"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qejr7"]
@@ -52,6 +53,8 @@ offset_right = 563.0
 offset_bottom = 291.0
 color = Color(0, 0, 0, 0.588235)
 metadata/_edit_use_anchors_ = true
+
+[node name="AIworld" parent="CanvasLayer" instance=ExtResource("6_54vnm")]
 
 [node name="ackapa" parent="CanvasLayer" instance=ExtResource("6_6f21o")]
 

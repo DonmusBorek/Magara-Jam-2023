@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://b0u72axr7bkji"]
+[gd_scene load_steps=11 format=3 uid="uid://b0u72axr7bkji"]
 
 [ext_resource type="Script" path="res://scripts/WorldScripts/world_5.gd" id="1_u50nd"]
 [ext_resource type="TileSet" uid="uid://dbcekwogp6tu4" path="res://Tilseset1.tres" id="1_yij0s"]
 [ext_resource type="PackedScene" uid="uid://fbvrsjqpv48e" path="res://scenes/Player.tscn" id="2_xy3ak"]
 [ext_resource type="PackedScene" uid="uid://b37o5dkrdxh0i" path="res://scenes/laser.tscn" id="3_mlyif"]
+[ext_resource type="PackedScene" uid="uid://ck1qqt2h66flu" path="res://scenes/a_iworld.tscn" id="4_pgwas"]
 [ext_resource type="PackedScene" uid="uid://b6jc6rqa5yav7" path="res://scenes/ackapa.tscn" id="4_yq7yd"]
 [ext_resource type="PackedScene" uid="uid://b8k7fady4vvuw" path="res://scenes/floresan.tscn" id="7_hbnke"]
 [ext_resource type="Environment" uid="uid://cfimef8lfv0p4" path="res://scenes/Worlds/glow.tres" id="8_gvu1i"]
@@ -38,6 +39,8 @@ offset_right = 563.0
 offset_bottom = 291.0
 color = Color(0, 0, 0, 0.588235)
 metadata/_edit_use_anchors_ = true
+
+[node name="AIworld" parent="CanvasLayer" instance=ExtResource("4_pgwas")]
 
 [node name="ackapa" parent="CanvasLayer" instance=ExtResource("4_yq7yd")]
 

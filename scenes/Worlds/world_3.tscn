@@ -12,8 +12,8 @@
 [ext_resource type="Script" path="res://Camera2D.gd" id="8_gbpmh"]
 [ext_resource type="Script" path="res://scripts/eyegain.gd" id="9_ywfwi"]
 [ext_resource type="PackedScene" uid="uid://dbbsw3u3qfvod" path="res://scenes/door.tscn" id="12_vxmuu"]
-[ext_resource type="PackedScene" uid="uid://0ufd07f2xa57" path="res://scenes/floresan.tscn" id="13_kpi1x"]
-[ext_resource type="Environment" uid="uid://wkxkytfd75u2" path="res://scenes/Worlds/glow.tres" id="14_sn1jc"]
+[ext_resource type="PackedScene" uid="uid://b8k7fady4vvuw" path="res://scenes/floresan.tscn" id="13_kpi1x"]
+[ext_resource type="Environment" uid="uid://cfimef8lfv0p4" path="res://scenes/Worlds/glow.tres" id="14_sn1jc"]
 [ext_resource type="PackedScene" uid="uid://ck1qqt2h66flu" path="res://scenes/a_iworld.tscn" id="15_s4uaj"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_b2hur"]

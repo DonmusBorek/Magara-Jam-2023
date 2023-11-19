@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bkua0s8hor0i0"]
+[gd_scene load_steps=17 format=3 uid="uid://bkua0s8hor0i0"]
 
 [ext_resource type="Script" path="res://scripts/UpgradeStation.gd" id="1_m8ssf"]
 [ext_resource type="PackedScene" uid="uid://dwghnlpbj28k4" path="res://scenes/drop_place.tscn" id="2_8wsbc"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://bv0w3n08a3vb0" path="res://sprites/floresanacik.png" id="6_trcuk"]
 [ext_resource type="Texture2D" uid="uid://nnn0x11grg1q" path="res://sprites/festuscanon.png" id="7_n8m03"]
 [ext_resource type="AudioStream" uid="uid://tp77digxy0mj" path="res://Sound/SoundEffect/textsound.wav" id="7_ygu2k"]
+[ext_resource type="FontFile" uid="uid://8dpr5lead7kx" path="res://turkishRoboto-Black.ttf" id="8_e44a7"]
 [ext_resource type="PackedScene" uid="uid://b6jc6rqa5yav7" path="res://scenes/ackapa.tscn" id="9_nin7a"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6em1k"]
@@ -121,6 +122,7 @@ sprite_scale = Vector2(1, 1)
 can_go = "Head"
 
 [node name="pump" parent="Control/Objects" instance=ExtResource("3_8op1s")]
+visible = false
 texture_filter = 1
 position = Vector2(343, 153)
 nagme = "pump"
@@ -137,6 +139,7 @@ sprite_scale = Vector2(1, 1)
 can_go = "Right_Hand"
 
 [node name="dash" parent="Control/Objects" instance=ExtResource("3_8op1s")]
+visible = false
 texture_filter = 1
 position = Vector2(418, 221)
 nagme = "dash"
@@ -162,37 +165,40 @@ layout_mode = 0
 offset_left = 110.0
 offset_top = 7.0
 offset_right = 260.0
-offset_bottom = 91.0
+offset_bottom = 116.0
 color = Color(0, 0, 0, 1)
 
 [node name="AItext" type="Label" parent="Control"]
+texture_filter = 1
 layout_mode = 0
-offset_left = 111.0
-offset_top = 8.0
-offset_right = 259.0
-offset_bottom = 90.0
+offset_left = 118.0
+offset_top = 14.0
+offset_right = 252.0
+offset_bottom = 109.0
+theme_override_fonts/font = ExtResource("8_e44a7")
+theme_override_font_sizes/font_size = 17
 autowrap_mode = 3
 script = ExtResource("5_ndr25")
 
 [node name="head" type="Sprite2D" parent="Control"]
 visible = false
 texture_filter = 1
-position = Vector2(178, 132)
+position = Vector2(178, 152)
 scale = Vector2(-3, 3)
 texture = ExtResource("4_v7agf")
 
 [node name="player" type="AnimatedSprite2D" parent="Control"]
 texture_filter = 1
-position = Vector2(180, 174)
+position = Vector2(180, 193.5)
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_y0fsv")
 
 [node name="platform" type="ColorRect" parent="Control"]
 layout_mode = 0
 offset_left = 136.0
-offset_top = 191.0
+offset_top = 210.5
 offset_right = 227.0
-offset_bottom = 267.0
+offset_bottom = 286.5
 color = Color(0.145098, 0.145098, 0.145098, 1)
 
 [node name="Next" type="Button" parent="Control"]
@@ -218,5 +224,6 @@ layer = 2
 
 [node name="ackapa" parent="CanvasLayer" instance=ExtResource("9_nin7a")]
 
+[connection signal="display_finished" from="Control/AItext" to="." method="_on_a_itext_display_finished"]
 [connection signal="pressed" from="Control/Next" to="." method="_on_next_pressed"]
 [connection signal="timeout" from="texttimer" to="Control/AItext" method="_on_timer_timeout"]

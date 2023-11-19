@@ -77,6 +77,7 @@ func _on_eyegain_area_entered(area):
 		$eyegain.global_position = Vector2(0,-200)
 		a = false
 		await get_tree().create_timer(2).timeout
+		$CanvasLayer/UpgradeStation/texttimer.start()
 		$Door.global_position = Vector2(0,-200)
 
 
