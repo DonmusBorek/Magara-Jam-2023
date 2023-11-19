@@ -28,6 +28,8 @@ func _ready():
 		$texttimer.start()
 	if State.currentWorld == 8:
 		$Control/Objects/pump.visible = true
+	if State.currentWorld == 10:
+		$Control/Objects/dash.visible = true
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -69,6 +71,11 @@ func _on_next_pressed():
 				$"../../Player".can_move = true
 		elif State.currentWorld == 8:
 			if State.EyePump:
+				$CanvasLayer/ackapa/Fadeout1.play("fadeout")
+				await get_tree().create_timer(3).timeout
+				get_tree().change_scene_to_file(State.Worlds[State.currentWorld+1])
+		elif State.currentWorld == 10:
+			if State.Dash:
 				$CanvasLayer/ackapa/Fadeout1.play("fadeout")
 				await get_tree().create_timer(3).timeout
 				get_tree().change_scene_to_file(State.Worlds[State.currentWorld+1])
