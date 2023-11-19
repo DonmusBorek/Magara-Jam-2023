@@ -6,7 +6,7 @@ extends Node2D
 var end = false
 
 var a = 0
-var b = false
+var b = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -22,6 +22,7 @@ func _process(delta):
 	
 	if a == 3 && b:
 		$Door._door_open()
+		b = false
 
 
 

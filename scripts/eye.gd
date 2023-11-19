@@ -1,5 +1,7 @@
 extends Node2D
 
+signal is_dead
+
 @onready var player:CharacterBody2D = $"../Player"
 @onready var timer = $Timer
 @onready var rotatet = $Rotatet
@@ -21,6 +23,7 @@ func _physics_process(delta):
 		_particle.position = global_position
 		_particle.emitting = true
 		get_tree().current_scene.add_child(_particle)
+		emit_signal("is_dead")
 		alive = false
 		queue_free()
 	
@@ -55,4 +58,4 @@ func _on_timer_timeout():
 func _on_eyecollision_area_entered(area):
 	if area.is_in_group("soksokattack") or area.is_in_group("gun"):
 		$HitFlash.play("HitFlash")
-		health -= 5
+		health -= 10

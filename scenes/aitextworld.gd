@@ -43,6 +43,8 @@ func _ready():
 		_text_sequence = ["Dikkatli ol.","Saklanarak öldürmeye çalış.",""]
 	if State.currentWorld == 9:
 		_text_sequence = ["Silahın tepmesiyle daha yükseğe"," çıkabilirsin.",""]
+	if State.currentWorld == 10:
+		_text_sequence = ["Gittikçe daha da zorlaşacak.",""]
 func _display_next_text():
 	if _text_number < _text_sequence.size(): 
 		_current_text = _text_sequence[_text_number]

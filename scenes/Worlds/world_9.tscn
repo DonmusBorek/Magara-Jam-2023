@@ -17,13 +17,13 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0eo5q"]
 size = Vector2(20, 92)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_gpv40"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lwygd"]
 resource_local_to_scene = true
 shader = ExtResource("11_drvli")
 shader_parameter/enabled = false
 shader_parameter/tint = Color(0.996945, 6e-06, 2e-06, 1)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_72u62"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_f2yls"]
 resource_local_to_scene = true
 shader = ExtResource("11_drvli")
 shader_parameter/enabled = false
@@ -61,7 +61,6 @@ metadata/_edit_use_anchors_ = true
 [node name="AIworld" parent="CanvasLayer" instance=ExtResource("7_chvlw")]
 
 [node name="ackapa" parent="CanvasLayer" instance=ExtResource("8_u5nmv")]
-visible = false
 
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2(447, 98)
@@ -89,11 +88,11 @@ position = Vector2(819, 51)
 environment = ExtResource("9_x2ulo")
 
 [node name="MiniBoss1" parent="." instance=ExtResource("10_usack")]
-material = SubResource("ShaderMaterial_gpv40")
+material = SubResource("ShaderMaterial_lwygd")
 position = Vector2(407, 202)
 
 [node name="MiniBoss2" parent="." instance=ExtResource("10_usack")]
-material = SubResource("ShaderMaterial_72u62")
+material = SubResource("ShaderMaterial_f2yls")
 position = Vector2(749, 202)
 
 [node name="Door" parent="." instance=ExtResource("12_a5o56")]
