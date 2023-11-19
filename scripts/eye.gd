@@ -29,32 +29,28 @@ func _physics_process(delta):
 	
 	if track:
 		rotateToTarget(player, delta)
-		if timer.time_left == 0: 
+		if timer.time_left == 0:
 			if !a:
-				timer.start(2.5)
+				timer.start(2.0)
 			else:
-				timer.start(3.0)
+				if(!$audio.playing): $audio.play()
+				timer.start(4.0)
 		
-
 func rotateToTarget(target, delta):
 	var direction = (target.global_position - rotatet.global_position)
 	var angleTo = rotatet.global_transform.x.angle_to(direction)
 	rotatet.rotate(sign(angleTo) * min(delta * rotation_speed, abs(angleTo)))
-
-
+	if(!$rotaudio.playing && round(angleTo) != 0): $rotaudio.play()
+	
 func _on_area_2d_area_entered(area):
 	if area.is_in_group("Player"):
 		track = true
 		
-
-
 func _on_timer_timeout():
 	var eyelaser = preload("res://scenes/eyelaser.tscn").instantiate()
 	rotatet.add_child(eyelaser)
 	a = true
 	
-
-
 func _on_eyecollision_area_entered(area):
 	if area.is_in_group("soksokattack") or area.is_in_group("gun"):
 		$HitFlash.play("HitFlash")

@@ -32,6 +32,8 @@ func _ready():
 	State.playerDead = false
 	
 func _physics_process(delta):
+	if(Input.is_action_just_pressed("ui_down")):
+		position.y += 1
 	update_animation()
 	if can_move:
 		dash()

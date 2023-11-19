@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cl1wdbdm28en0" path="res://scenes/eye.tscn" id="3_0mwem"]
 [ext_resource type="PackedScene" uid="uid://b6jc6rqa5yav7" path="res://scenes/ackapa.tscn" id="5_7oyqr"]
 [ext_resource type="PackedScene" uid="uid://ck1qqt2h66flu" path="res://scenes/a_iworld.tscn" id="5_ee2on"]
-[ext_resource type="Environment" uid="uid://cfimef8lfv0p4" path="res://scenes/Worlds/glow.tres" id="6_wtr1b"]
+[ext_resource type="Environment" uid="uid://wkxkytfd75u2" path="res://scenes/Worlds/glow.tres" id="6_wtr1b"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qejr7"]
 size = Vector2(20, 92)

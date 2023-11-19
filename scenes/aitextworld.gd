@@ -40,7 +40,7 @@ func _ready():
 	if State.currentWorld == 7:
 		_text_sequence = ["Hepsini öldürmen gerekecek.",""]
 	if State.currentWorld == 8:
-		_text_sequence = ["Dikkatli ol.","Saklanarak öldürmeye çalış.",""]
+		_text_sequence = ["Dikkatli ol.","Saklanarak öldürmeye çalış.","Aşağı inmek için S'ye bas.", ""]
 	if State.currentWorld == 9:
 		_text_sequence = ["Silahın tepmesiyle daha yükseğe"," çıkabilirsin.",""]
 	if State.currentWorld == 10:
