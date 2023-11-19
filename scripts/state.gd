@@ -88,6 +88,12 @@ func _process(delta: float) -> void:
 		else:
 			player.get_node("turn/SokSok/isactive").active = false
 		
+		if (!on_arsenal && !on_menu && !on_intro):
+			if(EyePump):
+				player.get_node("Gun1/isactive").active = true
+			else:
+				player.get_node("Gun1/isactive").active = false
+		
 	# Fade out the intensity over time
 	shake_strength = lerp(shake_strength, 0.0, SHAKE_DECAY_RATE * delta)
 	

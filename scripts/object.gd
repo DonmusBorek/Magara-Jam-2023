@@ -38,24 +38,20 @@ func _process(delta):
 		if has_ref:
 			if body_ref.name == "Head" && nagme == "vision" && !draggable:
 				State.VisionCompHave = true
+				can_move =false
 				if State.currentWorld == 2:
 					can_move = false
 				else :
-					can_move = true
-			elif body_ref.name == "Empty" && nagme == "vision" && draggable:
-				State.VisionCompHave = false
+					can_move = false
 			if body_ref.name == "Left_Hand" && nagme == "pump" && !draggable:
 				State.EyePump = true
-			elif body_ref.name == "Empty" && nagme == "pump" && draggable:
-				State.EyePump = false
+				can_move =false
 			if body_ref.name == "Right_Hand" && nagme == "knife" && !draggable:
 				State.knife = true
-			elif body_ref.name == "Empty" && nagme == "knife" && draggable:
-				State.knife = false
+				can_move =false
 			if body_ref.name == "Ability" && nagme == "dash" && !draggable:
 				State.Dash = true
-			elif body_ref.name == "Empty" && nagme == "dash" && draggable:
-				State.Dash = false
+				can_move =false
 
 
 func _on_area_2d_mouse_entered():

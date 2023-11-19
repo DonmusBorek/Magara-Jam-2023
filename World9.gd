@@ -10,6 +10,7 @@ var b = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	State.knife = true
 	State.currentWorld = 9
 
 
@@ -52,4 +53,5 @@ func _on_mini_boss_2_bossdead():
 
 
 func _on_doorbutton_area_entered(area):
-	a += 1
+	if area.is_in_group("soksokattack"):
+		a += 1
