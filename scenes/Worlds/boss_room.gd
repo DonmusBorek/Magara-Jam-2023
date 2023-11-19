@@ -3,6 +3,8 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	State.currentWorld = 13
+	
 	State.VisionCompHave = true
 	State.EyePump = true
 	State.Dash = true
@@ -24,3 +26,8 @@ func _on_elevin_area_entered(area):
 
 
 
+
+
+func _on_endarea_area_entered(area):
+	if area.is_in_group("Player"):
+		pass
