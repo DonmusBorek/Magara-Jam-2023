@@ -4,6 +4,8 @@ var a = true
 var geri = false
 
 var onworld3 = false
+
+var can_devam = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	if get_parent().get_parent() != null:
@@ -44,15 +46,20 @@ func _on_fadeout_animation_finished(anim_name):
 
 
 func _on_next_pressed():
-	if onworld3:
-		if State.VisionCompHave && State.knife:
+	if can_devam:
+		if onworld3:
+			if State.VisionCompHave && State.knife:
+				$CanvasLayer/ackapa/Fadeout1.play("fadeout")
+				await get_tree().create_timer(3).timeout
+				$CanvasLayer/ackapa/Fadeout1.play_backwards("fadeout")
+				$Control.visible = false
+				$"../AIworld".visible = true
+				$"../../Player".can_move = true
+		else:
 			$CanvasLayer/ackapa/Fadeout1.play("fadeout")
 			await get_tree().create_timer(3).timeout
-			$CanvasLayer/ackapa/Fadeout1.play_backwards("fadeout")
-			$Control.visible = false
-			$"../AIworld".visible = true
-			$"../../Player".can_move = true
-	else:
-		$CanvasLayer/ackapa/Fadeout1.play("fadeout")
-		await get_tree().create_timer(3).timeout
-		get_tree().change_scene_to_file(State.Worlds[State.currentWorld])
+			get_tree().change_scene_to_file(State.Worlds[State.currentWorld])
+
+
+func _on_a_itext_display_finished():
+	can_devam =  true

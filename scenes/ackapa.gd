@@ -27,7 +27,7 @@ func _process(delta):
 func _on_fadeout_1_animation_finished(anim_name):
 	if(changable):
 		get_tree().change_scene_to_file(State.Worlds[State.currentWorld + 1])
-		State.currentWorld += 1
+		#State.currentWorld += 1
 		changable = false
 	if(State.playerDead):
 		get_tree().reload_current_scene()

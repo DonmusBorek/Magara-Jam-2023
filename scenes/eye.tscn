@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://cl1wdbdm28en0"]
+[gd_scene load_steps=6 format=3 uid="uid://cl1wdbdm28en0"]
 
 [ext_resource type="Script" path="res://scripts/eye.gd" id="1_8713f"]
 [ext_resource type="Texture2D" uid="uid://nnn0x11grg1q" path="res://sprites/festuscanon.png" id="2_w5yrw"]
@@ -6,6 +6,9 @@
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_orns4"]
 radius = 394.103
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e36ln"]
+size = Vector2(36, 23.5)
 
 [node name="Eye" type="Node2D"]
 script = ExtResource("1_8713f")
@@ -33,5 +36,14 @@ position = Vector2(0, -1)
 rotation = -1.5708
 texture = ExtResource("3_lt7ka")
 
+[node name="eyecollision" type="Area2D" parent="."]
+collision_layer = 5
+collision_mask = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="eyecollision"]
+position = Vector2(0, 0.25)
+shape = SubResource("RectangleShape2D_e36ln")
+
 [connection signal="area_entered" from="track" to="." method="_on_area_2d_area_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="area_entered" from="eyecollision" to="." method="_on_eyecollision_area_entered"]

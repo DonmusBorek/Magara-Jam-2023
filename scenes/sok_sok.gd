@@ -8,7 +8,7 @@ func _ready():
 func _process(delta):
 	if(Input.is_action_just_pressed("Left_Click")):
 		$anima.play("default")
-	if($anima.frame == 4):
+	if($anima.frame == 3 or $anima.frame == 4 or $anima.frame == 5 or $anima.frame == 6):
 		$Attack/CollisionShape2D.disabled = false
 	else:
 		$Attack/CollisionShape2D.disabled = true
