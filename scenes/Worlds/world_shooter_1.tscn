@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://dna7gj16e5sxq"]
+[gd_scene load_steps=42 format=3 uid="uid://ddcjhg5sbbfqc"]
 
 [ext_resource type="Script" path="res://scenes/Worlds/world_shooter_1.gd" id="1_rrxar"]
 [ext_resource type="TileSet" uid="uid://dbcekwogp6tu4" path="res://Tilseset1.tres" id="1_xd5vh"]
@@ -17,8 +17,9 @@
 [ext_resource type="PackedScene" uid="uid://c4u01v2bjq5ty" path="res://scenes/headman.tscn" id="12_2hl3p"]
 [ext_resource type="Texture2D" uid="uid://qitpvvu66w1" path="res://asansor.png" id="13_ebqdc"]
 [ext_resource type="Script" path="res://platfor.gd" id="14_3vq4x"]
-[ext_resource type="Environment" uid="uid://cfimef8lfv0p4" path="res://scenes/Worlds/glow.tres" id="14_hhmfp"]
-[ext_resource type="PackedScene" uid="uid://b8k7fady4vvuw" path="res://scenes/floresan.tscn" id="18_u8rgg"]
+[ext_resource type="Environment" uid="uid://wkxkytfd75u2" path="res://scenes/Worlds/glow.tres" id="14_hhmfp"]
+[ext_resource type="PackedScene" uid="uid://0ufd07f2xa57" path="res://scenes/floresan.tscn" id="18_u8rgg"]
+[ext_resource type="AudioStream" uid="uid://fw7fdnxmio8p" path="res://Sound/AMB_SciFi_Wind_Heavy_Loop.wav" id="20_gbqb3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_c18w4"]
 texture = ExtResource("2_mprof")
@@ -203,31 +204,31 @@ size = Vector2(238, 63)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0b08t"]
 size = Vector2(238, 63)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_q8awt"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5ppvo"]
 resource_local_to_scene = true
 shader = ExtResource("10_edjwt")
 shader_parameter/enabled = false
 shader_parameter/tint = Color(0.996945, 6e-06, 2e-06, 1)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_5ta7w"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_s6je1"]
 resource_local_to_scene = true
 shader = ExtResource("10_edjwt")
 shader_parameter/enabled = false
 shader_parameter/tint = Color(0.996945, 6e-06, 2e-06, 1)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_s2uxv"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_avg5u"]
 resource_local_to_scene = true
 shader = ExtResource("10_edjwt")
 shader_parameter/enabled = false
 shader_parameter/tint = Color(0.996945, 6e-06, 2e-06, 1)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_vx11m"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3sfiy"]
 resource_local_to_scene = true
 shader = ExtResource("10_edjwt")
 shader_parameter/enabled = false
 shader_parameter/tint = Color(0.996945, 6e-06, 2e-06, 1)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_ds8kj"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ay83i"]
 resource_local_to_scene = true
 shader = ExtResource("10_edjwt")
 shader_parameter/enabled = false
@@ -279,19 +280,19 @@ _data = {
 "platfor": SubResource("Animation_gbyj7")
 }
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_88asa"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2sdrn"]
 resource_local_to_scene = true
 shader = ExtResource("10_edjwt")
 shader_parameter/enabled = false
 shader_parameter/tint = Color(0.996945, 6e-06, 2e-06, 1)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_pje3u"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7wbp1"]
 resource_local_to_scene = true
 shader = ExtResource("10_edjwt")
 shader_parameter/enabled = false
 shader_parameter/tint = Color(0.996945, 6e-06, 2e-06, 1)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_a8k5m"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0fjfp"]
 resource_local_to_scene = true
 shader = ExtResource("10_edjwt")
 shader_parameter/enabled = false
@@ -363,11 +364,11 @@ position = Vector2(17, -119.5)
 shape = SubResource("RectangleShape2D_0b08t")
 
 [node name="MiniBoss1" parent="." instance=ExtResource("9_xcy0j")]
-material = SubResource("ShaderMaterial_q8awt")
+material = SubResource("ShaderMaterial_5ppvo")
 position = Vector2(-3962, 1153)
 
 [node name="MiniBoss2" parent="." instance=ExtResource("9_xcy0j")]
-material = SubResource("ShaderMaterial_5ta7w")
+material = SubResource("ShaderMaterial_s6je1")
 position = Vector2(-3612, 1160)
 
 [node name="Eye" parent="." instance=ExtResource("11_6sguu")]
@@ -387,15 +388,15 @@ position = Vector2(-1372, 679)
 rotation = 3.14159
 
 [node name="Headman" parent="." instance=ExtResource("12_2hl3p")]
-material = SubResource("ShaderMaterial_s2uxv")
+material = SubResource("ShaderMaterial_avg5u")
 position = Vector2(-2829, 1166)
 
 [node name="Headman2" parent="." instance=ExtResource("12_2hl3p")]
-material = SubResource("ShaderMaterial_vx11m")
+material = SubResource("ShaderMaterial_3sfiy")
 position = Vector2(-2799, 1164)
 
 [node name="MiniBoss3" parent="." instance=ExtResource("9_xcy0j")]
-material = SubResource("ShaderMaterial_ds8kj")
+material = SubResource("ShaderMaterial_ay83i")
 position = Vector2(-2321, 1163)
 
 [node name="Platform" type="StaticBody2D" parent="."]
@@ -435,15 +436,15 @@ script = ExtResource("14_3vq4x")
 environment = ExtResource("14_hhmfp")
 
 [node name="MiniBoss4" parent="." instance=ExtResource("9_xcy0j")]
-material = SubResource("ShaderMaterial_88asa")
+material = SubResource("ShaderMaterial_2sdrn")
 position = Vector2(-1451, 663)
 
 [node name="MiniBoss5" parent="." instance=ExtResource("9_xcy0j")]
-material = SubResource("ShaderMaterial_pje3u")
+material = SubResource("ShaderMaterial_7wbp1")
 position = Vector2(-998, 649)
 
 [node name="MiniBoss6" parent="." instance=ExtResource("9_xcy0j")]
-material = SubResource("ShaderMaterial_a8k5m")
+material = SubResource("ShaderMaterial_0fjfp")
 position = Vector2(251, 663)
 
 [node name="florance" type="Node2D" parent="."]
@@ -490,6 +491,10 @@ position = Vector2(650, 648)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(0, -1.5)
 shape = SubResource("RectangleShape2D_fijfc")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("20_gbqb3")
+autoplay = true
 
 [connection signal="body_entered" from="Platform/platformdetect" to="platfor" method="_on_platformdetect_body_entered"]
 [connection signal="body_exited" from="Platform/platformdetect" to="platfor" method="_on_platformdetect_body_exited"]

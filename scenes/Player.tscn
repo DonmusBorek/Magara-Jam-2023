@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://fbvrsjqpv48e"]
+[gd_scene load_steps=27 format=3 uid="uid://fbvrsjqpv48e"]
 
 [ext_resource type="Material" uid="uid://d18a0ol1keis" path="res://scenes/HitFlashShader.tres" id="1_d6mo7"]
 [ext_resource type="Script" path="res://scripts/Player.gd" id="1_scjqm"]
@@ -134,11 +134,16 @@ _data = {
 "RESET": SubResource("Animation_oggnf")
 }
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vtxbt"]
+size = Vector2(14, 47)
+
 [node name="Player" type="CharacterBody2D"]
 material = ExtResource("1_d6mo7")
 script = ExtResource("1_scjqm")
 
 [node name="Gun1" parent="." instance=ExtResource("3_78g5t")]
+visible = false
+position = Vector2(0, -26)
 
 [node name="isactive" parent="Gun1" instance=ExtResource("6_khpj1")]
 
@@ -175,10 +180,9 @@ shape = SubResource("RectangleShape2D_d4n0d")
 [node name="turn" type="Marker2D" parent="."]
 
 [node name="VisionComp" type="Sprite2D" parent="turn"]
-visible = false
 texture_filter = 1
 material = ExtResource("1_d6mo7")
-position = Vector2(-1, -19)
+position = Vector2(0, -20)
 rotation = 3.14159
 scale = Vector2(1, -1)
 texture = ExtResource("3_kdv7o")
@@ -214,5 +218,9 @@ libraries = {
 
 [node name="labomba" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("12_838kf")
+
+[node name="bodycol" type="CollisionShape2D" parent="."]
+position = Vector2(2, -33.5)
+shape = SubResource("RectangleShape2D_vtxbt")
 
 [connection signal="dead" from="UI" to="." method="_on_ui_dead"]

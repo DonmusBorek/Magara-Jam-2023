@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dvf3vvrxhgfq2"]
+[gd_scene load_steps=10 format=3 uid="uid://dvf3vvrxhgfq2"]
 
 [ext_resource type="TileSet" uid="uid://dbcekwogp6tu4" path="res://Tilseset1.tres" id="1_2hd0y"]
 [ext_resource type="Script" path="res://scripts/WorldScripts/world_7.gd" id="1_s4ucd"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://b6jc6rqa5yav7" path="res://scenes/ackapa.tscn" id="5_7oyqr"]
 [ext_resource type="PackedScene" uid="uid://ck1qqt2h66flu" path="res://scenes/a_iworld.tscn" id="5_ee2on"]
 [ext_resource type="Environment" uid="uid://wkxkytfd75u2" path="res://scenes/Worlds/glow.tres" id="6_wtr1b"]
+[ext_resource type="AudioStream" uid="uid://fw7fdnxmio8p" path="res://Sound/AMB_SciFi_Wind_Heavy_Loop.wav" id="8_4rpdg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qejr7"]
 size = Vector2(20, 92)
@@ -50,6 +51,10 @@ metadata/_edit_use_anchors_ = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = ExtResource("6_wtr1b")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_4rpdg")
+autoplay = true
 
 [connection signal="deadsignal" from="Player" to="." method="_on_player_deadsignal"]
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
