@@ -7,8 +7,8 @@
 [ext_resource type="Script" path="res://Camera2D.gd" id="4_frot8"]
 [ext_resource type="PackedScene" uid="uid://b6jc6rqa5yav7" path="res://scenes/ackapa.tscn" id="5_kcsqp"]
 [ext_resource type="PackedScene" uid="uid://ck1qqt2h66flu" path="res://scenes/a_iworld.tscn" id="5_konbq"]
-[ext_resource type="PackedScene" uid="uid://0ufd07f2xa57" path="res://scenes/floresan.tscn" id="6_f7a83"]
-[ext_resource type="Environment" uid="uid://wkxkytfd75u2" path="res://scenes/Worlds/glow.tres" id="9_u51r2"]
+[ext_resource type="PackedScene" uid="uid://b8k7fady4vvuw" path="res://scenes/floresan.tscn" id="6_f7a83"]
+[ext_resource type="Environment" uid="uid://cfimef8lfv0p4" path="res://scenes/Worlds/glow.tres" id="9_u51r2"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ijs7t"]
 shader = ExtResource("4_5kh60")
@@ -43,11 +43,20 @@ script = ExtResource("4_frot8")
 layer = 2
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+visible = false
 material = SubResource("ShaderMaterial_ijs7t")
 offset_left = -21.0
 offset_top = -10.0
 offset_right = 513.0
 offset_bottom = 295.0
+
+[node name="ColorRect2" type="ColorRect" parent="CanvasLayer"]
+modulate = Color(1, 1, 1, 0.592157)
+offset_left = -49.0
+offset_top = -23.0
+offset_right = 1367.0
+offset_bottom = 330.0
+color = Color(0, 0, 0, 1)
 
 [node name="AIworld" parent="CanvasLayer" instance=ExtResource("5_konbq")]
 
@@ -59,14 +68,6 @@ position = Vector2(986, 167)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(14, 21)
 shape = SubResource("RectangleShape2D_v3muy")
-
-[node name="ColorRect" type="ColorRect" parent="."]
-modulate = Color(1, 1, 1, 0.592157)
-offset_left = -49.0
-offset_top = -23.0
-offset_right = 1367.0
-offset_bottom = 330.0
-color = Color(0, 0, 0, 1)
 
 [node name="Floresan" parent="." instance=ExtResource("6_f7a83")]
 position = Vector2(267, 51)

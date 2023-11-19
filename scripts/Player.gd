@@ -36,7 +36,8 @@ func _physics_process(delta):
 		position.y += 1
 	update_animation()
 	if can_move:
-		dash()
+		if State.Dash:
+			dash()
 		apply_gravity(delta)
 		process_movement_input(delta)
 		var was_on_floor = is_on_floor()

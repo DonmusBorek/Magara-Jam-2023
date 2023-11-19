@@ -11,7 +11,7 @@
 [ext_resource type="Script" path="res://scripts/introtexts/introlabel6.gd" id="8_vllx3"]
 [ext_resource type="Script" path="res://scripts/introtexts/introlabel7.gd" id="9_ol78j"]
 [ext_resource type="PackedScene" uid="uid://b6jc6rqa5yav7" path="res://scenes/ackapa.tscn" id="11_kcdbc"]
-[ext_resource type="AudioStream" uid="uid://c42hiotg2b3ix" path="res://Sound/SoundEffect/Microsoft Windows 7 Startup Sound.mp3" id="12_fn7ls"]
+[ext_resource type="AudioStream" path="res://Sound/SoundEffect/Microsoft Windows 7 Startup Sound.mp3" id="12_fn7ls"]
 
 [node name="Intro" type="Node2D"]
 script = ExtResource("1_gx145")
@@ -122,9 +122,11 @@ stream = ExtResource("3_c3qh2")
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="ackapa" parent="CanvasLayer" instance=ExtResource("11_kcdbc")]
+visible = false
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("12_fn7ls")
+pitch_scale = 0.5
 autoplay = true
 
 [connection signal="display_finished" from="introlabel" to="introlabel2" method="_on_introlabel_display_finished"]
