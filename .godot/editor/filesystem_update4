@@ -43,3 +43,8 @@ res://scenes/Worlds/world_shooter_1.tscn
 res://scenes/Worlds/world_shooter_1.gd
 res://scenes/Worlds/world_4.tscn
 res://scripts/WorldScripts/world_4.gd
+res://scripts/Menu.gd
+res://scenes/Worlds/boss_room.gd
+res://NPCs/froggy.tscn
+res://NPCs/froggy.gd
+res://scenes/Worlds/BossBar.gd
