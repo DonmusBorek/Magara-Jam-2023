@@ -21,11 +21,8 @@ func _on_froggy_bossdead():
 
 func _on_elevin_area_entered(area):
 	if area.is_in_group("Player"):
+		$Player.can_move = false
 		$end.play("end")
-
-
-
-
 
 
 func _on_endarea_area_entered(area):
