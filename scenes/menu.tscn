@@ -1,8 +1,16 @@
-[gd_scene load_steps=15 format=3 uid="uid://cnikyolov1heq"]
+[gd_scene load_steps=21 format=3 uid="uid://cnikyolov1heq"]
 
 [ext_resource type="Script" path="res://scripts/Menu.gd" id="1_y1xxo"]
 [ext_resource type="AudioStream" uid="uid://xj1y13uqyfsh" path="res://Sound/Music/intro.mp3" id="2_0wqf1"]
-[ext_resource type="Texture2D" uid="uid://868u4jdwn0ck" path="res://icon.svg" id="2_tuuv6"]
+[ext_resource type="Texture2D" uid="uid://c8ocb4kjb1jwl" path="res://scenes/menuyeni.png" id="2_ph14s"]
+[ext_resource type="Texture2D" uid="uid://0acuma2uprdd" path="res://sprites/kucuk_oyna_tasarm1.png" id="3_3nch4"]
+[ext_resource type="Texture2D" uid="uid://by3ugxa3caysx" path="res://sprites/kucuk_oyna_tasarm3.png" id="4_j25sr"]
+[ext_resource type="Texture2D" uid="uid://dpv5q2cq1rdl8" path="res://sprites/kucuk_oyna_tasarm2.png" id="5_ftt2k"]
+[ext_resource type="Texture2D" uid="uid://kp3w4apwl3ev" path="res://sprites/ayarlar_butonu1.png" id="6_rw014"]
+[ext_resource type="Texture2D" uid="uid://jiw87dgx3ex4" path="res://sprites/ayarlar_butonu3.png" id="7_4qugu"]
+[ext_resource type="Texture2D" uid="uid://bxtntgvvw1qxt" path="res://sprites/ayarlar_butonu2.png" id="8_kgeq7"]
+[ext_resource type="Texture2D" uid="uid://cr23dmr6t1yan" path="res://sprites/yukaribasmalisey.png" id="10_gl6fa"]
+[ext_resource type="Texture2D" uid="uid://csqpyi6reodqs" path="res://sprites/basmalisey.png" id="11_36wcb"]
 
 [sub_resource type="Gradient" id="Gradient_df5w4"]
 
@@ -10,10 +18,6 @@
 gradient = SubResource("Gradient_df5w4")
 fill_from = Vector2(0.509174, 1)
 fill_to = Vector2(0.504587, 0)
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3w5ua"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ttjds"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_t17ev"]
 
@@ -37,25 +41,25 @@ tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/path = NodePath("CanvasLayer/Lowerfade:position")
-tracks/0/interp = 1
+tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(490, 728.5)]
+"values": [Vector2(480, 700)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/path = NodePath("CanvasLayer/Upperfade:position")
-tracks/1/interp = 1
+tracks/1/interp = 2
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(490, -185)]
+"values": [Vector2(480, -142)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -72,30 +76,29 @@ tracks/2/keys = {
 
 [sub_resource type="Animation" id="Animation_l1elr"]
 resource_name = "fade"
-length = 3.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/path = NodePath("CanvasLayer/Lowerfade:position")
-tracks/0/interp = 1
+tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 1, 1.5, 3),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(490, 728.5), Vector2(490, 460), Vector2(490, 460), Vector2(490, 728.5)]
+"values": [Vector2(480, -160), Vector2(480, 160)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/path = NodePath("CanvasLayer/Upperfade:position")
-tracks/1/interp = 1
+tracks/1/interp = 2
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 1, 1.5, 3),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(490, -185), Vector2(490, 84), Vector2(490, 84), Vector2(490, -185)]
+"values": [Vector2(480, 700), Vector2(480, 430)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -127,7 +130,7 @@ scale = Vector2(0.5, 0.5)
 script = ExtResource("1_y1xxo")
 
 [node name="Menuback" type="TextureRect" parent="."]
-modulate = Color(0.301961, 0.345098, 1, 1)
+texture_filter = 1
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -138,7 +141,7 @@ offset_right = 482.0
 offset_bottom = 304.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = SubResource("GradientTexture2D_e5dqy")
+texture = ExtResource("2_ph14s")
 
 [node name="Optionsback" type="TextureRect" parent="."]
 modulate = Color(0.301961, 0.345098, 1, 1)
@@ -156,28 +159,28 @@ texture = SubResource("GradientTexture2D_e5dqy")
 
 [node name="MenuButtons" type="Node" parent="."]
 
-[node name="Oyna" type="Button" parent="MenuButtons"]
-offset_left = 198.0
-offset_top = 99.0
-offset_right = 379.0
-offset_bottom = 164.0
-scale = Vector2(0.5, 0.5)
-theme_override_font_sizes/font_size = 41
-theme_override_styles/focus = SubResource("StyleBoxEmpty_3w5ua")
+[node name="Oyna" type="TextureButton" parent="MenuButtons"]
+texture_filter = 1
+offset_left = 330.0
+offset_top = 6.0
+offset_right = 424.0
+offset_bottom = 47.0
+scale = Vector2(1.5, 1.5)
 toggle_mode = true
-text = "Oyna"
+texture_normal = ExtResource("3_3nch4")
+texture_pressed = ExtResource("4_j25sr")
+texture_hover = ExtResource("5_ftt2k")
 
-[node name="Ayarlar" type="Button" parent="MenuButtons"]
-offset_left = 198.0
-offset_top = 147.0
-offset_right = 379.0
-offset_bottom = 212.0
-scale = Vector2(0.5, 0.5)
-theme_override_font_sizes/font_size = 41
-theme_override_styles/focus = SubResource("StyleBoxEmpty_ttjds")
+[node name="Ayarlar" type="TextureButton" parent="MenuButtons"]
+texture_filter = 1
+offset_left = 343.0
+offset_top = 71.0
+offset_right = 524.0
+offset_bottom = 136.0
 toggle_mode = true
-text = "Ayarlar
-"
+texture_normal = ExtResource("6_rw014")
+texture_pressed = ExtResource("7_4qugu")
+texture_hover = ExtResource("8_kgeq7")
 
 [node name="Cıkıs" type="Button" parent="MenuButtons"]
 offset_left = 198.0
@@ -270,16 +273,6 @@ scale = Vector2(0.5, 0.5)
 theme_override_font_sizes/font_size = 66
 text = "Sfx"
 
-[node name="Title" type="Label" parent="."]
-modulate = Color(1.5, 1, 1, 1)
-layout_mode = 0
-offset_left = 272.0
-offset_top = 49.0
-offset_right = 667.0
-offset_bottom = 157.0
-theme_override_font_sizes/font_size = 76
-text = "Exorcism 2"
-
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_ebdu5")
 
@@ -305,15 +298,19 @@ transform = Transform2D(0.5, 0, 0, 0.5, 0, 0)
 
 [node name="Lowerfade" type="Sprite2D" parent="CanvasLayer"]
 z_index = 1
-position = Vector2(490, 728.5)
-scale = Vector2(7.73437, 1.45703)
-texture = ExtResource("2_tuuv6")
+texture_filter = 1
+position = Vector2(480, 700)
+scale = Vector2(2, 2)
+texture = ExtResource("10_gl6fa")
+flip_h = true
 
 [node name="Upperfade" type="Sprite2D" parent="CanvasLayer"]
 z_index = 1
-position = Vector2(490, -185)
-scale = Vector2(7.46875, 1.45703)
-texture = ExtResource("2_tuuv6")
+texture_filter = 1
+position = Vector2(480, -142)
+scale = Vector2(2, 2)
+texture = ExtResource("11_36wcb")
+flip_h = true
 
 [connection signal="toggled" from="MenuButtons/Oyna" to="." method="_on_oyna_toggled"]
 [connection signal="toggled" from="MenuButtons/Ayarlar" to="." method="_on_ayarlar_toggled"]
@@ -323,3 +320,4 @@ texture = ExtResource("2_tuuv6")
 [connection signal="value_changed" from="OptionsButtons/Master2" to="." method="_on_master_2_value_changed"]
 [connection signal="value_changed" from="OptionsButtons/Music" to="." method="_on_music_value_changed"]
 [connection signal="value_changed" from="OptionsButtons/Sfx" to="." method="_on_sfx_value_changed"]
+[connection signal="animation_finished" from="Fade" to="." method="_on_fade_animation_finished"]

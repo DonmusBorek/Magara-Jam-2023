@@ -1,9 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://cl1wdbdm28en0"]
+[gd_scene load_steps=13 format=3 uid="uid://cl1wdbdm28en0"]
 
 [ext_resource type="Material" uid="uid://dm2kquhjmemy0" path="res://scenes/HitFlashShaderM1.tres" id="1_047sq"]
 [ext_resource type="Script" path="res://scripts/eye.gd" id="1_8713f"]
 [ext_resource type="Texture2D" uid="uid://nnn0x11grg1q" path="res://sprites/festuscanon.png" id="2_w5yrw"]
 [ext_resource type="Texture2D" uid="uid://ciomu0d6d8id3" path="res://sprites/lasercannons.png" id="3_lt7ka"]
+[ext_resource type="AudioStream" uid="uid://cb74rptn47k7u" path="res://Sound/SoundEffect/SFX_Chargeup_Fillup_Long.wav" id="5_mxs0h"]
+[ext_resource type="AudioStream" uid="uid://cfcs10udxl4bp" path="res://Sound/SoundEffect/SFX_Mowers_Crank_2.wav" id="6_4svte"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_orns4"]
 radius = 394.103
@@ -90,7 +92,7 @@ texture = ExtResource("2_w5yrw")
 shape = SubResource("CircleShape2D_orns4")
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 2.5
+wait_time = 2.0
 one_shot = true
 
 [node name="Rotatet" type="Marker2D" parent="."]
@@ -117,6 +119,12 @@ shape = SubResource("RectangleShape2D_bjyku")
 libraries = {
 "": SubResource("AnimationLibrary_k8oef")
 }
+
+[node name="audio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_mxs0h")
+
+[node name="rotaudio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_4svte")
 
 [connection signal="area_entered" from="track" to="." method="_on_area_2d_area_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -6,8 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://b37o5dkrdxh0i" path="res://scenes/laser.tscn" id="3_mlyif"]
 [ext_resource type="PackedScene" uid="uid://ck1qqt2h66flu" path="res://scenes/a_iworld.tscn" id="4_pgwas"]
 [ext_resource type="PackedScene" uid="uid://b6jc6rqa5yav7" path="res://scenes/ackapa.tscn" id="4_yq7yd"]
-[ext_resource type="PackedScene" uid="uid://b8k7fady4vvuw" path="res://scenes/floresan.tscn" id="7_hbnke"]
-[ext_resource type="Environment" uid="uid://cfimef8lfv0p4" path="res://scenes/Worlds/glow.tres" id="8_gvu1i"]
+[ext_resource type="PackedScene" uid="uid://0ufd07f2xa57" path="res://scenes/floresan.tscn" id="7_hbnke"]
+[ext_resource type="Environment" uid="uid://wkxkytfd75u2" path="res://scenes/Worlds/glow.tres" id="8_gvu1i"]
 [ext_resource type="TileSet" uid="uid://caqgtfl7smp0e" path="res://scenes/Worlds/platform.tres" id="8_wgtyw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0eo5q"]
