@@ -18,7 +18,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qejr7"]
 size = Vector2(20, 92)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_j7od8"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_b1hre"]
 resource_local_to_scene = true
 shader = ExtResource("10_ymref")
 shader_parameter/enabled = false
@@ -73,7 +73,7 @@ position = Vector2(465, 224)
 position = Vector2(416, 147)
 
 [node name="MiniBoss1" parent="." instance=ExtResource("9_2sa5f")]
-material = SubResource("ShaderMaterial_j7od8")
+material = SubResource("ShaderMaterial_b1hre")
 position = Vector2(431, 201)
 
 [node name="Floresan" parent="." instance=ExtResource("10_x7duh")]

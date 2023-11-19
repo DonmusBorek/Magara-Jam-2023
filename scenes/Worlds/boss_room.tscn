@@ -14,7 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://cwxrt687x086b" path="res://sprites/hpbarover.png" id="6_k8kdt"]
 [ext_resource type="Script" path="res://Camera2D.gd" id="6_uq4ho"]
 [ext_resource type="Texture2D" uid="uid://dn7h0ww0vfvtg" path="res://sprites/hpbarunder.png" id="7_aksb8"]
-[ext_resource type="PackedScene" uid="uid://b8k7fady4vvuw" path="res://scenes/floresan.tscn" id="7_v3xdo"]
+[ext_resource type="PackedScene" uid="uid://0ufd07f2xa57" path="res://scenes/floresan.tscn" id="7_v3xdo"]
 [ext_resource type="Script" path="res://scenes/Worlds/BossBar.gd" id="8_4m0yc"]
 [ext_resource type="AudioStream" uid="uid://so4s6ytjsuol" path="res://Sound/SoundEffect/main.mp3" id="9_8yk5c"]
 [ext_resource type="Shader" uid="uid://s7s30mt8g442" path="res://scenes/Player.tres" id="9_p73p4"]
@@ -311,7 +311,7 @@ physics_layer_0/collision_layer = 2
 physics_layer_0/collision_mask = 2
 sources/0 = SubResource("TileSetAtlasSource_t5fu4")
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_v10mo"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_l110c"]
 resource_local_to_scene = true
 shader = ExtResource("9_p73p4")
 shader_parameter/enabled = false
@@ -322,6 +322,21 @@ size = Vector2(107, 14)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ludx6"]
 size = Vector2(91, 18)
+
+[sub_resource type="Animation" id="Animation_ap46y"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("StaticBody2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1628, 103)]
+}
 
 [sub_resource type="Animation" id="Animation_3jlqv"]
 resource_name = "end"
@@ -337,21 +352,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(1628, 103), Vector2(1628, -816)]
-}
-
-[sub_resource type="Animation" id="Animation_ap46y"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("StaticBody2D:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1628, 103)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_wnpr5"]
@@ -431,7 +431,7 @@ format = 2
 layer_0/tile_data = PackedInt32Array(720958, 65536, 2, 655422, 65536, 2, 589886, 65536, 2, 524350, 65536, 2, 458814, 65536, 2, 393278, 65536, 2, 327742, 65536, 2, 262206, 65536, 2, 196670, 65536, 2, 131134, 65536, 1, 65598, 65536, 0, 65597, 0, 0, 65599, 131072, 0, 65600, 196608, 0, 65601, 262144, 0, 131137, 262144, 1, 196673, 262144, 2, 262209, 262144, 2, 327745, 262144, 2, 393281, 262144, 2, 458817, 262144, 2, 524353, 262144, 2, 589889, 262144, 2, 655425, 262144, 2, 720961, 262144, 2, 65602, 327680, 0, 65540, 0, 0, 65541, 65536, 0, 131077, 65536, 1, 196613, 65536, 2, 262149, 65536, 2, 327685, 65536, 2, 393221, 65536, 2, 458757, 65536, 2, 524293, 65536, 2, 589829, 65536, 2, 655365, 65536, 2, 720901, 65536, 2, 65542, 131072, 0, 65543, 196608, 0, 65544, 262144, 0, 131080, 262144, 1, 196616, 262144, 2, 262152, 262144, 2, 327688, 262144, 2, 393224, 262144, 2, 458760, 262144, 2, 524296, 262144, 2, 589832, 262144, 2, 655368, 262144, 2, 720904, 262144, 2, 65545, 327680, 0, 65554, 0, 0, 65555, 65536, 0, 131091, 65536, 1, 196627, 65536, 2, 262163, 65536, 2, 327699, 65536, 2, 393235, 65536, 2, 458771, 65536, 2, 524307, 65536, 2, 589843, 65536, 2, 655379, 65536, 2, 720915, 65536, 2, 65556, 131072, 0, 65557, 196608, 0, 65558, 262144, 0, 131094, 262144, 1, 196630, 262144, 2, 262166, 262144, 2, 327702, 262144, 2, 393238, 262144, 2, 458774, 262144, 2, 524310, 262144, 2, 589846, 262144, 2, 655382, 262144, 2, 720918, 262144, 2, 65559, 327680, 0, 65581, 0, 0, 65582, 65536, 0, 131118, 65536, 1, 196654, 65536, 2, 262190, 65536, 2, 327726, 65536, 2, 393262, 65536, 2, 458798, 65536, 2, 524334, 65536, 2, 589870, 65536, 2, 655406, 65536, 2, 720942, 65536, 2, 65583, 131072, 0, 65584, 196608, 0, 65585, 262144, 0, 131121, 262144, 1, 196657, 262144, 2, 262193, 262144, 2, 327729, 262144, 2, 393265, 262144, 2, 458801, 262144, 2, 524337, 262144, 2, 589873, 262144, 2, 655409, 262144, 2, 720945, 262144, 2, 65586, 327680, 0)
 
 [node name="froggy" parent="." instance=ExtResource("6_2b544")]
-material = SubResource("ShaderMaterial_v10mo")
+material = SubResource("ShaderMaterial_l110c")
 position = Vector2(2, 35)
 
 [node name="Floresan" parent="." instance=ExtResource("7_v3xdo")]
