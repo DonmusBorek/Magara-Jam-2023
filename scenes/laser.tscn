@@ -1,7 +1,7 @@
 [gd_scene load_steps=12 format=3 uid="uid://b37o5dkrdxh0i"]
 
 [ext_resource type="Script" path="res://scripts/laser.gd" id="1_pjgai"]
-[ext_resource type="Material" uid="uid://g4diueghkikn" path="res://scenes/laserbegin.tres" id="2_viak0"]
+[ext_resource type="Material" uid="uid://dvljdtqwv6vuv" path="res://scenes/laserbegin.tres" id="2_viak0"]
 [ext_resource type="Texture2D" uid="uid://c1hg6r0ct7cq8" path="res://sprites/particule.png" id="3_2o5r3"]
 
 [sub_resource type="Gradient" id="Gradient_5wwgd"]
@@ -49,6 +49,7 @@ tangential_accel_max = 200.0
 color_ramp = SubResource("GradientTexture1D_jtt22")
 
 [node name="Laser" type="RayCast2D"]
+z_index = 1
 target_position = Vector2(1000, 0)
 collide_with_bodies = false
 script = ExtResource("1_pjgai")
