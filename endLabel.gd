@@ -11,7 +11,7 @@ extends Label
 var _current_text : String
  
 var _text_sequence = ["Hayır!","Sistem uyarılarında yazmıyordu.",
-"Bataryanın son savaş yüzünden aşırı ısınması yüzünden.","Son umudumuz buydu...", " "]
+"Bataryan son savaş yüzünden aşırı ısınmış olmalı.","Son umudumuz buydu...", " "]
 var _letter_index = 0
 var _text_number = 0
 
