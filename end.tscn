@@ -1,0 +1,47 @@
+[gd_scene load_steps=5 format=3 uid="uid://yggfs4jhbkdc"]
+
+[ext_resource type="Script" path="res://end.gd" id="1_io7jd"]
+[ext_resource type="FontFile" uid="uid://8dpr5lead7kx" path="res://turkishRoboto-Black.ttf" id="2_bjrcd"]
+[ext_resource type="Script" path="res://endLabel.gd" id="2_cmjs0"]
+[ext_resource type="AudioStream" uid="uid://tp77digxy0mj" path="res://Sound/SoundEffect/textsound.wav" id="3_wu2ys"]
+
+[node name="End" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_io7jd")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="endLabel" type="Label" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_left = 42.0
+offset_top = 102.0
+offset_right = 426.0
+offset_bottom = 133.0
+theme_override_fonts/font = ExtResource("2_bjrcd")
+theme_override_font_sizes/font_size = 25
+autowrap_mode = 3
+script = ExtResource("2_cmjs0")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+autostart = true
+
+[node name="textsound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_wu2ys")
+
+[connection signal="display_finished" from="endLabel" to="." method="_on_end_label_display_finished"]
+[connection signal="timeout" from="Timer" to="endLabel" method="_on_timer_timeout"]
