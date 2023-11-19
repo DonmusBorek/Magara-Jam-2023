@@ -1,6 +1,7 @@
 extends Node2D
 
 var cooldown = false
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -34,6 +35,9 @@ func _physics_process(delta):
 			
 			#Hitscan
 			if($Marker2D/guncast.is_colliding()):
+				if $Marker2D/guncast.get_collider().name == "eyecollision":
+					$Marker2D/guncast.get_collider().get_parent().health -= 5
+				
 				var hitenemy = preload("res://hit_enemy.tscn").instantiate()
 				hitenemy.global_position = $Marker2D/guncast.get_collision_point()
 				get_tree().root.add_child(hitenemy)

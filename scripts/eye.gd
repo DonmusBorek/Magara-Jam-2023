@@ -11,9 +11,19 @@ var track = false
 
 var a = false
 
+var alive = true
+
 
 func _physics_process(delta):
-		
+	
+	if health == 0 && alive:
+		var _particle = preload("res://scenes/explosion.tscn").instantiate()
+		_particle.position = global_position
+		_particle.emitting = true
+		get_tree().current_scene.add_child(_particle)
+		alive = false
+		queue_free()
+	
 	if track:
 		rotateToTarget(player, delta)
 		if timer.time_left == 0: 
@@ -42,5 +52,7 @@ func _on_timer_timeout():
 	
 
 
-func _on_hit_area_entered(area):
-	area.is_in_group("soksokattack")
+func _on_eyecollision_area_entered(area):
+	if area.is_in_group("soksokattack") or area.is_in_group("gun"):
+		print(area.name)
+		health -= 5
