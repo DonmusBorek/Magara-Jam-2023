@@ -1,9 +1,123 @@
-[gd_scene load_steps=4 format=3 uid="uid://bvv1ii68l5xih"]
+[gd_scene load_steps=22 format=3 uid="uid://bvv1ii68l5xih"]
 
-[ext_resource type="Texture2D" uid="uid://cotvulxyq83nm" path="res://sprites/gozparca.png" id="1_imkd7"]
 [ext_resource type="Script" path="res://scenes/door_button.gd" id="1_mwa04"]
+[ext_resource type="Texture2D" uid="uid://c63ik3vqccj6c" path="res://scenes/Worlds/buttonidle-Sheet.png" id="2_g7hsk"]
+[ext_resource type="Material" uid="uid://dm2kquhjmemy0" path="res://scenes/HitFlashShaderM1.tres" id="2_vh3ox"]
+[ext_resource type="Texture2D" uid="uid://cx5ieq66bf4q" path="res://scenes/Worlds/buttonsplash.png" id="3_qbncx"]
+[ext_resource type="Texture2D" uid="uid://cq22h2oxlg8qa" path="res://sprites/2d_lights_and_shadows_neutral_point_light.webp" id="4_b3nmq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2vxbn"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cpkw8"]
+atlas = ExtResource("2_g7hsk")
+region = Rect2(0, 0, 32, 27)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3gusf"]
+atlas = ExtResource("2_g7hsk")
+region = Rect2(32, 0, 32, 27)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g2vpu"]
+atlas = ExtResource("2_g7hsk")
+region = Rect2(64, 0, 32, 27)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s54p8"]
+atlas = ExtResource("2_g7hsk")
+region = Rect2(96, 0, 32, 27)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_npnbf"]
+atlas = ExtResource("2_g7hsk")
+region = Rect2(128, 0, 32, 27)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x34hm"]
+atlas = ExtResource("2_g7hsk")
+region = Rect2(160, 0, 32, 27)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tskg0"]
+atlas = ExtResource("2_g7hsk")
+region = Rect2(192, 0, 32, 27)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sgm03"]
+atlas = ExtResource("3_qbncx")
+region = Rect2(0, 0, 44, 39)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mn1c1"]
+atlas = ExtResource("3_qbncx")
+region = Rect2(44, 0, 44, 39)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qwp3f"]
+atlas = ExtResource("3_qbncx")
+region = Rect2(88, 0, 44, 39)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qwy3o"]
+atlas = ExtResource("3_qbncx")
+region = Rect2(132, 0, 44, 39)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_htud4"]
+atlas = ExtResource("3_qbncx")
+region = Rect2(176, 0, 44, 39)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_atm3w"]
+atlas = ExtResource("3_qbncx")
+region = Rect2(220, 0, 44, 39)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fctpi"]
+atlas = ExtResource("3_qbncx")
+region = Rect2(264, 0, 44, 39)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_sd7g0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cpkw8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3gusf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g2vpu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s54p8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_npnbf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x34hm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tskg0")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sgm03")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mn1c1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qwp3f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qwy3o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_htud4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_atm3w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fctpi")
+}],
+"loop": false,
+"name": &"pop",
+"speed": 5.0
+}]
 
 [node name="Doorbutton" type="Area2D"]
 script = ExtResource("1_mwa04")
@@ -11,8 +125,19 @@ script = ExtResource("1_mwa04")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_2vxbn")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
-texture = ExtResource("1_imkd7")
+material = ExtResource("2_vh3ox")
+sprite_frames = SubResource("SpriteFrames_sd7g0")
+animation = &"pop"
+autoplay = "idle"
+frame = 6
+frame_progress = 1.0
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(-5, 0)
+scale = Vector2(0.25, 0.25)
+color = Color(0.44, 0, 0, 1)
+texture = ExtResource("4_b3nmq")
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]

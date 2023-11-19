@@ -28,6 +28,8 @@ func _ready():
 		_text_sequence = ["Burası cephanelik.","Burada sahip olduğun ekipmanları takabilirsin.",
 		"Aldığın gözü ve bıçağı takmayı dene.","Her güçlendirmeyi belirli bir yere takabilirsin.",
 		"İstediğin zaman da çıkarabilirsin.",""]
+	if State.currentWorld == 8:
+		_text_sequence = ["Yeni bir silah buldun.","Bıçağın yanına tak.",""]
 
 func _display_next_text():
 	if _text_number < _text_sequence.size():

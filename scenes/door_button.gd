@@ -13,4 +13,9 @@ func _process(delta):
 
 func _on_area_entered(area):
 	if area.is_in_group("soksokattack"):
+		$AnimatedSprite2D.animation = "pop"
+		State.frameFreeze(0.1, 0.05)
+		$AnimatedSprite2D.material.set_shader_parameter("enabled", 1)
+		await get_tree().create_timer(0.1).timeout
+		$AnimatedSprite2D.material.set_shader_parameter("enabled", 0)
 		set_deferred("monitoring",false)

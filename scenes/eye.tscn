@@ -1,5 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://cl1wdbdm28en0"]
+[gd_scene load_steps=11 format=3 uid="uid://cl1wdbdm28en0"]
 
+[ext_resource type="Material" uid="uid://dm2kquhjmemy0" path="res://scenes/HitFlashShaderM1.tres" id="1_047sq"]
 [ext_resource type="Script" path="res://scripts/eye.gd" id="1_8713f"]
 [ext_resource type="Texture2D" uid="uid://nnn0x11grg1q" path="res://sprites/festuscanon.png" id="2_w5yrw"]
 [ext_resource type="Texture2D" uid="uid://ciomu0d6d8id3" path="res://sprites/lasercannons.png" id="3_lt7ka"]
@@ -10,18 +11,82 @@ radius = 394.103
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e36ln"]
 size = Vector2(36, 23.5)
 
-[node name="Eye" type="Node2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bjyku"]
+size = Vector2(32, 20)
+
+[sub_resource type="Animation" id="Animation_c3ldn"]
+resource_name = "HitFlash"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:material:shader_parameter/enabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Rotatet/Sprite2D2:material:shader_parameter/enabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_8jcrv"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:material:shader_parameter/enabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Rotatet/Sprite2D2:material:shader_parameter/enabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_k8oef"]
+_data = {
+"HitFlash": SubResource("Animation_c3ldn"),
+"RESET": SubResource("Animation_8jcrv")
+}
+
+[node name="Eye" type="StaticBody2D" groups=["eye"]]
 script = ExtResource("1_8713f")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 z_index = 1
 texture_filter = 1
+material = ExtResource("1_047sq")
 texture = ExtResource("2_w5yrw")
 
 [node name="track" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="track"]
-visible = false
 shape = SubResource("CircleShape2D_orns4")
 
 [node name="Timer" type="Timer" parent="."]
@@ -32,6 +97,7 @@ one_shot = true
 
 [node name="Sprite2D2" type="Sprite2D" parent="Rotatet"]
 texture_filter = 1
+material = ExtResource("1_047sq")
 position = Vector2(0, -1)
 rotation = -1.5708
 texture = ExtResource("3_lt7ka")
@@ -43,6 +109,14 @@ collision_mask = 5
 [node name="CollisionShape2D" type="CollisionShape2D" parent="eyecollision"]
 position = Vector2(0, 0.25)
 shape = SubResource("RectangleShape2D_e36ln")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_bjyku")
+
+[node name="HitFlash" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_k8oef")
+}
 
 [connection signal="area_entered" from="track" to="." method="_on_area_2d_area_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

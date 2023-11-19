@@ -8,6 +8,16 @@ var onworld3 = false
 var can_devam = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	if State.VisionCompHave:
+		$Control/Objects/vision.position = $Control/Placable/Head.position
+	if State.knife:
+		$Control/Objects/knife.position = $Control/Placable/Right_Hand.position
+	if State.EyePump:
+		$Control/Objects/pump.position = $Control/Placable/Left_Hand.position
+	if State.Dash:
+		$Control/Objects/dash.position = $Control/Placable/Ability.position
+	
+	
 	if get_parent().get_parent() != null:
 		onworld3 = true
 	
@@ -16,6 +26,8 @@ func _ready():
 		fadeout()
 		await get_tree().create_timer(3).timeout
 		$texttimer.start()
+	if State.currentWorld == 8:
+		$Control/Objects/pump.visible = true
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
