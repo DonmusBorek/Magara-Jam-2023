@@ -18,3 +18,16 @@ res://gun_1.tscn
 res://scenes/ui.tscn
 res://scenes/laser.tscn
 res://gun_1.gd
+res://scenes/xipe_head.tscn
+res://scenes/xipe_head.gd
+res://scenes/Worlds/boss_room.tscn
+res://scenes/Worlds/platform.tres
+res://scenes/Worlds/frogger.gd
+res://scenes/ackapa.gd
+res://NPCs/froggy.gd
+res://scripts/Player.gd
+res://NPCs/froggy.tscn
+res://scenes/Worlds/BossBar.gd
+res://scenes/a_iworld.tscn
+res://scenes/Worlds/world_2.tscn
+res://scenes/menu.tscn

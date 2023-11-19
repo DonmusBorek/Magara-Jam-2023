@@ -164,7 +164,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_2rbqo")
 }],
-"loop": true,
+"loop": false,
 "name": &"jump",
 "speed": 10.0
 }, {
@@ -241,9 +241,8 @@ wait_time = 0.3
 texture_filter = 1
 material = ExtResource("2_4vvp5")
 sprite_frames = SubResource("SpriteFrames_lmfej")
-animation = &"walk"
+animation = &"jump"
 autoplay = "walk"
-frame_progress = 0.125444
 
 [node name="Hurtful" parent="turn" instance=ExtResource("3_4nlqw")]
 

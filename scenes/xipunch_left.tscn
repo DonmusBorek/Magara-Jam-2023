@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=3 uid="uid://bbw736u30m344"]
+
+[ext_resource type="PackedScene" uid="uid://dls3uiopain3t" path="res://hurtful.tscn" id="1_l6q4d"]
+
+[node name="XipunchLeft" type="CharacterBody2D"]
+
+[node name="yumruk" type="Sprite2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="Hurtful" parent="." instance=ExtResource("1_l6q4d")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtful"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="avuc" type="Sprite2D" parent="."]
+
+[node name="avuctimer" type="Timer" parent="."]

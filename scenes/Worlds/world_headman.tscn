@@ -13,109 +13,109 @@
 
 [sub_resource type="TileSet" id="TileSet_k6ksc"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_vw1ko"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4fl6b"]
 resource_local_to_scene = true
 shader = ExtResource("8_2682q")
 shader_parameter/enabled = false
 shader_parameter/tint = Color(0.996945, 6e-06, 2e-06, 1)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_7tuik"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vevmj"]
 resource_local_to_scene = true
 shader = ExtResource("8_2682q")
 shader_parameter/enabled = false
 shader_parameter/tint = Color(0.996945, 6e-06, 2e-06, 1)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_8ngib"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6gkvr"]
 resource_local_to_scene = true
 shader = ExtResource("8_2682q")
 shader_parameter/enabled = false
 shader_parameter/tint = Color(0.996945, 6e-06, 2e-06, 1)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_k78af"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wybm1"]
 resource_local_to_scene = true
 shader = ExtResource("8_2682q")
 shader_parameter/enabled = false
 shader_parameter/tint = Color(0.996945, 6e-06, 2e-06, 1)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_aykj4"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ctosk"]
 resource_local_to_scene = true
 shader = ExtResource("8_2682q")
 shader_parameter/enabled = false
 shader_parameter/tint = Color(0.996945, 6e-06, 2e-06, 1)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_efle1"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_35v3o"]
 resource_local_to_scene = true
 shader = ExtResource("8_2682q")
 shader_parameter/enabled = false
 shader_parameter/tint = Color(0.996945, 6e-06, 2e-06, 1)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_isidi"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_23t2w"]
 resource_local_to_scene = true
 shader = ExtResource("8_2682q")
 shader_parameter/enabled = false
 shader_parameter/tint = Color(0.996945, 6e-06, 2e-06, 1)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_e567c"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_g2cob"]
 resource_local_to_scene = true
 shader = ExtResource("8_2682q")
 shader_parameter/enabled = false
 shader_parameter/tint = Color(0.996945, 6e-06, 2e-06, 1)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_jlifp"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3nrl6"]
 resource_local_to_scene = true
 shader = ExtResource("8_2682q")
 shader_parameter/enabled = false
 shader_parameter/tint = Color(0.996945, 6e-06, 2e-06, 1)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_q3fkq"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_v6712"]
 resource_local_to_scene = true
 shader = ExtResource("8_2682q")
 shader_parameter/enabled = false
 shader_parameter/tint = Color(0.996945, 6e-06, 2e-06, 1)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_phlcb"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ffd8q"]
 resource_local_to_scene = true
 shader = ExtResource("8_2682q")
 shader_parameter/enabled = false
 shader_parameter/tint = Color(0.996945, 6e-06, 2e-06, 1)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_56kvp"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nl7k4"]
 resource_local_to_scene = true
 shader = ExtResource("8_2682q")
 shader_parameter/enabled = false
 shader_parameter/tint = Color(0.996945, 6e-06, 2e-06, 1)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_nxtul"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_k72bw"]
 resource_local_to_scene = true
 shader = ExtResource("8_2682q")
 shader_parameter/enabled = false
 shader_parameter/tint = Color(0.996945, 6e-06, 2e-06, 1)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_yfff0"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kefe5"]
 resource_local_to_scene = true
 shader = ExtResource("8_2682q")
 shader_parameter/enabled = false
 shader_parameter/tint = Color(0.996945, 6e-06, 2e-06, 1)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_adnnd"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_by63j"]
 resource_local_to_scene = true
 shader = ExtResource("8_2682q")
 shader_parameter/enabled = false
 shader_parameter/tint = Color(0.996945, 6e-06, 2e-06, 1)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_jpl3j"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_b3fn4"]
 resource_local_to_scene = true
 shader = ExtResource("8_2682q")
 shader_parameter/enabled = false
 shader_parameter/tint = Color(0.996945, 6e-06, 2e-06, 1)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_hrcjl"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_u7u3p"]
 resource_local_to_scene = true
 shader = ExtResource("8_2682q")
 shader_parameter/enabled = false
 shader_parameter/tint = Color(0.996945, 6e-06, 2e-06, 1)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_mbj12"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vf1lp"]
 resource_local_to_scene = true
 shader = ExtResource("8_2682q")
 shader_parameter/enabled = false
@@ -124,37 +124,37 @@ shader_parameter/tint = Color(0.996945, 6e-06, 2e-06, 1)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c7i2i"]
 size = Vector2(238, 63)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_fjwav"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8rq2a"]
 resource_local_to_scene = true
 shader = ExtResource("8_2682q")
 shader_parameter/enabled = false
 shader_parameter/tint = Color(0.996945, 6e-06, 2e-06, 1)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_wx5e0"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lfrrt"]
 resource_local_to_scene = true
 shader = ExtResource("8_2682q")
 shader_parameter/enabled = false
 shader_parameter/tint = Color(0.996945, 6e-06, 2e-06, 1)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_sr3tg"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_sv5o0"]
 resource_local_to_scene = true
 shader = ExtResource("8_2682q")
 shader_parameter/enabled = false
 shader_parameter/tint = Color(0.996945, 6e-06, 2e-06, 1)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_n2k2t"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_a67t2"]
 resource_local_to_scene = true
 shader = ExtResource("8_2682q")
 shader_parameter/enabled = false
 shader_parameter/tint = Color(0.996945, 6e-06, 2e-06, 1)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_ypyyb"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_j7wgj"]
 resource_local_to_scene = true
 shader = ExtResource("8_2682q")
 shader_parameter/enabled = false
 shader_parameter/tint = Color(0.996945, 6e-06, 2e-06, 1)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_62236"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tngja"]
 resource_local_to_scene = true
 shader = ExtResource("8_2682q")
 shader_parameter/enabled = false
@@ -213,75 +213,75 @@ position = Vector2(206, 515)
 [node name="MotherOfAllHeadmen" type="Node2D" parent="."]
 
 [node name="Headman" parent="MotherOfAllHeadmen" instance=ExtResource("3_icg1x")]
-material = SubResource("ShaderMaterial_vw1ko")
+material = SubResource("ShaderMaterial_4fl6b")
 position = Vector2(-239, 80)
 
 [node name="Headman2" parent="MotherOfAllHeadmen" instance=ExtResource("3_icg1x")]
-material = SubResource("ShaderMaterial_7tuik")
+material = SubResource("ShaderMaterial_vevmj")
 position = Vector2(774, 83)
 
 [node name="Headman3" parent="MotherOfAllHeadmen" instance=ExtResource("3_icg1x")]
-material = SubResource("ShaderMaterial_8ngib")
+material = SubResource("ShaderMaterial_6gkvr")
 position = Vector2(756, 68)
 
 [node name="Headman4" parent="MotherOfAllHeadmen" instance=ExtResource("3_icg1x")]
-material = SubResource("ShaderMaterial_k78af")
+material = SubResource("ShaderMaterial_wybm1")
 position = Vector2(737, 86)
 
 [node name="Headman5" parent="MotherOfAllHeadmen" instance=ExtResource("3_icg1x")]
-material = SubResource("ShaderMaterial_aykj4")
+material = SubResource("ShaderMaterial_ctosk")
 position = Vector2(-208, 70)
 
 [node name="Headman6" parent="MotherOfAllHeadmen" instance=ExtResource("3_icg1x")]
-material = SubResource("ShaderMaterial_efle1")
+material = SubResource("ShaderMaterial_35v3o")
 position = Vector2(-270, 67)
 
 [node name="Headman7" parent="MotherOfAllHeadmen" instance=ExtResource("3_icg1x")]
-material = SubResource("ShaderMaterial_isidi")
+material = SubResource("ShaderMaterial_23t2w")
 position = Vector2(-225, 673)
 
 [node name="Headman8" parent="MotherOfAllHeadmen" instance=ExtResource("3_icg1x")]
-material = SubResource("ShaderMaterial_e567c")
+material = SubResource("ShaderMaterial_g2cob")
 position = Vector2(-210, 651)
 
 [node name="Headman9" parent="MotherOfAllHeadmen" instance=ExtResource("3_icg1x")]
-material = SubResource("ShaderMaterial_jlifp")
+material = SubResource("ShaderMaterial_3nrl6")
 position = Vector2(-198, 674)
 
 [node name="Headman10" parent="MotherOfAllHeadmen" instance=ExtResource("3_icg1x")]
-material = SubResource("ShaderMaterial_q3fkq")
+material = SubResource("ShaderMaterial_v6712")
 position = Vector2(-227, 631)
 
 [node name="Headman11" parent="MotherOfAllHeadmen" instance=ExtResource("3_icg1x")]
-material = SubResource("ShaderMaterial_phlcb")
+material = SubResource("ShaderMaterial_ffd8q")
 position = Vector2(-175, 624)
 
 [node name="Headman12" parent="MotherOfAllHeadmen" instance=ExtResource("3_icg1x")]
-material = SubResource("ShaderMaterial_56kvp")
+material = SubResource("ShaderMaterial_nl7k4")
 position = Vector2(-146, 642)
 
 [node name="Headman13" parent="MotherOfAllHeadmen" instance=ExtResource("3_icg1x")]
-material = SubResource("ShaderMaterial_nxtul")
+material = SubResource("ShaderMaterial_k72bw")
 position = Vector2(-130, 604)
 
 [node name="Headman14" parent="MotherOfAllHeadmen" instance=ExtResource("3_icg1x")]
-material = SubResource("ShaderMaterial_yfff0")
+material = SubResource("ShaderMaterial_kefe5")
 position = Vector2(-91, 649)
 
 [node name="Headman15" parent="MotherOfAllHeadmen" instance=ExtResource("3_icg1x")]
-material = SubResource("ShaderMaterial_adnnd")
+material = SubResource("ShaderMaterial_by63j")
 position = Vector2(-1403, 668)
 
 [node name="Headman16" parent="MotherOfAllHeadmen" instance=ExtResource("3_icg1x")]
-material = SubResource("ShaderMaterial_jpl3j")
+material = SubResource("ShaderMaterial_b3fn4")
 position = Vector2(-1357, 669)
 
 [node name="Headman17" parent="MotherOfAllHeadmen" instance=ExtResource("3_icg1x")]
-material = SubResource("ShaderMaterial_hrcjl")
+material = SubResource("ShaderMaterial_u7u3p")
 position = Vector2(-1321, 672)
 
 [node name="Headman18" parent="MotherOfAllHeadmen" instance=ExtResource("3_icg1x")]
-material = SubResource("ShaderMaterial_mbj12")
+material = SubResource("ShaderMaterial_vf1lp")
 position = Vector2(-1288, 668)
 
 [node name="Fall" type="Node2D" parent="."]
@@ -298,27 +298,27 @@ shape = SubResource("RectangleShape2D_c7i2i")
 position = Vector2(-3430, 1024)
 
 [node name="Headman" parent="MotherOfAllHeadmen2" instance=ExtResource("3_icg1x")]
-material = SubResource("ShaderMaterial_fjwav")
+material = SubResource("ShaderMaterial_8rq2a")
 position = Vector2(-239, 80)
 
 [node name="Headman2" parent="MotherOfAllHeadmen2" instance=ExtResource("3_icg1x")]
-material = SubResource("ShaderMaterial_wx5e0")
+material = SubResource("ShaderMaterial_lfrrt")
 position = Vector2(774, 83)
 
 [node name="Headman3" parent="MotherOfAllHeadmen2" instance=ExtResource("3_icg1x")]
-material = SubResource("ShaderMaterial_sr3tg")
+material = SubResource("ShaderMaterial_sv5o0")
 position = Vector2(756, 68)
 
 [node name="Headman4" parent="MotherOfAllHeadmen2" instance=ExtResource("3_icg1x")]
-material = SubResource("ShaderMaterial_n2k2t")
+material = SubResource("ShaderMaterial_a67t2")
 position = Vector2(737, 86)
 
 [node name="Headman5" parent="MotherOfAllHeadmen2" instance=ExtResource("3_icg1x")]
-material = SubResource("ShaderMaterial_ypyyb")
+material = SubResource("ShaderMaterial_j7wgj")
 position = Vector2(-208, 70)
 
 [node name="Headman6" parent="MotherOfAllHeadmen2" instance=ExtResource("3_icg1x")]
-material = SubResource("ShaderMaterial_62236")
+material = SubResource("ShaderMaterial_tngja")
 position = Vector2(-270, 67)
 
 [node name="Fall2" type="Node2D" parent="."]

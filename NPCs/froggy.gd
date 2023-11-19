@@ -25,7 +25,6 @@ func _physics_process(delta):
 	if(anima.animation == "walk" && anima.frame in [4, 8]):
 		var taktuk = preload("res://Sound/SoundEffect/taktuk.tscn").instantiate()
 		add_child(taktuk)
-	print(State.player.velocity.x)
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y += gravity * delta
@@ -33,7 +32,6 @@ func _physics_process(delta):
 	if($rcL.is_colliding() || $rcR.is_colliding()):
 		if(overwall):
 			$shuffletimer.stop()
-			print(atstate)
 			atstate = 3
 			overwall = false
 	if(state == "alive") && can_move:
@@ -66,7 +64,9 @@ func _physics_process(delta):
 			3:
 				if(jumponce):
 					velocity.x = 0
-					anima.play("jump")
+					if(anima.animation != "jump"):
+						anima.play("jump")
+						print("dalaylama")
 					jumponce = false
 					$realjumptimer.start()
 				if(anima.animation == "jump" && anima.frame == 6 && jumponce2):
@@ -77,8 +77,9 @@ func _physics_process(delta):
 					velocity.y = -450 - height
 					jumponce2 = false
 					$jumptimer.start()
-				if(anima.animation == "jump" && anima.frame == 9 && is_on_floor() && fall):
+				if(anima.animation == "jump" && anima.frame == 9 && is_on_floor()):
 					var heavytaktuk = preload("res://Sound/SoundEffect/heavytaktuk.tscn").instantiate()
+					if(State.player.is_on_floor()): State.player.velocity.y = -6000
 					add_child(heavytaktuk)
 					State.apply_random_shake()
 					anima.play("walk")
@@ -104,7 +105,6 @@ func _on_hurtful_body_entered(body):
 	pass # Replace with function body.
 
 func _on_recotimer_timeout():
-	print("reeeecoooiiiiilllll!")
 	atstate = 0
 	pass # Replace with function body.
 
@@ -114,19 +114,16 @@ func _on_jumptimer_timeout():
 	fall = true
 	pass # Replace with function body.
 
-
 func _on_shuffletimer_timeout():
 	var attacks = [0, 1, 3]
 	atstate = attacks[randi_range(0, 2)]
 	$shuffletimer.wait_time = randf_range(2, 4)
 	pass # Replace with function body.
 
-
 func _on_realjumptimer_timeout():
 	jumponce = true
 	jumponce2 = true
 	pass # Replace with function body.
-
 
 func _on_hurtful_body_exited(body):
 	if(body == State.player):

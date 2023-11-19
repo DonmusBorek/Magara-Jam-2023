@@ -12,6 +12,7 @@ signal deadsignal
 
 var candash = false
 var dashing = false
+var noluyozipliyoz = false
 
 const JUMP_BUFFER_TIME = 10
 

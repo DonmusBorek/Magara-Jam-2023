@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://bsmd5ll1ormx6"]
+
+[ext_resource type="Script" path="res://scenes/xipe_head.gd" id="1_fqy41"]
+[ext_resource type="Texture2D" uid="uid://smsfet5jj0ii" path="res://sprites/xipe.png" id="1_o5m4d"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ryo38"]
+radius = 67.0
+height = 274.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ike4m"]
+radius = 66.0
+height = 276.0
+
+[node name="XipeHead" type="CharacterBody2D"]
+collision_layer = 8
+collision_mask = 8
+script = ExtResource("1_fqy41")
+
+[node name="FirstForm" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_o5m4d")
+
+[node name="SecondForm" type="Sprite2D" parent="."]
+
+[node name="FirstCollider" type="CollisionShape2D" parent="."]
+position = Vector2(11, -77)
+shape = SubResource("CapsuleShape2D_ryo38")
+
+[node name="SecondCollider" type="CollisionShape2D" parent="."]
+position = Vector2(11, -78)
+shape = SubResource("CapsuleShape2D_ike4m")
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="summoningSickness" type="Timer" parent="."]
