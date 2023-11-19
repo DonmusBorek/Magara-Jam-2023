@@ -34,7 +34,7 @@ texture_scale = 2.0
 
 [node name="sfx" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_cjf4m")
-volume_db = 2.0
+volume_db = -7.0
 autoplay = true
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

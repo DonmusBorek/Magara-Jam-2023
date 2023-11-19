@@ -17,7 +17,7 @@ func _process(delta):
 func _on_attack_body_entered(body):
 	if(body.is_in_group("Enemy")):
 		body.health -= 5
-		body.get_node("HitFlash").play("HitFlash")
+		body.get_node("HitFlash").play("HitFlash2")
 		body.speed -= (State.player.global_position.x-body.global_position.x) * 20 * body.isfroggy / body.mass
 		State.frameFreeze(0.1, 0.05)
 		var kivilcim = preload("res://scenes/kivilcim.tscn").instantiate()

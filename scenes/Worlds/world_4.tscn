@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bjxsl3k7lv5ln"]
+[gd_scene load_steps=15 format=3 uid="uid://bjxsl3k7lv5ln"]
 
 [ext_resource type="Script" path="res://scripts/WorldScripts/world_4.gd" id="1_k1d63"]
 [ext_resource type="TileSet" uid="uid://caqgtfl7smp0e" path="res://scenes/Worlds/platform.tres" id="2_njmmv"]
@@ -11,9 +11,16 @@
 [ext_resource type="PackedScene" uid="uid://bl1i20vwjfqms" path="res://NPCs/MiniBoss1.tscn" id="9_2sa5f"]
 [ext_resource type="Environment" uid="uid://cfimef8lfv0p4" path="res://scenes/Worlds/glow.tres" id="10_5n8kt"]
 [ext_resource type="PackedScene" uid="uid://b8k7fady4vvuw" path="res://scenes/floresan.tscn" id="10_x7duh"]
+[ext_resource type="Shader" uid="uid://s7s30mt8g442" path="res://scenes/Player.tres" id="10_ymref"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qejr7"]
 size = Vector2(20, 92)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_73rn8"]
+resource_local_to_scene = true
+shader = ExtResource("10_ymref")
+shader_parameter/enabled = false
+shader_parameter/tint = Color(0.996945, 6e-06, 2e-06, 1)
 
 [node name="World4" type="Node2D"]
 script = ExtResource("1_k1d63")
@@ -48,23 +55,24 @@ layer = 2
 
 [node name="AIworld" parent="CanvasLayer" instance=ExtResource("5_rsnor")]
 
+[node name="ColorRect2" type="ColorRect" parent="CanvasLayer"]
+offset_left = -46.0
+offset_right = 563.0
+offset_bottom = 291.0
+color = Color(0, 0, 0, 0.588235)
+metadata/_edit_use_anchors_ = true
+
 [node name="ackapa" parent="CanvasLayer" instance=ExtResource("5_fsfd7")]
 
 [node name="Door" parent="." instance=ExtResource("7_yfd5y")]
 position = Vector2(465, 224)
 
 [node name="Doorbutton" parent="." instance=ExtResource("8_i33ci")]
-position = Vector2(431, 147)
+position = Vector2(416, 147)
 
 [node name="MiniBoss1" parent="." instance=ExtResource("9_2sa5f")]
+material = SubResource("ShaderMaterial_73rn8")
 position = Vector2(431, 201)
-
-[node name="ColorRect2" type="ColorRect" parent="."]
-offset_left = -46.0
-offset_right = 563.0
-offset_bottom = 291.0
-color = Color(0, 0, 0, 0.588235)
-metadata/_edit_use_anchors_ = true
 
 [node name="Floresan" parent="." instance=ExtResource("10_x7duh")]
 position = Vector2(240, 51)

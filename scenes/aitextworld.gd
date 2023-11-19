@@ -30,7 +30,7 @@ func _ready():
 	if State.currentWorld == 2:
 		_text_sequence = ["Görüş Sistemin bozuk.","Yeni bir tane bul.",""]
 	if State.currentWorld == 3:
-		_text_sequence = ["Kapıları açmak için bütün canlıları ","öldürmen gerekiyor.",""]
+		_text_sequence = ["Kapıları açmak için bütün canlıları ","öldürmen gerekiyor.","Kalpleri sadece bıçakla ","patlatabilirsin.",""]
 	if State.currentWorld == 4:
 		_text_sequence = ["Savaş başladığından beri böyleler.","Huzur içindeydik.",""]
 	if State.currentWorld == 6:
@@ -41,8 +41,10 @@ func _ready():
 		_text_sequence = ["Hepsini öldürmen gerekecek.",""]
 	if State.currentWorld == 8:
 		_text_sequence = ["Dikkatli ol.","Saklanarak öldürmeye çalış.",""]
+	if State.currentWorld == 9:
+		_text_sequence = ["Silahın tepmesiyle daha yükseğe"," çıkabilirsin.",""]
 func _display_next_text():
-	if _text_number < _text_sequence.size():
+	if _text_number < _text_sequence.size(): 
 		_current_text = _text_sequence[_text_number]
 		self.text = ""
 		_letter_index = 0

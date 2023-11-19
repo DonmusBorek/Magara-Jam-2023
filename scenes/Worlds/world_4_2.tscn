@@ -48,29 +48,33 @@ layer = 2
 
 [node name="AIworld" parent="CanvasLayer" instance=ExtResource("5_w21kb")]
 
-[node name="ackapa" parent="CanvasLayer" instance=ExtResource("5_fn11h")]
-
-[node name="Door" parent="." instance=ExtResource("7_e67yp")]
-position = Vector2(465, 224)
-
-[node name="Doorbutton" parent="." instance=ExtResource("8_iahow")]
-position = Vector2(431, 138)
-
-[node name="Doorbutton2" parent="." instance=ExtResource("8_iahow")]
-position = Vector2(314, 57)
-
-[node name="Doorbutton3" parent="." instance=ExtResource("8_iahow")]
-position = Vector2(156, 59)
-
-[node name="Doorbutton4" parent="." instance=ExtResource("8_iahow")]
-position = Vector2(47, 134)
-
-[node name="ColorRect2" type="ColorRect" parent="."]
+[node name="ColorRect2" type="ColorRect" parent="CanvasLayer"]
 offset_left = -46.0
 offset_right = 563.0
 offset_bottom = 291.0
 color = Color(0, 0, 0, 0.588235)
 metadata/_edit_use_anchors_ = true
+
+[node name="ackapa" parent="CanvasLayer" instance=ExtResource("5_fn11h")]
+visible = false
+
+[node name="Door" parent="." instance=ExtResource("7_e67yp")]
+position = Vector2(465, 224)
+
+[node name="Doorbutton" parent="." instance=ExtResource("8_iahow")]
+position = Vector2(416, 138)
+
+[node name="Doorbutton2" parent="." instance=ExtResource("8_iahow")]
+position = Vector2(314, 64)
+rotation = -1.5708
+
+[node name="Doorbutton3" parent="." instance=ExtResource("8_iahow")]
+position = Vector2(156, 64)
+rotation = -1.5708
+
+[node name="Doorbutton4" parent="." instance=ExtResource("8_iahow")]
+position = Vector2(64, 134)
+rotation = 3.14159
 
 [node name="Floresan" parent="." instance=ExtResource("9_xto67")]
 position = Vector2(240, 51)
