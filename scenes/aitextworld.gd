@@ -19,6 +19,8 @@ var _punctuation_time = 1.5
 
 var _display_finished = false
 
+var last = false
+
 signal display_finished()
 
 func _ready():
@@ -46,7 +48,11 @@ func _ready():
 	if State.currentWorld == 10:
 		_text_sequence = ["Gittikçe daha da zorlaşacak.",""]
 	if State.currentWorld == 11:
-		_text_sequence = ["Kaç hemen",""]
+		_text_sequence = ["Kaç hemen!",""]
+	if State.currentWorld == 12:
+		_text_sequence = ["Sona yaklaşıyoruz.","Az kaldı.",""]
+	if State.currentWorld == 13:
+		_text_sequence = ["Sona yaklaşıyoruz.","Az kaldı.",""]
 func _display_next_text():
 	if _text_number < _text_sequence.size(): 
 		_current_text = _text_sequence[_text_number]
@@ -56,6 +62,8 @@ func _display_next_text():
 		_display_letter()
 	else:
 		_display_finished = true
+		if State.currentWorld == 11 or State.currentWorld == 12:
+			get_parent().visible = false
 		emit_signal("display_finished")
 
 func _display_letter():
@@ -79,4 +87,8 @@ func _start_timer_for_char(char):
 
 func _on_timer_timeout():
 	if !_display_finished:
-		_display_letter()
+		if State.currentWorld == 13:
+			if last == true:
+				_display_letter()
+		else:
+			_display_letter()

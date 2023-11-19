@@ -3,6 +3,7 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	State.currentWorld = 12
 	$"Player".health = 200
 	$Player/UI/HPBar.max_value = 200
 
