@@ -1,7 +1,10 @@
+Node2D
 CollisionShape2D
+StaticBody2D
+AnimationPlayer
+AudioStreamPlayer2D
 Area2D
 AudioStreamPlayer2D
-Node2D
 Timer
 Camera2D
 Marker2D
@@ -15,8 +18,6 @@ GPUParticles2D
 AudioStreamPlayer
 Button
 Sprite2D
-AnimationPlayer
-StaticBody2D
 CPUParticles2D
 ColorRect
 Label
@@ -29,4 +30,3 @@ GridContainer
 VBoxContainer
 CheckButton
 HSlider
-LineEdit
