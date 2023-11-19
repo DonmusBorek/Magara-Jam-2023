@@ -1,0 +1,59 @@
+[gd_scene load_steps=8 format=3 uid="uid://ds2xojv3ud71x"]
+
+[ext_resource type="Script" path="res://Fly.gd" id="1_4te2c"]
+[ext_resource type="Texture2D" uid="uid://d0ivsadwxygu4" path="res://sprites/flysheet.png" id="2_i26di"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5jmxa"]
+atlas = ExtResource("2_i26di")
+region = Rect2(0, 0, 6, 4)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_twtai"]
+atlas = ExtResource("2_i26di")
+region = Rect2(6, 0, 6, 4)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wi2kg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5jmxa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_twtai")
+}],
+"loop": true,
+"name": &"default",
+"speed": 24.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_r1oq0"]
+radius = 1.41421
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vwtpq"]
+radius = 49.0
+
+[node name="Fly" type="CharacterBody2D"]
+collision_layer = 8
+collision_mask = 8
+script = ExtResource("1_4te2c")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_wi2kg")
+autoplay = "default"
+frame_progress = 0.927828
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_r1oq0")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
+
+[node name="LampDetector" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LampDetector"]
+shape = SubResource("CircleShape2D_vwtpq")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="body_entered" from="LampDetector" to="." method="_on_lamp_detector_body_entered"]
+[connection signal="body_exited" from="LampDetector" to="." method="_on_lamp_detector_body_exited"]

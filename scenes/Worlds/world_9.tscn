@@ -1,13 +1,13 @@
-[gd_scene load_steps=16 format=3 uid="uid://n6ybb86ny5w7"]
+[gd_scene load_steps=16 format=3 uid="uid://bdrenk02p2rde"]
 
 [ext_resource type="Script" path="res://World9.gd" id="1_mxx3i"]
 [ext_resource type="TileSet" uid="uid://caqgtfl7smp0e" path="res://scenes/Worlds/platform.tres" id="2_wcg8o"]
 [ext_resource type="TileSet" uid="uid://dbcekwogp6tu4" path="res://Tilseset1.tres" id="3_mkpe4"]
 [ext_resource type="PackedScene" uid="uid://fbvrsjqpv48e" path="res://scenes/Player.tscn" id="4_oksys"]
 [ext_resource type="PackedScene" uid="uid://ck1qqt2h66flu" path="res://scenes/a_iworld.tscn" id="7_chvlw"]
-[ext_resource type="PackedScene" uid="uid://b8k7fady4vvuw" path="res://scenes/floresan.tscn" id="7_w2sy2"]
+[ext_resource type="PackedScene" uid="uid://0ufd07f2xa57" path="res://scenes/floresan.tscn" id="7_w2sy2"]
 [ext_resource type="PackedScene" uid="uid://b6jc6rqa5yav7" path="res://scenes/ackapa.tscn" id="8_u5nmv"]
-[ext_resource type="Environment" uid="uid://cfimef8lfv0p4" path="res://scenes/Worlds/glow.tres" id="9_x2ulo"]
+[ext_resource type="Environment" uid="uid://wkxkytfd75u2" path="res://scenes/Worlds/glow.tres" id="9_x2ulo"]
 [ext_resource type="PackedScene" uid="uid://bl1i20vwjfqms" path="res://NPCs/MiniBoss1.tscn" id="10_usack"]
 [ext_resource type="Shader" uid="uid://s7s30mt8g442" path="res://scenes/Player.tres" id="11_drvli"]
 [ext_resource type="PackedScene" uid="uid://dbbsw3u3qfvod" path="res://scenes/door.tscn" id="12_a5o56"]
@@ -16,13 +16,13 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0eo5q"]
 size = Vector2(20, 92)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_wm2q1"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2oq5g"]
 resource_local_to_scene = true
 shader = ExtResource("11_drvli")
 shader_parameter/enabled = false
 shader_parameter/tint = Color(0.996945, 6e-06, 2e-06, 1)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_4fx1w"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5euwq"]
 resource_local_to_scene = true
 shader = ExtResource("11_drvli")
 shader_parameter/enabled = false
@@ -85,11 +85,11 @@ position = Vector2(819, 51)
 environment = ExtResource("9_x2ulo")
 
 [node name="MiniBoss1" parent="." instance=ExtResource("10_usack")]
-material = SubResource("ShaderMaterial_wm2q1")
+material = SubResource("ShaderMaterial_2oq5g")
 position = Vector2(407, 202)
 
 [node name="MiniBoss2" parent="." instance=ExtResource("10_usack")]
-material = SubResource("ShaderMaterial_4fx1w")
+material = SubResource("ShaderMaterial_5euwq")
 position = Vector2(749, 202)
 
 [node name="Door" parent="." instance=ExtResource("12_a5o56")]

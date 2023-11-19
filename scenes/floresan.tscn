@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://0ufd07f2xa57"]
+[gd_scene load_steps=7 format=3 uid="uid://0ufd07f2xa57"]
 
 [ext_resource type="Script" path="res://scenes/floresan.gd" id="1_2fkgi"]
 [ext_resource type="Texture2D" uid="uid://bv0w3n08a3vb0" path="res://sprites/floresanacik.png" id="1_doqv7"]
@@ -6,7 +6,10 @@
 [ext_resource type="Texture2D" uid="uid://cq22h2oxlg8qa" path="res://sprites/2d_lights_and_shadows_neutral_point_light.webp" id="4_5tjqt"]
 [ext_resource type="AudioStream" uid="uid://befx0e1lsjykr" path="res://Sound/SoundEffect/fluorescent-lamp-with-broken-ignitor-16995.mp3" id="5_cjf4m"]
 
-[node name="Floresan" type="Node2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qs6i1"]
+size = Vector2(58, 3)
+
+[node name="Floresan" type="StaticBody2D" groups=["floresan"]]
 script = ExtResource("1_2fkgi")
 
 [node name="acik" type="Sprite2D" parent="."]
@@ -36,6 +39,10 @@ texture_scale = 2.0
 stream = ExtResource("5_cjf4m")
 volume_db = -7.0
 autoplay = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -1.5)
+shape = SubResource("RectangleShape2D_qs6i1")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="kivilcimcikarici" to="." method="_on_kivilcimcikarici_timeout"]

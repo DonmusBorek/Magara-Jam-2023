@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://v65wqd3t0otg"]
+[gd_scene load_steps=14 format=3 uid="uid://v65wqd3t0otg"]
 
 [ext_resource type="Script" path="res://scripts/WorldScripts/World8.gd" id="1_cwhmq"]
 [ext_resource type="TileSet" uid="uid://caqgtfl7smp0e" path="res://scenes/Worlds/platform.tres" id="2_70nfy"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://dbbsw3u3qfvod" path="res://scenes/door.tscn" id="9_xbyi1"]
 [ext_resource type="PackedScene" uid="uid://0ufd07f2xa57" path="res://scenes/floresan.tscn" id="10_r56ib"]
 [ext_resource type="AudioStream" uid="uid://fw7fdnxmio8p" path="res://Sound/AMB_SciFi_Wind_Heavy_Loop.wav" id="11_4hejk"]
+[ext_resource type="PackedScene" uid="uid://ds2xojv3ud71x" path="res://fly.tscn" id="12_i7yty"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qejr7"]
 size = Vector2(20, 92)
@@ -81,9 +82,14 @@ position = Vector2(182, 52)
 stream = ExtResource("11_4hejk")
 autoplay = true
 
-[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("11_4hejk")
-autoplay = true
+[node name="Fly" parent="." instance=ExtResource("12_i7yty")]
+position = Vector2(79, 135)
+
+[node name="Fly2" parent="." instance=ExtResource("12_i7yty")]
+position = Vector2(154, 80)
+
+[node name="Fly3" parent="." instance=ExtResource("12_i7yty")]
+position = Vector2(219, 141)
 
 [connection signal="deadsignal" from="Player" to="." method="_on_player_deadsignal"]
 [connection signal="is_dead" from="Eye" to="." method="_on_eye_is_dead"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bnmni2uoxyr3l"]
+[gd_scene load_steps=14 format=3 uid="uid://bnmni2uoxyr3l"]
 
 [ext_resource type="Script" path="res://scripts/WorldScripts/world_1.gd" id="1_q8r0o"]
 [ext_resource type="TileSet" uid="uid://dbcekwogp6tu4" path="res://Tilseset1.tres" id="1_stto2"]
@@ -9,6 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://ck1qqt2h66flu" path="res://scenes/a_iworld.tscn" id="5_konbq"]
 [ext_resource type="PackedScene" uid="uid://0ufd07f2xa57" path="res://scenes/floresan.tscn" id="6_f7a83"]
 [ext_resource type="Environment" uid="uid://wkxkytfd75u2" path="res://scenes/Worlds/glow.tres" id="9_u51r2"]
+[ext_resource type="AudioStream" uid="uid://fw7fdnxmio8p" path="res://Sound/AMB_SciFi_Wind_Heavy_Loop.wav" id="10_s3nwq"]
+[ext_resource type="PackedScene" uid="uid://ds2xojv3ud71x" path="res://fly.tscn" id="11_thu6p"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ijs7t"]
 shader = ExtResource("4_5kh60")
@@ -77,5 +79,18 @@ position = Vector2(778, 51)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = ExtResource("9_u51r2")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_s3nwq")
+autoplay = true
+
+[node name="Fly" parent="." instance=ExtResource("11_thu6p")]
+position = Vector2(739, 98)
+
+[node name="Fly2" parent="." instance=ExtResource("11_thu6p")]
+position = Vector2(625, 125)
+
+[node name="Fly3" parent="." instance=ExtResource("11_thu6p")]
+position = Vector2(472, 114)
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

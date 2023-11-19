@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://lefoi2dhtlfc"]
+[gd_scene load_steps=30 format=3 uid="uid://lefoi2dhtlfc"]
 
 [ext_resource type="Script" path="res://scripts/WorldScripts/world_3.gd" id="1_3okja"]
 [ext_resource type="TileSet" uid="uid://dbcekwogp6tu4" path="res://Tilseset1.tres" id="2_xig3k"]
@@ -17,6 +17,7 @@
 [ext_resource type="Environment" uid="uid://wkxkytfd75u2" path="res://scenes/Worlds/glow.tres" id="14_sn1jc"]
 [ext_resource type="PackedScene" uid="uid://ck1qqt2h66flu" path="res://scenes/a_iworld.tscn" id="15_s4uaj"]
 [ext_resource type="AudioStream" uid="uid://fw7fdnxmio8p" path="res://Sound/AMB_SciFi_Wind_Heavy_Loop.wav" id="17_mwrtl"]
+[ext_resource type="PackedScene" uid="uid://ds2xojv3ud71x" path="res://fly.tscn" id="18_n5fe4"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_b2hur"]
 shader = ExtResource("3_xpb27")
@@ -68,7 +69,7 @@ _data = {
 "platform": SubResource("Animation_psjoq")
 }
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_5wh2m"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cxas1"]
 resource_local_to_scene = true
 shader = ExtResource("11_irsu6")
 shader_parameter/enabled = false
@@ -161,7 +162,7 @@ libraries = {
 }
 
 [node name="MiniBoss1" parent="." instance=ExtResource("6_oxajl")]
-material = SubResource("ShaderMaterial_5wh2m")
+material = SubResource("ShaderMaterial_cxas1")
 position = Vector2(923, 201)
 
 [node name="Squish1" type="Area2D" parent="."]
@@ -207,6 +208,9 @@ environment = ExtResource("14_sn1jc")
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("17_mwrtl")
 autoplay = true
+
+[node name="Fly" parent="." instance=ExtResource("18_n5fe4")]
+position = Vector2(599, 126)
 
 [connection signal="deadsignal" from="Player" to="." method="_on_player_deadsignal"]
 [connection signal="area_entered" from="Platform/platformdetect" to="." method="_on_platformdetect_area_entered"]

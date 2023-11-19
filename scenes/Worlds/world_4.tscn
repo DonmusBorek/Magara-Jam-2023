@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bjxsl3k7lv5ln"]
+[gd_scene load_steps=17 format=3 uid="uid://bjxsl3k7lv5ln"]
 
 [ext_resource type="Script" path="res://scripts/WorldScripts/world_4.gd" id="1_k1d63"]
 [ext_resource type="TileSet" uid="uid://caqgtfl7smp0e" path="res://scenes/Worlds/platform.tres" id="2_njmmv"]
@@ -13,11 +13,12 @@
 [ext_resource type="PackedScene" uid="uid://0ufd07f2xa57" path="res://scenes/floresan.tscn" id="10_x7duh"]
 [ext_resource type="Shader" uid="uid://s7s30mt8g442" path="res://scenes/Player.tres" id="10_ymref"]
 [ext_resource type="AudioStream" uid="uid://fw7fdnxmio8p" path="res://Sound/AMB_SciFi_Wind_Heavy_Loop.wav" id="13_hdbba"]
+[ext_resource type="PackedScene" uid="uid://ds2xojv3ud71x" path="res://fly.tscn" id="14_6rncp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qejr7"]
 size = Vector2(20, 92)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_kvfb0"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_j7od8"]
 resource_local_to_scene = true
 shader = ExtResource("10_ymref")
 shader_parameter/enabled = false
@@ -72,7 +73,7 @@ position = Vector2(465, 224)
 position = Vector2(416, 147)
 
 [node name="MiniBoss1" parent="." instance=ExtResource("9_2sa5f")]
-material = SubResource("ShaderMaterial_kvfb0")
+material = SubResource("ShaderMaterial_j7od8")
 position = Vector2(431, 201)
 
 [node name="Floresan" parent="." instance=ExtResource("10_x7duh")]
@@ -84,6 +85,15 @@ environment = ExtResource("10_5n8kt")
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("13_hdbba")
 autoplay = true
+
+[node name="Fly" parent="." instance=ExtResource("14_6rncp")]
+position = Vector2(264, 133)
+
+[node name="Fly2" parent="." instance=ExtResource("14_6rncp")]
+position = Vector2(164, 116)
+
+[node name="Fly3" parent="." instance=ExtResource("14_6rncp")]
+position = Vector2(217, 112)
 
 [connection signal="deadsignal" from="Player" to="." method="_on_player_deadsignal" flags=18]
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered" flags=18]

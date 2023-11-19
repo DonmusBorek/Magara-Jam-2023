@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://ddcjhg5sbbfqc"]
+[gd_scene load_steps=43 format=3 uid="uid://ddcjhg5sbbfqc"]
 
 [ext_resource type="Script" path="res://scenes/Worlds/world_shooter_1.gd" id="1_rrxar"]
 [ext_resource type="TileSet" uid="uid://dbcekwogp6tu4" path="res://Tilseset1.tres" id="1_xd5vh"]
@@ -20,6 +20,7 @@
 [ext_resource type="Environment" uid="uid://wkxkytfd75u2" path="res://scenes/Worlds/glow.tres" id="14_hhmfp"]
 [ext_resource type="PackedScene" uid="uid://0ufd07f2xa57" path="res://scenes/floresan.tscn" id="18_u8rgg"]
 [ext_resource type="AudioStream" uid="uid://fw7fdnxmio8p" path="res://Sound/AMB_SciFi_Wind_Heavy_Loop.wav" id="20_gbqb3"]
+[ext_resource type="PackedScene" uid="uid://ds2xojv3ud71x" path="res://fly.tscn" id="21_xqrra"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_c18w4"]
 texture = ExtResource("2_mprof")
@@ -204,31 +205,31 @@ size = Vector2(238, 63)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0b08t"]
 size = Vector2(238, 63)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_5ppvo"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_15sp0"]
 resource_local_to_scene = true
 shader = ExtResource("10_edjwt")
 shader_parameter/enabled = false
 shader_parameter/tint = Color(0.996945, 6e-06, 2e-06, 1)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_s6je1"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8pbuo"]
 resource_local_to_scene = true
 shader = ExtResource("10_edjwt")
 shader_parameter/enabled = false
 shader_parameter/tint = Color(0.996945, 6e-06, 2e-06, 1)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_avg5u"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mw5a1"]
 resource_local_to_scene = true
 shader = ExtResource("10_edjwt")
 shader_parameter/enabled = false
 shader_parameter/tint = Color(0.996945, 6e-06, 2e-06, 1)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_3sfiy"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nlcn1"]
 resource_local_to_scene = true
 shader = ExtResource("10_edjwt")
 shader_parameter/enabled = false
 shader_parameter/tint = Color(0.996945, 6e-06, 2e-06, 1)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_ay83i"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_uqb6v"]
 resource_local_to_scene = true
 shader = ExtResource("10_edjwt")
 shader_parameter/enabled = false
@@ -280,19 +281,19 @@ _data = {
 "platfor": SubResource("Animation_gbyj7")
 }
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_2sdrn"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_isyt3"]
 resource_local_to_scene = true
 shader = ExtResource("10_edjwt")
 shader_parameter/enabled = false
 shader_parameter/tint = Color(0.996945, 6e-06, 2e-06, 1)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_7wbp1"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4pbx6"]
 resource_local_to_scene = true
 shader = ExtResource("10_edjwt")
 shader_parameter/enabled = false
 shader_parameter/tint = Color(0.996945, 6e-06, 2e-06, 1)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_0fjfp"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ney0s"]
 resource_local_to_scene = true
 shader = ExtResource("10_edjwt")
 shader_parameter/enabled = false
@@ -364,11 +365,11 @@ position = Vector2(17, -119.5)
 shape = SubResource("RectangleShape2D_0b08t")
 
 [node name="MiniBoss1" parent="." instance=ExtResource("9_xcy0j")]
-material = SubResource("ShaderMaterial_5ppvo")
+material = SubResource("ShaderMaterial_15sp0")
 position = Vector2(-3962, 1153)
 
 [node name="MiniBoss2" parent="." instance=ExtResource("9_xcy0j")]
-material = SubResource("ShaderMaterial_s6je1")
+material = SubResource("ShaderMaterial_8pbuo")
 position = Vector2(-3612, 1160)
 
 [node name="Eye" parent="." instance=ExtResource("11_6sguu")]
@@ -388,15 +389,15 @@ position = Vector2(-1372, 679)
 rotation = 3.14159
 
 [node name="Headman" parent="." instance=ExtResource("12_2hl3p")]
-material = SubResource("ShaderMaterial_avg5u")
+material = SubResource("ShaderMaterial_mw5a1")
 position = Vector2(-2829, 1166)
 
 [node name="Headman2" parent="." instance=ExtResource("12_2hl3p")]
-material = SubResource("ShaderMaterial_3sfiy")
+material = SubResource("ShaderMaterial_nlcn1")
 position = Vector2(-2799, 1164)
 
 [node name="MiniBoss3" parent="." instance=ExtResource("9_xcy0j")]
-material = SubResource("ShaderMaterial_ay83i")
+material = SubResource("ShaderMaterial_uqb6v")
 position = Vector2(-2321, 1163)
 
 [node name="Platform" type="StaticBody2D" parent="."]
@@ -436,15 +437,15 @@ script = ExtResource("14_3vq4x")
 environment = ExtResource("14_hhmfp")
 
 [node name="MiniBoss4" parent="." instance=ExtResource("9_xcy0j")]
-material = SubResource("ShaderMaterial_2sdrn")
+material = SubResource("ShaderMaterial_isyt3")
 position = Vector2(-1451, 663)
 
 [node name="MiniBoss5" parent="." instance=ExtResource("9_xcy0j")]
-material = SubResource("ShaderMaterial_7wbp1")
+material = SubResource("ShaderMaterial_4pbx6")
 position = Vector2(-998, 649)
 
 [node name="MiniBoss6" parent="." instance=ExtResource("9_xcy0j")]
-material = SubResource("ShaderMaterial_0fjfp")
+material = SubResource("ShaderMaterial_ney0s")
 position = Vector2(251, 663)
 
 [node name="florance" type="Node2D" parent="."]
@@ -495,6 +496,33 @@ shape = SubResource("RectangleShape2D_fijfc")
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("20_gbqb3")
 autoplay = true
+
+[node name="Fly" parent="." instance=ExtResource("21_xqrra")]
+position = Vector2(-4461, 1122)
+
+[node name="Fly2" parent="." instance=ExtResource("21_xqrra")]
+position = Vector2(-4567, 1102)
+
+[node name="Fly3" parent="." instance=ExtResource("21_xqrra")]
+position = Vector2(-3873, 1035)
+
+[node name="Fly4" parent="." instance=ExtResource("21_xqrra")]
+position = Vector2(-3857, 1047)
+
+[node name="Fly5" parent="." instance=ExtResource("21_xqrra")]
+position = Vector2(-2199, 847)
+
+[node name="Fly6" parent="." instance=ExtResource("21_xqrra")]
+position = Vector2(-2187, 812)
+
+[node name="Fly7" parent="." instance=ExtResource("21_xqrra")]
+position = Vector2(-805, 617)
+
+[node name="Fly8" parent="." instance=ExtResource("21_xqrra")]
+position = Vector2(-1191, 583)
+
+[node name="Fly9" parent="." instance=ExtResource("21_xqrra")]
+position = Vector2(-1221, 600)
 
 [connection signal="body_entered" from="Platform/platformdetect" to="platfor" method="_on_platformdetect_body_entered"]
 [connection signal="body_exited" from="Platform/platformdetect" to="platfor" method="_on_platformdetect_body_exited"]
