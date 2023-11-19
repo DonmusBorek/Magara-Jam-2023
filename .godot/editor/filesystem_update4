@@ -19,3 +19,4 @@ res://scenes/a_iworld.tscn
 res://scenes/Player.tscn
 res://scenes/intro.tscn
 res://scenes/Worlds/world_headman.tscn
+res://NPCs/froggy.gd

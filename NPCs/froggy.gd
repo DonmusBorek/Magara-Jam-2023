@@ -86,6 +86,12 @@ func _physics_process(delta):
 					$shuffletimer.start()
 					atstate = 1
 					fall = false
+	else:
+		var _particle = preload("res://scenes/explosion.tscn").instantiate()
+		_particle.position = global_position
+		_particle.emitting = true
+		get_tree().current_scene.add_child(_particle)
+		emit_signal("bossdead")
 	#Le Turno
 	if(velocity.x == 0):
 		if(State.player.global_position.x < position.x):
