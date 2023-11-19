@@ -1,10 +1,12 @@
 extends CharacterBody2D
 
+signal bossdead
+
 var state = "alive"
 var atstate = 3
 var can_move = true
 var speed = 0
-var attack = 34
+var attack = 20
 var mass = 80
 var health = 300
 var jumponce = true
@@ -71,7 +73,7 @@ func _physics_process(delta):
 						anima.play("jump")
 						print("dalaylama")
 					jumponce = false
-					$realjumptimer.start()
+					if $realjumptimer.is_stopped(): $realjumptimer.start()
 				if(anima.animation == "jump" && anima.frame == 6 && jumponce2):
 					if(anima.frame == 9): anima.pause()
 					var distance = State.player.global_position.x - global_position.x
@@ -79,7 +81,7 @@ func _physics_process(delta):
 					velocity.x = distance + State.player.velocity.x * 40 * delta
 					velocity.y = -450 - height
 					jumponce2 = false
-					$jumptimer.start()
+					if $jumptimer.is_stopped(): $jumptimer.start()
 				if(anima.animation == "jump" && anima.frame == 9 && is_on_floor()):
 					var heavytaktuk = preload("res://Sound/SoundEffect/heavytaktuk.tscn").instantiate()
 					if(State.player.is_on_floor()): State.player.velocity.y = -6000
@@ -95,6 +97,9 @@ func _physics_process(delta):
 		_particle.emitting = true
 		get_tree().current_scene.add_child(_particle)
 		emit_signal("bossdead")
+		modulate = Color.DIM_GRAY
+		global_rotation = 90
+		set_physics_process(false)
 	#Le Turno
 	if(velocity.x == 0):
 		if(State.player.global_position.x < position.x):
