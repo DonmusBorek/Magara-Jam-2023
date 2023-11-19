@@ -29,6 +29,9 @@ func _physics_process(delta):
 	if not is_on_floor():
 		velocity.y += gravity * delta
 		
+	if(health <= 0):
+		state = "dead"
+		
 	if($rcL.is_colliding() || $rcR.is_colliding()):
 		if(overwall):
 			$shuffletimer.stop()
@@ -63,7 +66,7 @@ func _physics_process(delta):
 				if($recotimer.is_stopped()): $recotimer.start()
 			3:
 				if(jumponce):
-					velocity.x = 0
+					velocity.x *= 1/2
 					if(anima.animation != "jump"):
 						anima.play("jump")
 						print("dalaylama")
